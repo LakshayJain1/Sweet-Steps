@@ -1,13 +1,31 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useEffect } from "react";
+import Navbar from "@/components/Navbar";
+import Hero from "@/components/Hero";
+import WhatWeDo from "@/components/WhatWeDo";
+import HowItWorks from "@/components/HowItWorks";
+import FeaturedProducts from "@/components/FeaturedProducts";
+import Testimonials from "@/components/Testimonials";
+import FAQ from "@/components/FAQ";
+import BookSession from "@/components/BookSession";
+import Footer from "@/components/Footer";
 
 const Index = () => {
+  useEffect(() => {
+    document.title = "Sweet Steps – Jaipur Baby Hand & Feet Impressions | 3D Keepsake Frames";
+  }, []);
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
-    </div>
+    <main className="min-h-screen">
+      <Navbar />
+      <Hero />
+      <WhatWeDo />
+      <HowItWorks />
+      <FeaturedProducts />
+      <Testimonials />
+      <FAQ />
+      <BookSession />
+      <Footer />
+    </main>
   );
 };
 

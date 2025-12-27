@@ -12,7 +12,11 @@ const menuItems = [
   { label: "Contact", href: "#contact" },
 ];
 
-const Navbar = () => {
+interface NavbarProps {
+  onOpenBooking?: () => void;
+}
+
+const Navbar = ({ onOpenBooking }: NavbarProps) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -26,11 +30,10 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? "bg-card/95 backdrop-blur-md shadow-soft py-3"
-          : "bg-transparent py-5"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
+        ? "bg-card/95 backdrop-blur-md shadow-soft py-3"
+        : "bg-transparent py-5"
+        }`}
       role="navigation"
       aria-label="Main navigation"
     >
@@ -60,7 +63,7 @@ const Navbar = () => {
         </div>
 
         <div className="hidden lg:block">
-          <Button variant="hero" size="lg">
+          <Button variant="hero" size="lg" onClick={onOpenBooking}>
             Book a Session
           </Button>
         </div>
@@ -89,7 +92,7 @@ const Navbar = () => {
                 {item.label}
               </a>
             ))}
-            <Button variant="hero" size="lg" className="mt-4">
+            <Button variant="hero" size="lg" className="mt-4" onClick={onOpenBooking}>
               Book a Session
             </Button>
           </div>

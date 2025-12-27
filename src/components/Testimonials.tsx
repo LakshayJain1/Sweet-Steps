@@ -1,24 +1,32 @@
 import { useState } from "react";
-import { ChevronLeft, ChevronRight, Star } from "lucide-react";
+import { ChevronLeft, ChevronRight, Star, ExternalLink } from "lucide-react";
 import { Button } from "./ui/button";
+
+const GOOGLE_REVIEWS_URL = "https://www.google.com/maps/search/Sweet+Steps+Impressions+3D+Hand+Foot+Casting+Jaipur";
 
 const testimonials = [
   {
-    name: "Priya Sharma",
-    relation: "Mother of 6-month-old",
-    quote: "Absolutely loved the detailing and care Sweet Steps put into capturing my baby's tiny feet. The frame is stunning and sits proudly in our living room.",
+    name: "Piyush Bansal",
+    relation: "Google Review",
+    quote: "Absolutely loved the 3D impressions! The baby feet impression came out so detailed and lifelike. We also did a couple impression and the hand casting was beautiful. Highly recommend for preserving special memories with 3D casting!",
     rating: 5,
   },
   {
-    name: "Rahul & Anjali",
-    relation: "New Parents",
-    quote: "The family frame with all three of our handprints is simply beautiful. It's our most treasured possession. Thank you for making this process so easy!",
+    name: "Akanksha Modi",
+    relation: "Google Review",
+    quote: "It was amazing. Must connect with Sweet Steps Impression for your child footprint and handprints.",
     rating: 5,
   },
   {
-    name: "Meera Kapoor",
-    relation: "Gift Buyer",
-    quote: "Gifted this to my sister for her baby shower and she was in tears! The quality is premium and the finish is perfect. Highly recommend!",
+    name: "Karan Kaushik",
+    relation: "Google Review",
+    quote: "Extremely impressive foot casting and hand casting. The impressions were fantastic!",
+    rating: 5,
+  },
+  {
+    name: "Vikas Sharma",
+    relation: "Google Review",
+    quote: "Extremely happy with work.",
     rating: 5,
   },
 ];
@@ -94,11 +102,10 @@ const Testimonials = () => {
                 {testimonials.map((_, i) => (
                   <button
                     key={i}
-                    className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                      i === current
-                        ? "w-6 gradient-primary"
-                        : "bg-muted-foreground/30"
-                    }`}
+                    className={`w-2 h-2 rounded-full transition-all duration-300 ${i === current
+                      ? "w-6 gradient-primary"
+                      : "bg-muted-foreground/30"
+                      }`}
                     onClick={() => setCurrent(i)}
                     aria-label={`Go to testimonial ${i + 1}`}
                   />
@@ -112,6 +119,19 @@ const Testimonials = () => {
               >
                 <ChevronRight className="w-5 h-5" />
               </Button>
+            </div>
+
+            {/* View on Google link */}
+            <div className="flex justify-center mt-6">
+              <a
+                href={GOOGLE_REVIEWS_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-sm text-primary hover:text-primary/80 transition-colors"
+              >
+                View all reviews on Google
+                <ExternalLink className="w-4 h-4" />
+              </a>
             </div>
           </div>
         </div>

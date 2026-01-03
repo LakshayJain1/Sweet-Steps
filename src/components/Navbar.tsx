@@ -1,15 +1,13 @@
 import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Button } from "./ui/button";
 import logo from "@/assets/logo.png";
 
 const menuItems = [
-  { label: "Home", href: "#home" },
-  { label: "Our Frames", href: "#products" },
-  { label: "How It Works", href: "#how-it-works" },
-  { label: "Testimonials", href: "#testimonials" },
-  { label: "FAQ", href: "#faq" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "/" },
+  { label: "Products", href: "/products" },
+  { label: "Contact Us", href: "/contact" },
 ];
 
 interface NavbarProps {
@@ -38,7 +36,7 @@ const Navbar = ({ onOpenBooking }: NavbarProps) => {
       aria-label="Main navigation"
     >
       <div className="container flex items-center justify-between">
-        <a href="#home" className="flex items-center gap-3 group">
+        <Link to="/" className="flex items-center gap-3 group">
           <img
             src={logo}
             alt="Sweet Steps Logo"
@@ -47,18 +45,18 @@ const Navbar = ({ onOpenBooking }: NavbarProps) => {
           <span className="font-heading text-xl font-semibold text-foreground">
             Sweet Steps
           </span>
-        </a>
+        </Link>
 
         {/* Desktop Menu */}
         <div className="hidden lg:flex items-center gap-8">
           {menuItems.map((item) => (
-            <a
+            <Link
               key={item.label}
-              href={item.href}
+              to={item.href}
               className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors duration-200"
             >
               {item.label}
-            </a>
+            </Link>
           ))}
         </div>
 
@@ -83,14 +81,14 @@ const Navbar = ({ onOpenBooking }: NavbarProps) => {
         <div className="lg:hidden absolute top-full left-0 right-0 bg-card/98 backdrop-blur-md shadow-elevated animate-fade-in">
           <div className="container py-6 flex flex-col gap-4">
             {menuItems.map((item) => (
-              <a
+              <Link
                 key={item.label}
-                href={item.href}
+                to={item.href}
                 className="text-base font-medium text-foreground hover:text-primary transition-colors py-2"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {item.label}
-              </a>
+              </Link>
             ))}
             <Button variant="hero" size="lg" className="mt-4" onClick={onOpenBooking}>
               Book a Session

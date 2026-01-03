@@ -36,7 +36,7 @@ const Navbar = ({ onOpenBooking }: NavbarProps) => {
       aria-label="Main navigation"
     >
       <div className="container flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-3 group">
+        <Link to="/" className="flex items-center gap-3 group relative z-50">
           <img
             src={logo}
             alt="Sweet Steps Logo"
@@ -68,7 +68,7 @@ const Navbar = ({ onOpenBooking }: NavbarProps) => {
 
         {/* Mobile Menu Button */}
         <button
-          className="lg:hidden p-2 text-foreground"
+          className="lg:hidden p-2 text-foreground relative z-50"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Toggle menu"
         >
@@ -78,19 +78,22 @@ const Navbar = ({ onOpenBooking }: NavbarProps) => {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden absolute top-full left-0 right-0 bg-card/98 backdrop-blur-md shadow-elevated animate-fade-in">
-          <div className="container py-6 flex flex-col gap-4">
+        <div className="lg:hidden fixed inset-0 z-40 bg-background/98 backdrop-blur-xl animate-fade-in flex flex-col justify-center items-center">
+          <div className="container py-6 flex flex-col gap-6 items-center text-center">
             {menuItems.map((item) => (
               <Link
                 key={item.label}
                 to={item.href}
-                className="text-base font-medium text-foreground hover:text-primary transition-colors py-2"
+                className="text-2xl font-medium text-foreground hover:text-primary transition-colors py-2"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {item.label}
               </Link>
             ))}
-            <Button variant="hero" size="lg" className="mt-4" onClick={onOpenBooking}>
+            <Button variant="hero" size="lg" className="mt-4 w-full max-w-xs" onClick={() => {
+              setIsMobileMenuOpen(false);
+              onOpenBooking?.();
+            }}>
               Book a Session
             </Button>
           </div>

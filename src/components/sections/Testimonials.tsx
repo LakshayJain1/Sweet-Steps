@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { ChevronLeft, ChevronRight, Star, ExternalLink } from "lucide-react";
-import { Button } from "./ui/button";
+import { Button } from "@/components/ui/button";
 
 const GOOGLE_REVIEWS_URL = "https://www.google.com/maps/search/Sweet+Steps+Impressions+3D+Hand+Foot+Casting+Jaipur";
 

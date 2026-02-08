@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
-import Navbar from "@/components/Navbar";
-import Hero from "@/components/Hero";
-import WhatWeDo from "@/components/WhatWeDo";
-import HowItWorks from "@/components/HowItWorks";
-import FeaturedProducts from "@/components/FeaturedProducts";
-import Testimonials from "@/components/Testimonials";
-import FAQ from "@/components/FAQ";
-import BookSession from "@/components/BookSession";
-import Footer from "@/components/Footer";
-import BookingModal from "@/components/BookingModal";
+import Navbar from "@/components/layout/Navbar";
+import Hero from "@/components/sections/Hero";
+import WhatWeDo from "@/components/sections/WhatWeDo";
+import HowItWorks from "@/components/sections/HowItWorks";
+import FeaturedProducts from "@/components/sections/FeaturedProducts";
+import Testimonials from "@/components/sections/Testimonials";
+import FAQ from "@/components/sections/FAQ";
+import BookSession from "@/components/sections/BookSession";
+import Footer from "@/components/layout/Footer";
+import BookingModal from "@/components/common/BookingModal";
 
 const Index = () => {
   const [isBookingOpen, setIsBookingOpen] = useState(false);

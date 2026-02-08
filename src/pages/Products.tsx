@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import BookingModal from "@/components/BookingModal";
-import ProductCard from "@/components/ProductCard";
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
+import BookingModal from "@/components/common/BookingModal";
+import ProductCard from "@/components/common/ProductCard";
 import { Button } from "@/components/ui/button";
 import { Check, Star, Heart } from "lucide-react";
 import product1 from "@/assets/product-1.jpg";

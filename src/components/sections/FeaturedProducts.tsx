@@ -1,4 +1,4 @@
-import ProductCard from "./ProductCard";
+import ProductCard from "@/components/common/ProductCard";
 import product1 from "@/assets/product-1.jpg";
 import product2 from "@/assets/product-2.jpg";
 import product3 from "@/assets/product-3.jpg";

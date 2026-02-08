@@ -88,7 +88,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
                             },
                         ],
                     },
-                    "Submitted at": {
+                    "Submitted At": {
                         rich_text: [
                             {
                                 text: {

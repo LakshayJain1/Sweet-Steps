@@ -48,8 +48,12 @@ const Contact = () => {
                                     <div>
                                         <h3 className="font-heading font-semibold text-foreground mb-1">Call Us</h3>
                                         <p className="text-muted-foreground text-sm mb-2">Available Mon-Sat, 10AM-7PM</p>
-                                        <a href="tel:+916378146202" className="text-primary font-medium hover:underline">
-                                            +91-6378146202
+                                        <a href="tel:+918302419714" className="text-primary font-medium hover:underline">
+                                            +91-8302419714
+                                        </a>
+                                        <span className="text-muted-foreground mx-2">|</span>
+                                        <a href="tel:+919413867088" className="text-primary font-medium hover:underline">
+                                            +91-9413867088
                                         </a>
                                     </div>
                                 </div>
@@ -64,7 +68,7 @@ const Contact = () => {
                                         <h3 className="font-heading font-semibold text-foreground mb-1">WhatsApp</h3>
                                         <p className="text-muted-foreground text-sm mb-2">Quick responses via WhatsApp</p>
                                         <a
-                                            href="https://wa.me/916378146202"
+                                            href="https://wa.me/918302419714"
                                             target="_blank"
                                             rel="noopener noreferrer"
                                             className="text-primary font-medium hover:underline"
@@ -135,7 +139,9 @@ const Contact = () => {
                                 <h3 className="font-heading font-semibold text-foreground mb-4">Follow Us</h3>
                                 <div className="flex gap-4">
                                     <a
-                                        href="#"
+                                        href="https://instagram.com/sweet_.steps__"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
                                         className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
                                         aria-label="Instagram"
                                     >
@@ -149,7 +155,7 @@ const Contact = () => {
                                         <Facebook className="w-6 h-6" />
                                     </a>
                                     <a
-                                        href="https://wa.me/916378146202"
+                                        href="https://wa.me/918302419714"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"

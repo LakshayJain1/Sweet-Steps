@@ -23,7 +23,9 @@ const Footer = () => {
             </p>
             <div className="flex gap-4">
               <a
-                href="#"
+                href="https://instagram.com/sweet_.steps__"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
                 aria-label="Instagram"
               >
@@ -85,8 +87,12 @@ const Footer = () => {
                 <Phone className="w-5 h-5 text-primary mt-0.5" />
                 <div>
                   <p className="text-primary-foreground/70 text-sm">Call us</p>
-                  <a href="tel:+916378146202" className="hover:text-primary transition-colors">
-                    +91-6378146202
+                  <a href="tel:+918302419714" className="hover:text-primary transition-colors">
+                    +91-8302419714
+                  </a>
+                  <span className="text-primary-foreground/50 mx-1">|</span>
+                  <a href="tel:+919413867088" className="hover:text-primary transition-colors">
+                    +91-9413867088
                   </a>
                 </div>
               </li>

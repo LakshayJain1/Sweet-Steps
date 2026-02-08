@@ -32,12 +32,36 @@ const BookingModal = ({ isOpen, onClose }: BookingModalProps) => {
         package: "",
     });
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const [isSubmitting, setIsSubmitting] = useState(false);
+
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        console.log("Form submitted:", formData);
-        toast.success("Booking request received! We will contact you shortly.");
-        onClose();
-        setFormData({ name: "", contact: "", address: "", package: "" });
+        setIsSubmitting(true);
+
+        try {
+            const response = await fetch("/api/notion", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(formData),
+            });
+
+            const data = await response.json();
+
+            if (!response.ok) {
+                throw new Error(data.error || "Failed to submit booking");
+            }
+
+            toast.success("Booking request received! We will contact you shortly.");
+            onClose();
+            setFormData({ name: "", contact: "", address: "", package: "" });
+        } catch (error) {
+            console.error("Error submitting booking:", error);
+            toast.error("Failed to submit booking. Please try again.");
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     const handleChange = (
@@ -108,7 +132,9 @@ const BookingModal = ({ isOpen, onClose }: BookingModalProps) => {
                         />
                     </div>
                     <div className="flex justify-end pt-4">
-                        <Button type="submit">Submit Request</Button>
+                        <Button type="submit" disabled={isSubmitting}>
+                            {isSubmitting ? "Submitting..." : "Submit Request"}
+                        </Button>
                     </div>
                 </form>
             </DialogContent>

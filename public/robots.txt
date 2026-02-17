@@ -13,4 +13,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://sweetsteps.in/sitemap.xml
+Sitemap: https://sweetsteps-4c226c15.vercel.app/sitemap.xml

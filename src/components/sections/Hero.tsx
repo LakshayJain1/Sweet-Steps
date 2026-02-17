@@ -71,6 +71,10 @@ const Hero = ({ onOpenBooking }: HeroProps) => {
                 src={heroImage}
                 alt="Beautiful 3D baby hand and feet impression in a premium white frame"
                 className="w-full h-auto object-cover"
+                width={600}
+                height={600}
+                fetchPriority="high"
+                decoding="async"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-foreground/10 to-transparent" />
             </div>

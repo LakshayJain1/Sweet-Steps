@@ -15,4 +15,26 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          "vendor-react": ["react", "react-dom"],
+          "vendor-router": ["react-router-dom"],
+          "vendor-ui": [
+            "@radix-ui/react-dialog",
+            "@radix-ui/react-tooltip",
+            "@radix-ui/react-toast",
+            "@radix-ui/react-accordion",
+            "@radix-ui/react-slot",
+          ],
+        },
+      },
+    },
+    // Target modern browsers for smaller output
+    target: "es2020",
+    // Enable CSS code splitting
+    cssCodeSplit: true,
+  },
 }));
+

@@ -13,6 +13,10 @@ const Footer = () => {
                 src={logo}
                 alt="Sweet Steps Logo"
                 className="h-12 w-12 rounded-full"
+                width={48}
+                height={48}
+                loading="lazy"
+                decoding="async"
               />
               <span className="font-heading text-2xl font-semibold">
                 Sweet Steps

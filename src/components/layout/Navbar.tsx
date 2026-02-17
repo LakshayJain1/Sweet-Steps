@@ -50,6 +50,8 @@ const Navbar = ({ onOpenBooking }: NavbarProps) => {
                 src={logo}
                 alt="Sweet Steps Logo"
                 className="h-10 w-10 rounded-full"
+                width={40}
+                height={40}
               />
               <span className="font-heading text-xl font-semibold text-foreground">
                 Sweet Steps
@@ -101,6 +103,8 @@ const Navbar = ({ onOpenBooking }: NavbarProps) => {
               src={logo}
               alt="Sweet Steps Logo"
               className="h-10 w-10 rounded-full transition-transform duration-300 group-hover:scale-110"
+              width={40}
+              height={40}
             />
             <span className="font-heading text-xl font-semibold text-foreground">
               Sweet Steps

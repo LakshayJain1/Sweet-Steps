@@ -17,6 +17,10 @@ const ProductCard = ({ title, price, image, labels = [], description }: ProductC
           src={image}
           alt={title}
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+          width={400}
+          height={400}
+          loading="lazy"
+          decoding="async"
         />
         {labels.length > 0 && (
           <div className="absolute top-4 left-4 flex flex-wrap gap-2">

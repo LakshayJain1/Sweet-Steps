@@ -1,146 +1,140 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import logo from "@/assets/logo.webp";
-
-const menuItems = [
-  { label: "Home", href: "/" },
-  { label: "Products", href: "/products" },
-  { label: "Contact Us", href: "/contact" },
-];
 
 interface NavbarProps {
   onOpenBooking?: () => void;
 }
 
 const Navbar = ({ onOpenBooking }: NavbarProps) => {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
+    const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Prevent body scroll when mobile menu is open
   useEffect(() => {
-    if (isMobileMenuOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
-    return () => {
-      document.body.style.overflow = "";
-    };
-  }, [isMobileMenuOpen]);
+    setMobileOpen(false);
+  }, [location]);
+
+  const navLinks = [
+    { label: "Home", to: "/" },
+    { label: "Products", to: "/products" },
+    { label: "Contact", to: "/contact" },
+  ];
+
+  const isActive = (to: string) => {
+    if (to === "/") return location.pathname === "/";
+    return location.pathname.startsWith(to);
+  };
 
   return (
-    <>
-      {/* Mobile Menu Overlay - Rendered outside nav for proper stacking */}
-      {isMobileMenuOpen && (
-        <div className="lg:hidden fixed inset-0 z-[60] bg-background flex flex-col">
-          {/* Mobile Menu Header */}
-          <div className="container flex items-center justify-between py-5">
-            <Link to="/" className="flex items-center gap-3 group" onClick={() => setIsMobileMenuOpen(false)}>
-              <img
-                src={logo}
-                alt="Sweet Steps Logo"
-                className="h-10 w-10 rounded-full"
-                width={40}
-                height={40}
-              />
-              <span className="font-heading text-xl font-semibold text-foreground">
-                Sweet Steps
-              </span>
-            </Link>
-            <button
-              className="p-2 text-foreground"
-              onClick={() => setIsMobileMenuOpen(false)}
-              aria-label="Close menu"
-            >
-              <X size={24} />
-            </button>
-          </div>
-
-          {/* Mobile Menu Links */}
-          <div className="flex-1 flex flex-col gap-6 items-center justify-center text-center">
-            {menuItems.map((item) => (
-              <Link
-                key={item.label}
-                to={item.href}
-                className="text-2xl font-medium text-foreground hover:text-primary transition-colors py-2"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                {item.label}
-              </Link>
-            ))}
-            <Button variant="hero" size="lg" className="mt-4 w-full max-w-xs" onClick={() => {
-              setIsMobileMenuOpen(false);
-              onOpenBooking?.();
-            }}>
-              Book a Session
-            </Button>
-          </div>
-        </div>
-      )}
-
-      {/* Navbar */}
-      <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-          ? "bg-card/95 backdrop-blur-md shadow-soft py-3"
-          : "bg-transparent py-5"
-          }`}
-        role="navigation"
-        aria-label="Main navigation"
-      >
-        <div className="container flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-3 group">
+    <nav
+      className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-2rem)] max-w-6xl transition-all duration-300 ${scrolled
+        ? "bg-white/95 backdrop-blur-md shadow-lg"
+        : "bg-white/80 backdrop-blur-sm shadow-md"
+        }`}
+      style={{ borderRadius: "9999px" }}
+    >
+      <div className="flex items-center justify-between px-4 md:px-8 py-3">
+        {/* Logo */}
+        <Link to="/" className="flex items-center gap-2 group">
+          <div
+            className="w-10 h-10 rounded-full flex items-center justify-center overflow-hidden transition-transform duration-300 group-hover:scale-110"
+          >
             <img
               src={logo}
               alt="Sweet Steps Logo"
-              className="h-10 w-10 rounded-full transition-transform duration-300 group-hover:scale-110"
-              width={40}
-              height={40}
+              className="w-full h-full object-cover"
             />
-            <span className="font-heading text-xl font-semibold text-foreground">
-              Sweet Steps
-            </span>
-          </Link>
-
-          {/* Desktop Menu */}
-          <div className="hidden lg:flex items-center gap-8">
-            {menuItems.map((item) => (
-              <Link
-                key={item.label}
-                to={item.href}
-                className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors duration-200"
-              >
-                {item.label}
-              </Link>
-            ))}
           </div>
+          <span className="hidden sm:inline font-heading" style={{ color: "#2E2E2E", fontWeight: 700, fontSize: "18px" }}>
+            Sweet Steps
+          </span>
+        </Link>
 
-          <div className="hidden lg:block">
-            <Button variant="hero" size="lg" onClick={onOpenBooking}>
-              Book a Session
-            </Button>
-          </div>
+        {/* Desktop Links */}
+        <div className="hidden md:flex items-center gap-8">
+          {navLinks.map((link) => (
+            <Link
+              key={link.to}
+              to={link.to}
+              className="transition-colors duration-200 font-medium"
+              style={{
+                color: isActive(link.to) ? "#B85C7A" : "#2E2E2E",
+                fontSize: "15px",
+              }}
+            >
+              {link.label}
+            </Link>
+          ))}
+        </div>
 
-          {/* Mobile Menu Button */}
+        {/* CTA Button */}
+        <button
+          onClick={onOpenBooking}
+          className="hidden md:inline-flex items-center px-6 py-2.5 text-white transition-all duration-200 hover:opacity-90 font-semibold"
+          style={{
+            backgroundColor: "#B85C7A",
+            borderRadius: "9999px",
+            fontSize: "14px",
+          }}
+        >
+          Book a Session
+        </button>
+
+        {/* Mobile Menu Toggle */}
+        <button
+          className="md:hidden p-2"
+          onClick={() => setMobileOpen(!mobileOpen)}
+          style={{ color: "#2E2E2E" }}
+          aria-label="Toggle menu"
+        >
+          {mobileOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
+      </div>
+
+      {/* Mobile Menu */}
+      {mobileOpen && (
+        <div
+          className="md:hidden bg-white border-t px-6 py-4 flex flex-col gap-4"
+          style={{ borderRadius: "0 0 24px 24px", borderColor: "rgba(0,0,0,0.06)" }}
+        >
+          {navLinks.map((link) => (
+            <Link
+              key={link.to}
+              to={link.to}
+              className="py-2 transition-colors font-medium hover:text-[#B85C7A]"
+              style={{
+                color: isActive(link.to) ? "#B85C7A" : "#2E2E2E",
+                fontSize: "16px",
+              }}
+            >
+              {link.label}
+            </Link>
+          ))}
           <button
-            className="lg:hidden p-2 text-foreground"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label="Toggle menu"
+            onClick={() => {
+              setMobileOpen(false);
+              onOpenBooking?.();
+            }}
+            className="inline-flex items-center justify-center px-6 py-3 text-white mt-2 font-semibold"
+            style={{
+              backgroundColor: "#B85C7A",
+              borderRadius: "9999px",
+              fontSize: "15px",
+            }}
           >
-            <Menu size={24} />
+            Book a Session
           </button>
         </div>
-      </nav>
-    </>
+      )}
+    </nav>
   );
 };
 

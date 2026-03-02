@@ -5,53 +5,87 @@ import BookingModal from "@/components/common/BookingModal";
 import ProductCard from "@/components/common/ProductCard";
 import { Button } from "@/components/ui/button";
 import { Check, Star, Heart } from "lucide-react";
-import product1 from "@/assets/product-1.jpg";
-import product2 from "@/assets/product-2.jpg";
-import product3 from "@/assets/product-3.jpg";
+// Elder Blessing
+import elder1 from "@/assets/products/elder-blessing/565952625_17863936869481205_1499331118673531301_n.webp";
+import elder2 from "@/assets/products/elder-blessing/625008219_18092323357985877_3288329523995516286_n.jpg";
+
+// Four Impressions
+import four1 from "@/assets/products/four-imp/623791658_18082922257965629_7135710008465237176_n.jpg";
+import four2 from "@/assets/products/four-imp/625014262_18037330799541096_3734195408163251281_n.jpg";
+
+// Two Impressions
+import two1 from "@/assets/products/two-imp/616561075_17884532361431293_6748449571348436754_n.jpg";
+import two2 from "@/assets/products/two-imp/624027004_18080704790020495_1901701617521697128_n.jpg";
+import two3 from "@/assets/products/two-imp/624872407_18079786994584308_3771641984599392725_n.jpg";
+import two4 from "@/assets/products/two-imp/627446331_18106562986766187_3381016230724678298_n.jpg";
 
 // Frame Designs
-const frameDesigns = [
+const categories = [
     {
-        title: "Tiny Footprints Classic",
-        price: 2999,
-        image: product1,
-        labels: ["Bestseller"],
-        description: "Beautiful baby feet impression in premium white frame with gold accents. Perfect for nursery walls.",
+        name: "Elder Blessing",
+        description: "Honoring our roots with beautiful hand impressions of elders. A precious blessing to keep forever.",
+        designs: [
+            {
+                title: "Traditional Elder Blessing",
+                image: elder1,
+                labels: ["Spiritual"],
+                description: "Deeply detailed hand impressions capturing the wisdom and love of elders.",
+            },
+            {
+                title: "Heritage Frame",
+                image: elder2,
+                labels: ["Premium"],
+                description: "Elegant framing for the most cherished handprints of our grandparents.",
+            },
+        ],
     },
     {
-        title: "Little Hands Signature",
-        price: 3499,
-        image: product2,
-        labels: ["New"],
-        description: "Elegant handprint in modern black frame. A timeless piece that grows with your child.",
+        name: "Four Impressions",
+        description: "Complete sets capturing both hands and both feet of your little one.",
+        designs: [
+            {
+                title: "Total Love Set",
+                image: four1,
+                labels: ["Most Popular"],
+                description: "Four beautiful impressions in a single premium frame showing every tiny detail.",
+            },
+            {
+                title: "Baby's First Set",
+                image: four2,
+                labels: ["Bestseller"],
+                description: "A complete collection of your baby's first hand and foot impressions.",
+            },
+        ],
     },
     {
-        title: "Family Bond Frame",
-        price: 5999,
-        image: product3,
-        labels: ["Premium", "Family"],
-        description: "Capture the whole family with parent and baby impressions together. A truly unique keepsake.",
-    },
-    {
-        title: "Twin Treasures",
-        price: 4499,
-        image: product1,
-        labels: ["Popular"],
-        description: "Perfect for twins! Side-by-side impressions in a stunning dual-panel frame.",
-    },
-    {
-        title: "Sibling Love",
-        price: 4999,
-        image: product2,
-        labels: ["Family"],
-        description: "Celebrate the bond between siblings with matching impressions in one beautiful frame.",
-    },
-    {
-        title: "Memory Box Deluxe",
-        price: 7999,
-        image: product3,
-        labels: ["Premium", "Exclusive"],
-        description: "An exquisite shadow box featuring 3D impressions with space for photos and keepsakes.",
+        name: "Two Impressions",
+        description: "Balanced pairings of hand and foot impressions for a timeless look.",
+        designs: [
+            {
+                title: "Classic Duo",
+                image: two1,
+                labels: ["Classic"],
+                description: "One hand and one foot impression, perfectly balanced in a handcrafted frame.",
+            },
+            {
+                title: "Tiny Pair",
+                image: two2,
+                labels: ["Cute"],
+                description: "Adorable pairing of tiny impressions, an ideal gift for new parents.",
+            },
+            {
+                title: "Signature Pair",
+                image: two3,
+                labels: ["Signature"],
+                description: "Our most requested two-impression layout with premium finishing.",
+            },
+            {
+                title: "Elegance Duo",
+                image: two4,
+                labels: ["Elegant"],
+                description: "Sophisticated presentation of baby impressions for modern homes.",
+            },
+        ],
     },
 ];
 
@@ -59,8 +93,6 @@ const frameDesigns = [
 const packages = [
     {
         name: "Essential",
-        price: 2999,
-        originalPrice: 3499,
         features: [
             "Single hand or foot impression",
             "Classic white frame",
@@ -72,8 +104,6 @@ const packages = [
     },
     {
         name: "Classic",
-        price: 4499,
-        originalPrice: 5499,
         features: [
             "Both hands and feet impressions",
             "Choice of frame color",
@@ -86,8 +116,6 @@ const packages = [
     },
     {
         name: "Premium",
-        price: 7999,
-        originalPrice: 9999,
         features: [
             "Complete set with family touch",
             "Premium designer frame",
@@ -130,31 +158,33 @@ const Products = () => {
                 </div>
             </section>
 
-            {/* Frame Designs Section */}
-            <section className="py-20">
-                <div className="container">
-                    <div className="text-center max-w-2xl mx-auto mb-14">
-                        <h2 className="text-3xl md:text-4xl font-heading font-semibold text-foreground mb-4">
-                            Signature Frame Designs
-                        </h2>
-                        <p className="text-muted-foreground">
-                            Each frame is meticulously crafted to preserve your baby's precious impressions for generations.
-                        </p>
-                    </div>
+            {/* Frame Designs Sections */}
+            {categories.map((category, catIndex) => (
+                <section key={category.name} className={`py-20 ${catIndex % 2 === 1 ? "bg-muted/30" : ""}`}>
+                    <div className="container">
+                        <div className="text-center max-w-2xl mx-auto mb-14">
+                            <h2 className="text-3xl md:text-4xl font-heading font-semibold text-foreground mb-4">
+                                {category.name}
+                            </h2>
+                            <p className="text-muted-foreground">
+                                {category.description}
+                            </p>
+                        </div>
 
-                    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {frameDesigns.map((product, index) => (
-                            <div
-                                key={product.title}
-                                className="animate-fade-in-up"
-                                style={{ animationDelay: `${index * 0.1}s` }}
-                            >
-                                <ProductCard {...product} />
-                            </div>
-                        ))}
+                        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                            {category.designs.map((product, index) => (
+                                <div
+                                    key={product.title}
+                                    className="animate-fade-in-up"
+                                    style={{ animationDelay: `${index * 0.1}s` }}
+                                >
+                                    <ProductCard {...product} />
+                                </div>
+                            ))}
+                        </div>
                     </div>
-                </div>
-            </section>
+                </section>
+            ))}
 
             {/* Packages Section */}
             <section className="py-20 bg-muted/30">
@@ -189,12 +219,6 @@ const Products = () => {
                                     <h3 className="font-heading text-xl font-semibold text-foreground mb-2">
                                         {pkg.name}
                                     </h3>
-                                    <div className="flex items-center justify-center gap-2">
-                                        <span className="text-3xl font-bold text-primary">₹{pkg.price.toLocaleString()}</span>
-                                        <span className="text-muted-foreground line-through text-sm">
-                                            ₹{pkg.originalPrice.toLocaleString()}
-                                        </span>
-                                    </div>
                                 </div>
 
                                 <ul className="space-y-3 mb-8">

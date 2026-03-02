@@ -1,29 +1,26 @@
 import ProductCard from "@/components/common/ProductCard";
-import product1 from "@/assets/product-1.jpg";
-import product2 from "@/assets/product-2.jpg";
-import product3 from "@/assets/product-3.jpg";
+import elder1 from "@/assets/products/elder-blessing/565952625_17863936869481205_1499331118673531301_n.webp";
+import four1 from "@/assets/products/four-imp/623791658_18082922257965629_7135710008465237176_n.jpg";
+import two1 from "@/assets/products/two-imp/616561075_17884532361431293_6748449571348436754_n.jpg";
 
 const products = [
   {
-    title: "Tiny Footprints Classic",
-    price: 2999,
-    image: product1,
-    labels: ["Bestseller"],
-    description: "Beautiful baby feet impression in premium white frame with gold accents.",
+    title: "Traditional Elder Blessing",
+    image: elder1,
+    labels: ["Spiritual"],
+    description: "Deeply detailed hand impressions capturing the wisdom and love of elders.",
   },
   {
-    title: "Little Hands Signature",
-    price: 3499,
-    image: product2,
-    labels: ["New"],
-    description: "Elegant handprint in modern black frame, perfect for nursery decor.",
+    title: "Total Love Set",
+    image: four1,
+    labels: ["Most Popular"],
+    description: "Four beautiful impressions in a single premium frame showing every tiny detail.",
   },
   {
-    title: "Family Bond Frame",
-    price: 5999,
-    image: product3,
-    labels: ["Premium", "Family"],
-    description: "Capture the whole family with parent and baby impressions together.",
+    title: "Classic Duo",
+    image: two1,
+    labels: ["Classic"],
+    description: "One hand and one foot impression, perfectly balanced in a handcrafted frame.",
   },
 ];
 

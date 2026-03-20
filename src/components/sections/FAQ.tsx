@@ -64,17 +64,13 @@ const FAQ = () => {
                 style={{ animationDelay: `${index * 0.05}s` }}
               >
                 <Accordion type="single" collapsible>
-                  <AccordionItem 
-                    value={`item-${index}`} 
+                  <AccordionItem
+                    value={`item-${index}`}
                     className="border-0 px-6"
                   >
                     <AccordionTrigger className="text-left font-heading font-medium text-foreground hover:text-primary py-6 hover:no-underline group">
                       {faq.question}
-                      <span className="w-8 h-8 rounded-full glass flex items-center justify-center group-hover:bg-primary/10 transition-colors">
-                        <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                          <path d="M12 5v14M5 12h14" className="transition-transform group-data-[state=open]:rotate-45" />
-                        </svg>
-                      </span>
+
                     </AccordionTrigger>
                     <AccordionContent className="text-muted-foreground pb-6 leading-relaxed">
                       {faq.answer}

@@ -144,13 +144,6 @@ const Footer = () => {
             <p className="text-sm text-muted-foreground">
               © {new Date().getFullYear()} Sweet Steps. All rights reserved.
             </p>
-            <p className="flex items-center gap-2 text-sm text-muted-foreground">
-              Made with
-              <span className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center">
-                <Heart size={10} className="text-primary fill-primary" />
-              </span>
-              for precious memories in Jaipur
-            </p>
           </div>
         </div>
       </div>

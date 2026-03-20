@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Calendar } from "lucide-react";
 import logo from "@/assets/logo.webp";
 
 interface NavbarProps {
@@ -35,17 +35,17 @@ const Navbar = ({ onOpenBooking }: NavbarProps) => {
 
   return (
     <nav
-      className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-2rem)] max-w-6xl transition-all duration-300 ${scrolled
-        ? "bg-white/95 backdrop-blur-md shadow-lg"
-        : "bg-white/80 backdrop-blur-sm shadow-md"
+      className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-2rem)] max-w-6xl transition-all duration-500 ${scrolled
+          ? "glass-card shadow-elevated"
+          : "glass"
         }`}
       style={{ borderRadius: "9999px" }}
     >
-      <div className="flex items-center justify-between px-4 md:px-8 py-3">
+      <div className="flex items-center justify-between px-5 md:px-8 py-3">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-2 group">
+        <Link to="/" className="flex items-center gap-3 group">
           <div
-            className="w-10 h-10 rounded-full flex items-center justify-center overflow-hidden transition-transform duration-300 group-hover:scale-110"
+            className="w-11 h-11 rounded-xl flex items-center justify-center overflow-hidden transition-all duration-300 group-hover:shadow-md"
           >
             <img
               src={logo}
@@ -53,22 +53,21 @@ const Navbar = ({ onOpenBooking }: NavbarProps) => {
               className="w-full h-full object-cover"
             />
           </div>
-          <span className="hidden sm:inline font-heading" style={{ color: "#2E2E2E", fontWeight: 700, fontSize: "18px" }}>
+          <span className="hidden sm:inline font-heading font-bold text-foreground text-lg tracking-tight">
             Sweet Steps
           </span>
         </Link>
 
         {/* Desktop Links */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-1">
           {navLinks.map((link) => (
             <Link
               key={link.to}
               to={link.to}
-              className="transition-colors duration-200 font-medium"
-              style={{
-                color: isActive(link.to) ? "#B85C7A" : "#2E2E2E",
-                fontSize: "15px",
-              }}
+              className={`px-5 py-2 rounded-full transition-all duration-300 font-medium text-sm ${isActive(link.to)
+                  ? "bg-primary/10 text-primary"
+                  : "text-foreground hover:bg-primary/5 hover:text-primary"
+                }`}
             >
               {link.label}
             </Link>
@@ -78,60 +77,62 @@ const Navbar = ({ onOpenBooking }: NavbarProps) => {
         {/* CTA Button */}
         <button
           onClick={onOpenBooking}
-          className="hidden md:inline-flex items-center px-6 py-2.5 text-white transition-all duration-200 hover:opacity-90 font-semibold"
+          className="hidden md:inline-flex items-center gap-2 px-6 py-2.5 text-white font-semibold text-sm rounded-full transition-all duration-300 hover:shadow-glow animate-gradient"
           style={{
-            backgroundColor: "#B85C7A",
-            borderRadius: "9999px",
-            fontSize: "14px",
+            background: "linear-gradient(135deg, hsl(340 60% 52%), hsl(25 55% 58%))",
           }}
         >
+          <Calendar className="w-4 h-4" />
           Book a Session
         </button>
 
         {/* Mobile Menu Toggle */}
         <button
-          className="md:hidden p-2"
+          className="md:hidden p-2 rounded-xl hover:bg-primary/5 transition-colors"
           onClick={() => setMobileOpen(!mobileOpen)}
-          style={{ color: "#2E2E2E" }}
           aria-label="Toggle menu"
         >
-          {mobileOpen ? <X size={24} /> : <Menu size={24} />}
+          {mobileOpen ? (
+            <X className="w-6 h-6 text-foreground" />
+          ) : (
+            <Menu className="w-6 h-6 text-foreground" />
+          )}
         </button>
       </div>
 
       {/* Mobile Menu */}
       {mobileOpen && (
         <div
-          className="md:hidden bg-white border-t px-6 py-4 flex flex-col gap-4"
-          style={{ borderRadius: "0 0 24px 24px", borderColor: "rgba(0,0,0,0.06)" }}
+          className="md:hidden glass-card border-t border-white/20"
+          style={{ borderRadius: "0 0 24px 24px" }}
         >
-          {navLinks.map((link) => (
-            <Link
-              key={link.to}
-              to={link.to}
-              className="py-2 transition-colors font-medium hover:text-[#B85C7A]"
+          <div className="px-6 py-5 flex flex-col gap-2">
+            {navLinks.map((link) => (
+              <Link
+                key={link.to}
+                to={link.to}
+                className={`py-3 px-4 rounded-xl transition-all duration-300 font-medium ${isActive(link.to)
+                    ? "bg-primary/10 text-primary"
+                    : "text-foreground hover:bg-primary/5"
+                  }`}
+              >
+                {link.label}
+              </Link>
+            ))}
+            <button
+              onClick={() => {
+                setMobileOpen(false);
+                onOpenBooking?.();
+              }}
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 text-white mt-3 font-semibold rounded-full animate-gradient"
               style={{
-                color: isActive(link.to) ? "#B85C7A" : "#2E2E2E",
-                fontSize: "16px",
+                background: "linear-gradient(135deg, hsl(340 60% 52%), hsl(25 55% 58%))",
               }}
             >
-              {link.label}
-            </Link>
-          ))}
-          <button
-            onClick={() => {
-              setMobileOpen(false);
-              onOpenBooking?.();
-            }}
-            className="inline-flex items-center justify-center px-6 py-3 text-white mt-2 font-semibold"
-            style={{
-              backgroundColor: "#B85C7A",
-              borderRadius: "9999px",
-              fontSize: "15px",
-            }}
-          >
-            Book a Session
-          </button>
+              <Calendar className="w-4 h-4" />
+              Book a Session
+            </button>
+          </div>
         </div>
       )}
     </nav>

@@ -5,91 +5,78 @@ const steps = [
     step: "01",
     icon: Camera,
     title: "Capture",
-    desc: "Share your favorite photos and impressions with us"
+    desc: "Share your favorite photos and impressions with us through our easy booking process"
   },
   {
     step: "02",
     icon: Palette,
     title: "Craft",
-    desc: "Our artisans design your unique frame with care"
+    desc: "Our skilled artisans design your unique frame with meticulous attention to detail"
   },
   {
     step: "03",
     icon: Sparkles,
     title: "Customize",
-    desc: "Add personal touches, names, and special details"
+    desc: "Add personal touches, names, dates, and special details to make it truly yours"
   },
   {
     step: "04",
     icon: Truck,
     title: "Deliver",
-    desc: "Beautifully packaged and shipped to your door"
+    desc: "Beautifully packaged in a premium gift box and shipped safely to your door"
   },
 ];
 
 const HowItWorks = () => {
   return (
-    <section id="how-it-works" className="py-20" style={{ backgroundColor: "white" }}>
-      <div className="container px-6">
-        <div className="text-center mb-14">
-          <p
-            className="mb-3"
-            style={{
-              color: "#B85C7A",
-              fontWeight: 600,
-              fontSize: "14px",
-              letterSpacing: "1px",
-              textTransform: "uppercase"
-            }}
-          >
-            Our Process
-          </p>
-          <h2
-            className="font-heading"
-            style={{
-              fontSize: "clamp(28px, 3.5vw, 38px)",
-              fontWeight: 700,
-              color: "#2E2E2E",
-              lineHeight: 1.2
-            }}
-          >
-            How We Bring Your Memories to Life
+    <section id="how-it-works" className="py-24 relative overflow-hidden">
+      {/* Subtle background */}
+      <div className="absolute inset-0 bg-white" />
+      
+      {/* Decorative elements */}
+      <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full bg-primary/5 blur-[120px]" />
+      <div className="absolute bottom-0 right-1/4 w-80 h-80 rounded-full bg-accent/5 blur-[100px]" />
+
+      <div className="container px-6 relative z-10">
+        <div className="text-center mb-20">
+          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-button text-sm font-medium mb-5">
+            <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+            <span className="text-muted-foreground">Simple Process</span>
+          </span>
+          <h2 className="font-heading font-bold text-foreground mb-5" style={{
+            fontSize: "clamp(32px, 4vw, 48px)",
+            lineHeight: 1.2
+          }}>
+            How We Bring Your{" "}
+            <span className="text-gradient">Memories</span> to Life
           </h2>
+          <p className="text-lg text-muted-foreground max-w-xl mx-auto">
+            From booking to delivery, we make the entire process seamless and enjoyable
+          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
           {/* Connection line - desktop only */}
-          <div
-            className="hidden md:block absolute top-12 left-[12.5%] right-[12.5%] h-px"
-            style={{ backgroundColor: "#C6B6E940" }}
-          />
+          <div className="hidden md:block absolute top-16 left-[15%] right-[15%] h-1 rounded-full bg-gradient-to-r from-primary/20 via-primary/40 to-accent/20" />
 
           {steps.map((item, i) => (
             <div key={i} className="text-center relative group">
-              <div className="flex justify-center mb-5">
-                <div
-                  className="w-24 h-24 rounded-full flex items-center justify-center relative transition-transform duration-300 group-hover:scale-110"
-                  style={{
-                    background: `linear-gradient(135deg, ${i % 2 === 0 ? "#C6B6E930" : "#F2B8C630"
-                      }, ${i % 2 === 0 ? "#C6B6E915" : "#F2B8C615"})`,
-                  }}
-                >
-                  <item.icon
-                    size={28}
-                    style={{ color: i % 2 === 0 ? "#C6B6E9" : "#F2B8C6" }}
-                  />
-                  <span
-                    className="absolute -top-1 -right-1 w-7 h-7 rounded-full flex items-center justify-center text-white"
-                    style={{ backgroundColor: "#B85C7A", fontSize: "11px", fontWeight: 700 }}
-                  >
+              <div className="flex justify-center mb-6">
+                <div className="w-32 h-32 rounded-3xl glass-card-hover flex items-center justify-center relative transition-all duration-500 group-hover:scale-105 group-hover:shadow-glow">
+                  {/* Step number badge */}
+                  <div className="absolute -top-3 -right-3 w-10 h-10 rounded-xl gradient-warm flex items-center justify-center text-white font-bold text-sm shadow-lg">
                     {item.step}
-                  </span>
+                  </div>
+                  
+                  <item.icon size={36} className="text-primary" />
                 </div>
               </div>
-              <h3 className="font-heading" style={{ fontWeight: 700, fontSize: "17px", color: "#2E2E2E", marginBottom: "8px" }}>
+              
+              <h3 className="font-heading text-xl font-bold text-foreground mb-3">
                 {item.title}
               </h3>
-              <p style={{ fontSize: "14px", color: "#717182", lineHeight: 1.6 }}>
+              
+              <p className="text-sm text-muted-foreground leading-relaxed max-w-[220px] mx-auto">
                 {item.desc}
               </p>
             </div>

@@ -1,90 +1,46 @@
-import { Camera, Palette, Sparkles, Truck } from "lucide-react";
+import { Home, ScanFace, Gift, ArrowRight } from "lucide-react";
 
 const steps = [
   {
-    step: "01",
-    icon: Camera,
-    title: "Capture",
-    desc: "Share your favorite photos and impressions with us through our easy booking process"
+    title: "We visit you",
+    desc: "A professional casting artist visits your home at your convenience.",
+    icon: Home,
   },
   {
-    step: "02",
-    icon: Palette,
-    title: "Craft",
-    desc: "Our skilled artisans design your unique frame with meticulous attention to detail"
+    title: "We capture the impression",
+    desc: "A fast, 100% baby-safe process to capture every tiny wrinkle.",
+    icon: ScanFace,
   },
   {
-    step: "03",
-    icon: Sparkles,
-    title: "Customize",
-    desc: "Add personal touches, names, dates, and special details to make it truly yours"
-  },
-  {
-    step: "04",
-    icon: Truck,
-    title: "Deliver",
-    desc: "Beautifully packaged in a premium gift box and shipped safely to your door"
+    title: "You receive the frame",
+    desc: "Your beautiful handcrafted frame is delivered in 10-15 days.",
+    icon: Gift,
   },
 ];
 
-const HowItWorks = () => {
+export default function HowItWorks() {
   return (
-    <section id="how-it-works" className="py-24 relative overflow-hidden">
-      {/* Subtle background */}
-      <div className="absolute inset-0 bg-white" />
-      
-      {/* Decorative elements */}
-      <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full bg-primary/5 blur-[120px]" />
-      <div className="absolute bottom-0 right-1/4 w-80 h-80 rounded-full bg-accent/5 blur-[100px]" />
-
-      <div className="container px-6 relative z-10">
-        <div className="text-center mb-20">
-          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-button text-sm font-medium mb-5">
-            <span className="w-1.5 h-1.5 rounded-full bg-primary" />
-            <span className="text-muted-foreground">Simple Process</span>
-          </span>
-          <h2 className="font-heading font-bold text-foreground mb-5" style={{
-            fontSize: "clamp(32px, 4vw, 48px)",
-            lineHeight: 1.2
-          }}>
-            How We Bring Your{" "}
-            <span className="text-gradient">Memories</span> to Life
-          </h2>
-          <p className="text-lg text-muted-foreground max-w-xl mx-auto">
-            From booking to delivery, we make the entire process seamless and enjoyable
-          </p>
+    <section className="bg-[#FFFBF7] section-padding">
+      <div className="container mx-auto max-w-[1200px] px-6">
+        <div className="text-center space-y-4 mb-20">
+          <h2>How It Works</h2>
+          <p className="text-xl text-brown-secondary font-medium">Simple, stress-free, and magical.</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
-          {/* Connection line - desktop only */}
-          <div className="hidden md:block absolute top-16 left-[15%] right-[15%] h-1 rounded-full bg-gradient-to-r from-primary/20 via-primary/40 to-accent/20" />
-
-          {steps.map((item, i) => (
-            <div key={i} className="text-center relative group">
-              <div className="flex justify-center mb-6">
-                <div className="w-32 h-32 rounded-3xl glass-card-hover flex items-center justify-center relative transition-all duration-500 group-hover:scale-105 group-hover:shadow-glow">
-                  {/* Step number badge */}
-                  <div className="absolute -top-3 -right-3 w-10 h-10 rounded-xl gradient-warm flex items-center justify-center text-white font-bold text-sm shadow-lg">
-                    {item.step}
-                  </div>
-                  
-                  <item.icon size={36} className="text-primary" />
-                </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 relative">
+          <div className="hidden md:block absolute top-12 left-[15%] right-[15%] h-[2px] bg-gold-accent/20" />
+          
+          {steps.map((step, idx) => (
+            <div key={idx} className="relative z-10 flex flex-col items-center bg-card rounded-card p-6 shadow-sm border-t-[3px] border-t-gold-accent text-center transform transition-transform duration-300 hover:-translate-y-2">
+              <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-md mb-8 text-gold-accent border-4 border-[#FFFBF7]">
+                <step.icon className="h-10 w-10" />
               </div>
-              
-              <h3 className="font-heading text-xl font-bold text-foreground mb-3">
-                {item.title}
-              </h3>
-              
-              <p className="text-sm text-muted-foreground leading-relaxed max-w-[220px] mx-auto">
-                {item.desc}
-              </p>
+              <h3 className="mb-4">{step.title}</h3>
+              <p className="text-brown-secondary text-lg leading-relaxed">{step.desc}</p>
             </div>
           ))}
         </div>
       </div>
     </section>
   );
-};
-
-export default HowItWorks;
+}

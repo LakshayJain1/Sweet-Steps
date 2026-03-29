@@ -34,7 +34,7 @@ const jsonLd = [
     "telephone": "+91-8302419714",
     "url": "https://sweetsteps.in",
     "image": "https://sweetsteps.in/logo.webp",
-    "priceRange": "₹3999 - ₹12499",
+    "priceRange": "$$",
     "areaServed": "Jaipur",
     "geo": {
       "@type": "GeoCoordinates",
@@ -59,20 +59,20 @@ const jsonLd = [
   {
     "@context": "https://schema.org",
     "@type": "Product",
-    name: "Classic Two Impression Frame",
-    description: "Perfect for one hand and one foot impression of your newborn.",
-    image: "https://sweetsteps.in/product-1.jpg",
-    offers: {
+    "name": "Custom 3D Baby Impression Frames",
+    "description": "Handcrafted 3D impression frames - customizable for families. Contact for pricing.",
+    "image": "https://sweetsteps.in/product-1.jpg",
+    "offers": {
       "@type": "Offer",
-      price: "3999.00",
-      priceCurrency: "INR",
-      availability: "https://schema.org/InStock",
-      url: "https://sweetsteps.in/products"
+      "price": "0",
+      "priceCurrency": "INR",
+      "availability": "https://schema.org/InStock",
+      "url": "https://sweetsteps.in/products"
     },
-    aggregateRating: {
+    "aggregateRating": {
       "@type": "AggregateRating",
-      ratingValue: "5.0",
-      reviewCount: "214"
+      "ratingValue": "5.0",
+      "reviewCount": "214"
     }
   }
 ];

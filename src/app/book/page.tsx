@@ -2,7 +2,6 @@ import StickyHeader from "@/components/layout/StickyHeader";
 import Footer from "@/components/layout/Footer";
 import BookingForm from "@/components/sections/BookingForm";
 import WhatsAppButton from "@/components/common/WhatsAppButton";
-import UrgencyBadge from "@/components/common/UrgencyBadge";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -27,16 +26,27 @@ export default function BookPage() {
             
             <div className="flex flex-col gap-4 p-8 bg-card rounded-card border border-gold-accent/20">
               <h3 className="font-bold flex items-center justify-between">
-                <span>Availability Notice</span>
-                <span className="text-2xl">🗓️</span>
+                <span>What to Expect</span>
+                <span className="text-2xl">✨</span>
               </h3>
-              <p className="text-brown-secondary text-lg">
-                We take limited at-home appointments per week to ensure quality and hygiene for every family. 
-                Please reserve your dates early.
-              </p>
-              <div className="pt-2">
-                 <UrgencyBadge />
-              </div>
+              <ul className="text-brown-secondary text-lg space-y-3">
+                <li className="flex items-start gap-3">
+                  <span className="text-gold-accent">✓</span>
+                  At-home session in just 45 minutes
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-gold-accent">✓</span>
+                  100% baby-safe organic materials
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-gold-accent">✓</span>
+                  Your custom frame delivered in 10-15 days
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-gold-accent">✓</span>
+                  Free delivery across Jaipur
+                </li>
+              </ul>
             </div>
           </div>
 

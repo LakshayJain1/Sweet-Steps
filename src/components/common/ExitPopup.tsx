@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import emailjs from "@emailjs/browser";
-import { X, Gift } from "lucide-react";
+import { X, MessageCircle } from "lucide-react";
 
 export default function ExitPopup() {
   const [isVisible, setIsVisible] = useState(false);
@@ -12,7 +12,6 @@ export default function ExitPopup() {
 
   useEffect(() => {
     const handleMouseLeave = (e: MouseEvent) => {
-      // Trigger if mouse leaves top of viewport and popup hasn't been shown
       if (e.clientY < 0 && !hasShown && !sessionStorage.getItem("exit_shown")) {
         setIsVisible(true);
         setHasShown(true);
@@ -30,16 +29,15 @@ export default function ExitPopup() {
 
     setStatus("loading");
     try {
-      // Integrating EmailJS as requested for the leads popup
       await emailjs.send(
-        "service_xs1r1ij", // Reusing the known Service ID from earlier
-        "template_466ohrx", // Reusing the known Template ID
+        "service_xs1r1ij",
+        "template_466ohrx",
         {
           from_name: formData.name,
           reply_to: formData.whatsapp,
           message: `Lead from Exit Popup! Name: ${formData.name}, WhatsApp: ${formData.whatsapp}`,
         },
-        "MdPYAn2rmEEjW9s7e" // Reusing the known Public Key
+        "MdPYAn2rmEEjW9s7e"
       );
       setStatus("success");
     } catch (error) {
@@ -62,42 +60,42 @@ export default function ExitPopup() {
         </button>
 
         <div className="p-10 md:p-12 text-center space-y-8">
-          <div className="inline-flex items-center justify-center h-20 w-20 bg-pink-accent/20 text-pink-accent rounded-full mb-2 shadow-inner">
-            <Gift className="h-10 w-10 drop-shadow-[0_0_8px_rgba(244,167,185,0.4)]" />
+          <div className="inline-flex items-center justify-center h-20 w-20 bg-gold-accent/20 text-gold-accent rounded-full mb-2 shadow-inner">
+            <MessageCircle className="h-10 w-10 drop-shadow-[0_0_8px_rgba(232,168,56,0.4)]" />
           </div>
           
           <div className="space-y-4">
-             <h2 className="text-3xl md:text-5xl font-heading font-bold text-brown-primary leading-tight">
-               Get <span className="text-pink-accent italic underline decoration-pink-accent/30 underline-offset-8">10% OFF</span>
-             </h2>
-             <p className="text-brown-secondary text-lg md:text-xl font-medium">
-               Don't miss out! Drop your details and we'll text you a special welcome code.
-             </p>
+             <h2 className="text-3xl md:text-4xl font-heading font-bold text-brown-primary leading-tight">
+              Have Questions?
+            </h2>
+            <p className="text-brown-secondary text-lg md:text-xl font-medium">
+              We're here to help! Drop your details and we'll get back to you with all the information you need.
+            </p>
           </div>
 
           {status === "success" ? (
             <div className="pt-6 space-y-6 animate-in fade-in zoom-in-95 duration-500">
               <div className="p-6 bg-green-500/10 text-green-800 rounded-xl font-bold flex flex-col items-center gap-2 border border-green-500/20 shadow-sm">
-                <span className="text-2xl">🎉</span>
-                Code sent to WhatsApp!
+                <span className="text-2xl">✨</span>
+                We'll be in touch soon!
               </div>
               <button
                 onClick={() => setIsVisible(false)}
                 className="text-gold-accent font-bold hover:underline text-lg uppercase tracking-wide"
               >
-                Start Browsing
+                Continue Browsing
               </button>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-5 pt-4">
               <input
-                 type="text"
-                 required
-                 placeholder="Parent's Name"
-                 value={formData.name}
-                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                 className="w-full px-5 py-4 rounded-xl border border-white/60 focus:ring-4 focus:ring-pink-accent/10 focus:bg-white/60 outline-none text-lg bg-white/40 text-brown-primary placeholder:text-brown-primary/30 shadow-sm transition-all"
-                 disabled={status === "loading"}
+                type="text"
+                required
+                placeholder="Your Name"
+                value={formData.name}
+                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                className="w-full px-5 py-4 rounded-xl border border-white/60 focus:ring-4 focus:ring-gold-accent/10 focus:bg-white/60 outline-none text-lg bg-white/40 text-brown-primary placeholder:text-brown-primary/30 shadow-sm transition-all"
+                disabled={status === "loading"}
               />
               <div className="relative group">
                 <div className="absolute inset-y-0 left-5 flex items-center pointer-events-none text-brown-secondary/60 font-bold">
@@ -109,7 +107,7 @@ export default function ExitPopup() {
                   placeholder="WhatsApp Number"
                   value={formData.whatsapp}
                   onChange={(e) => setFormData({ ...formData, whatsapp: e.target.value })}
-                  className="w-full pl-16 pr-5 py-4 rounded-xl border border-white/60 focus:ring-4 focus:ring-pink-accent/10 focus:bg-white/60 outline-none text-lg bg-white/40 text-brown-primary placeholder:text-brown-primary/30 shadow-sm transition-all"
+                  className="w-full pl-16 pr-5 py-4 rounded-xl border border-white/60 focus:ring-4 focus:ring-gold-accent/10 focus:bg-white/60 outline-none text-lg bg-white/40 text-brown-primary placeholder:text-brown-primary/30 shadow-sm transition-all"
                   disabled={status === "loading"}
                 />
               </div>
@@ -119,7 +117,7 @@ export default function ExitPopup() {
                 disabled={status === "loading"}
                 className={`liquid-button w-full text-xl mt-4 font-bold ${status === "loading" ? "opacity-70 cursor-not-allowed" : ""}`}
               >
-                {status === "loading" ? "Sending..." : "Send My Discount →"}
+                {status === "loading" ? "Sending..." : "Get in Touch →"}
               </button>
               
               {status === "error" && (

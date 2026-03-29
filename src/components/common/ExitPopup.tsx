@@ -51,56 +51,57 @@ export default function ExitPopup() {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center p-6 bg-brown-primary/60 backdrop-blur-sm animate-in fade-in duration-300">
-      <div className="relative bg-[#FFFBF7] w-full max-w-lg rounded-card overflow-hidden shadow-card animate-in zoom-in-95 duration-500">
+    <div className="fixed inset-0 z-[100] flex items-center justify-center p-6 bg-brown-primary/40 backdrop-blur-md animate-in fade-in duration-500">
+      <div className="relative glass-panel w-full max-w-lg overflow-hidden border-white/60 shadow-glass-raised animate-in zoom-in-95 duration-700">
         <button
           onClick={() => setIsVisible(false)}
-          className="absolute top-6 right-6 p-2 bg-[#FFF6EE] rounded-full text-brown-secondary hover:text-brown-primary transition-colors z-10"
+          className="absolute top-6 right-6 p-2 bg-white/40 hover:bg-white/60 rounded-full text-brown-primary transition-all z-10 shadow-sm"
           aria-label="Close popup"
         >
           <X className="h-6 w-6" />
         </button>
 
-        <div className="p-10 md:p-12 text-center space-y-6">
-          <div className="inline-flex items-center justify-center h-16 w-16 bg-pink-accent/20 text-pink-accent rounded-full mb-2">
-            <Gift className="h-8 w-8" />
+        <div className="p-10 md:p-12 text-center space-y-8">
+          <div className="inline-flex items-center justify-center h-20 w-20 bg-pink-accent/20 text-pink-accent rounded-full mb-2 shadow-inner">
+            <Gift className="h-10 w-10 drop-shadow-[0_0_8px_rgba(244,167,185,0.4)]" />
           </div>
           
           <div className="space-y-4">
-             <h2 className="text-3xl md:text-4xl font-heading font-bold text-brown-primary leading-tight">
-               Get <span className="text-pink-accent italic">10% OFF</span> your first session.
+             <h2 className="text-3xl md:text-5xl font-heading font-bold text-brown-primary leading-tight">
+               Get <span className="text-pink-accent italic underline decoration-pink-accent/30 underline-offset-8">10% OFF</span>
              </h2>
-             <p className="text-brown-secondary text-lg">
-               Don't leave just yet! Provide your name and WhatsApp number and we'll instantly send you a special discount code.
+             <p className="text-brown-secondary text-lg md:text-xl font-medium">
+               Don't miss out! Drop your details and we'll text you a special welcome code.
              </p>
           </div>
 
           {status === "success" ? (
-            <div className="pt-6 space-y-4 animate-in fade-in">
-              <div className="p-4 bg-[#25D366]/10 text-green-800 rounded-input font-medium flex items-center justify-center gap-2 border border-[#25D366]/30">
-                Discount code sent! Check your WhatsApp.
+            <div className="pt-6 space-y-6 animate-in fade-in zoom-in-95 duration-500">
+              <div className="p-6 bg-green-500/10 text-green-800 rounded-xl font-bold flex flex-col items-center gap-2 border border-green-500/20 shadow-sm">
+                <span className="text-2xl">🎉</span>
+                Code sent to WhatsApp!
               </div>
               <button
                 onClick={() => setIsVisible(false)}
-                className="text-gold-accent font-medium hover:underline text-lg"
+                className="text-gold-accent font-bold hover:underline text-lg uppercase tracking-wide"
               >
-                Continue Browsing
+                Start Browsing
               </button>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="space-y-4 pt-4">
+            <form onSubmit={handleSubmit} className="space-y-5 pt-4">
               <input
                  type="text"
                  required
                  placeholder="Parent's Name"
                  value={formData.name}
                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                 className="w-full px-5 py-4 rounded-input border border-brown-secondary/20 focus:ring-2 focus:ring-gold-accent outline-none text-lg bg-[#FFF6EE] text-brown-primary placeholder:text-brown-secondary/50"
+                 className="w-full px-5 py-4 rounded-xl border border-white/60 focus:ring-4 focus:ring-pink-accent/10 focus:bg-white/60 outline-none text-lg bg-white/40 text-brown-primary placeholder:text-brown-primary/30 shadow-sm transition-all"
                  disabled={status === "loading"}
               />
-              <div className="relative">
-                <div className="absolute inset-y-0 left-5 flex items-center pointer-events-none text-brown-secondary">
-                  <span className="font-medium">+91</span>
+              <div className="relative group">
+                <div className="absolute inset-y-0 left-5 flex items-center pointer-events-none text-brown-secondary/60 font-bold">
+                  <span>+91</span>
                 </div>
                 <input
                   type="tel"
@@ -108,7 +109,7 @@ export default function ExitPopup() {
                   placeholder="WhatsApp Number"
                   value={formData.whatsapp}
                   onChange={(e) => setFormData({ ...formData, whatsapp: e.target.value })}
-                  className="w-full pl-16 pr-5 py-4 rounded-input border border-brown-secondary/20 focus:ring-2 focus:ring-gold-accent outline-none text-lg bg-[#FFF6EE] text-brown-primary placeholder:text-brown-secondary/50"
+                  className="w-full pl-16 pr-5 py-4 rounded-xl border border-white/60 focus:ring-4 focus:ring-pink-accent/10 focus:bg-white/60 outline-none text-lg bg-white/40 text-brown-primary placeholder:text-brown-primary/30 shadow-sm transition-all"
                   disabled={status === "loading"}
                 />
               </div>
@@ -116,13 +117,13 @@ export default function ExitPopup() {
               <button
                 type="submit"
                 disabled={status === "loading"}
-                className={`btn-primary w-full text-lg ${status === "loading" ? "opacity-70 cursor-not-allowed" : ""}`}
+                className={`liquid-button w-full text-xl mt-4 font-bold ${status === "loading" ? "opacity-70 cursor-not-allowed" : ""}`}
               >
-                {status === "loading" ? "Sending..." : "Send My Discount"}
+                {status === "loading" ? "Sending..." : "Send My Discount →"}
               </button>
               
               {status === "error" && (
-                 <p className="text-red-500 text-sm mt-2">Oops! Something went wrong. Try again.</p>
+                 <p className="text-red-500 text-sm font-bold mt-2 animate-bounce">Oops! Try again.</p>
               )}
             </form>
           )}

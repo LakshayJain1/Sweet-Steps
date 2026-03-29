@@ -33,22 +33,23 @@ export default function Testimonials() {
           <p className="text-xl text-brown-secondary">Real stories from real families in Jaipur.</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
           {reviews.map((review) => (
-            <div key={review.id} className="bg-white rounded-card p-8 shadow-card flex flex-col justify-between">
+            <div key={review.id} className="glass-card p-8 flex flex-col justify-between group">
               <div>
-                <div className="flex text-gold-accent mb-6">
+                <div className="flex text-gold-accent mb-6 space-x-1">
                   {Array.from({ length: 5 }).map((_, i) => (
-                    <Star key={i} className="h-5 w-5 fill-current" />
+                    <Star key={i} className="h-5 w-5 fill-current drop-shadow-[0_0_8px_rgba(232,168,56,0.3)]" />
                   ))}
                 </div>
-                <p className="text-lg text-brown-secondary leading-relaxed italic mb-8">
-                  "{review.text}"
+                <p className="text-xl text-brown-secondary leading-relaxed italic mb-10 relative">
+                  <span className="absolute -top-4 -left-2 text-4xl text-gold-accent/20 font-serif">"</span>
+                  {review.text}
                 </p>
               </div>
-              <div className="border-t border-brown-secondary/10 pt-6">
+              <div className="border-t border-white/30 pt-6">
                 <p className="font-heading font-bold text-xl text-brown-primary">{review.parent}</p>
-                <div className="text-sm text-brown-secondary mt-1 flex flex-col sm:flex-row sm:gap-2">
+                <div className="text-sm text-brown-secondary mt-1 flex flex-col sm:flex-row sm:gap-2 opacity-80">
                   <span>{review.babyAge}</span>
                   <span className="hidden sm:inline">•</span>
                   <span>{review.city}</span>

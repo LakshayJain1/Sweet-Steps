@@ -5,6 +5,11 @@
 @layer base {
   body {
     @apply bg-background text-brown-primary font-body antialiased selection:bg-pink-accent/30 leading-[1.7];
+    /* Soft global mesh gradient for glassmorphism backdrop */
+    background-image: 
+      radial-gradient(circle at 15% 50%, rgba(244, 167, 185, 0.15), transparent 25%),
+      radial-gradient(circle at 85% 30%, rgba(232, 168, 56, 0.12), transparent 25%);
+    background-attachment: fixed;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -27,13 +32,33 @@
 }
 
 @layer utilities {
-  .btn-primary {
-    @apply bg-gold-accent text-brown-primary hover:shadow-button-hover transition-all duration-300 font-normal px-8 py-4 rounded-button inline-flex items-center justify-center;
+  .glass-panel {
+    @apply bg-glass-light backdrop-blur-[32px] border border-white/60 shadow-glass rounded-card;
   }
+
+  .glass-card {
+    @apply bg-glass-medium backdrop-blur-[24px] border border-white/80 shadow-glass rounded-card hover:shadow-glass-raised transition-all duration-500 overflow-hidden transform hover:-translate-y-1;
+  }
+
+  /* Liquid Glass Button */
+  .liquid-button {
+    @apply relative inline-flex items-center justify-center font-medium px-8 py-4 overflow-hidden rounded-button bg-gradient-to-tr from-[#E8A838] to-[#d69624] text-[#FFFBF7] shadow-button-glow hover:shadow-button-hover transition-all duration-500 transform hover:scale-[1.02];
+  }
+  
+  .liquid-button::before {
+    content: "";
+    @apply absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-[200%] transition-transform duration-700 ease-in-out;
+  }
+
+  .liquid-button:hover::before {
+    @apply translate-x-[200%];
+  }
+
   .btn-ghost {
-    @apply bg-transparent border-[1.5px] border-brown-primary text-brown-primary hover:bg-brown-primary/5 transition-all duration-300 font-normal px-8 py-4 rounded-button inline-flex items-center justify-center;
+    @apply bg-white/40 backdrop-blur-md border border-white text-brown-primary hover:bg-white/70 transition-all duration-300 font-medium px-8 py-4 rounded-button shadow-glass hover:shadow-glass-raised inline-flex items-center justify-center transform hover:scale-[1.02];
   }
+
   .section-padding {
-    @apply py-12 md:py-20; 
+    @apply py-12 md:py-24 relative overflow-hidden; 
   }
 }

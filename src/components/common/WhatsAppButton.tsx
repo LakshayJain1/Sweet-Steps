@@ -22,14 +22,14 @@ export default function WhatsAppButton() {
       </Link>
 
       {/* Sticky Bottom Bar (Mobile Only) */}
-      <div className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white border-t border-gray-100 p-4 pb-8 backdrop-blur-md bg-white/90">
+      <div className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/40 backdrop-blur-xl border-t border-white/60 p-4 pb-8 shadow-glass">
         <Link
           href={waUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="w-full flex items-center justify-center gap-2 bg-[#25D366] text-white py-3.5 rounded-[12px] font-medium text-lg shadow-sm"
+          className="w-full flex items-center justify-center gap-3 bg-[#25D366] text-white py-4 rounded-xl font-bold text-lg shadow-lg active:scale-95 transition-transform"
         >
-          <MessageCircle className="h-5 w-5" />
+          <MessageCircle className="h-6 w-6" />
           Chat on WhatsApp
         </Link>
       </div>

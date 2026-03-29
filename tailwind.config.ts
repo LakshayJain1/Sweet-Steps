@@ -10,7 +10,12 @@ const config: Config = {
     extend: {
       colors: {
         background: "#FFFBF7",
-        card: "#FFF6EE",
+        glass: {
+          light: "rgba(255, 255, 255, 0.4)",
+          medium: "rgba(255, 255, 255, 0.6)",
+          heavy: "rgba(255, 255, 255, 0.8)",
+          card: "rgba(255, 246, 238, 0.5)"
+        },
         pink: {
           accent: "#F4A7B9",
         },
@@ -27,11 +32,13 @@ const config: Config = {
         body: ["var(--font-inter)", "sans-serif"],
       },
       boxShadow: {
-        card: "0 4px 24px rgba(232, 168, 56, 0.08)",
-        "button-hover": "0 6px 20px rgba(232, 168, 56, 0.35)",
+        glass: "0 8px 32px 0 rgba(44, 24, 16, 0.05)",
+        "glass-raised": "0 14px 40px -10px rgba(232, 168, 56, 0.2)",
+        "button-glow": "0 0 24px rgba(232, 168, 56, 0.4)",
+        "button-hover": "0 0 32px rgba(232, 168, 56, 0.6)",
       },
       borderRadius: {
-        card: "20px",
+        card: "24px",
         image: "16px",
         input: "12px",
         button: "9999px"

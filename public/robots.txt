@@ -1,16 +1,9 @@
-User-agent: Googlebot
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-
-User-agent: Twitterbot
-Allow: /
-
-User-agent: facebookexternalhit
-Allow: /
-
+# *
 User-agent: *
 Allow: /
 
-Sitemap: https://sweetsteps-4c226c15.vercel.app/sitemap.xml
+# Host
+Host: https://sweetsteps.in
+
+# Sitemaps
+Sitemap: https://sweetsteps.in/sitemap.xml

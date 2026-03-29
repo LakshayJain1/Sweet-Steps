@@ -1,5 +1,6 @@
 import Hero from "@/components/sections/Hero";
 import HowItWorks from "@/components/sections/HowItWorks";
+import BeforeAfterSection from "@/components/sections/BeforeAfterSection";
 import ProductGrid from "@/components/sections/ProductGrid";
 import Testimonials from "@/components/sections/Testimonials";
 import WhatsAppButton from "@/components/common/WhatsAppButton";
@@ -7,7 +8,9 @@ import ExitPopup from "@/components/common/ExitPopup";
 import StickyHeader from "@/components/layout/StickyHeader";
 import Footer from "@/components/layout/Footer";
 
-export const metadata = {
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
   title: "Sweet Steps | Jaipur's #1 Baby Impression Keepsake Frames",
   description: "Capture the tiny moments forever with premium 3D baby hand and feet impressions. Newborn safe, handcrafted with love in Jaipur. Book now!",
   alternates: {
@@ -37,7 +40,7 @@ const jsonLd = [
     "@type": "Product",
     name: "Classic Two Impression Frame",
     description: "Perfect for one hand and one foot impression of your newborn.",
-    image: "https://sweetsteps.in/placeholder.co/800x800",
+    image: "https://sweetsteps.in/product-1.jpg",
     offers: {
       "@type": "Offer",
       price: "3999.00",
@@ -63,6 +66,7 @@ export default function Home() {
       <StickyHeader />
       <Hero />
       <HowItWorks />
+      <BeforeAfterSection />
       <ProductGrid />
       <Testimonials />
       <Footer />

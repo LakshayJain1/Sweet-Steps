@@ -19,8 +19,10 @@ export default function StickyHeader() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-[#FFFBF7]/95 backdrop-blur-md shadow-sm py-4" : "bg-transparent py-6"
+      className={`fixed top-4 left-4 right-4 md:top-6 md:left-12 md:right-12 z-50 transition-all duration-500 rounded-full ${
+        isScrolled 
+          ? "bg-white/40 backdrop-blur-xl border border-white/60 shadow-glass py-3" 
+          : "bg-transparent py-4"
       }`}
     >
       <div className="container mx-auto max-w-[1200px] px-6">

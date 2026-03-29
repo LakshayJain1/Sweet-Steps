@@ -27,16 +27,20 @@ export default function HowItWorks() {
           <p className="text-xl text-brown-secondary font-medium">Simple, stress-free, and magical.</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 relative">
-          <div className="hidden md:block absolute top-12 left-[15%] right-[15%] h-[2px] bg-gold-accent/20" />
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 relative">
+          {/* Subtle connecting line with glow */}
+          <div className="hidden md:block absolute top-[15%] left-[10%] right-[10%] h-[1px] bg-gradient-to-r from-transparent via-gold-accent/30 to-transparent blur-[1px]" />
           
           {steps.map((step, idx) => (
-            <div key={idx} className="relative z-10 flex flex-col items-center bg-card rounded-card p-6 shadow-sm border-t-[3px] border-t-gold-accent text-center transform transition-transform duration-300 hover:-translate-y-2">
-              <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-md mb-8 text-gold-accent border-4 border-[#FFFBF7]">
-                <step.icon className="h-10 w-10" />
+            <div key={idx} className="glass-card flex flex-col items-center p-8 text-center group">
+              <div className="w-20 h-20 bg-white/40 backdrop-blur-xl rounded-full flex items-center justify-center shadow-glass mb-10 text-gold-accent border border-white group-hover:scale-110 group-hover:bg-white/60 transition-all duration-500">
+                <step.icon className="h-10 w-10 text-brown-primary drop-shadow-sm" />
               </div>
-              <h3 className="mb-4">{step.title}</h3>
+              <h3 className="mb-4 text-2xl font-bold">{step.title}</h3>
               <p className="text-brown-secondary text-lg leading-relaxed">{step.desc}</p>
+              
+              {/* Animated hover glow indicator */}
+              <div className="mt-8 w-12 h-1 bg-gold-accent/10 group-hover:bg-gold-accent/40 rounded-full transition-colors duration-500" />
             </div>
           ))}
         </div>

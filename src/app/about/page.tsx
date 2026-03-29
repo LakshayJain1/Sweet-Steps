@@ -29,7 +29,7 @@ export default function AboutPage() {
               <div className="absolute inset-0 rounded-full border-[3px] border-pink-accent overflow-hidden shadow-lg p-1">
                 <div className="relative w-full h-full rounded-full overflow-hidden bg-white">
                   <Image 
-                    src="/placeholder.co/800x800" 
+                    src="/founder.png" 
                     alt="Founder of Sweet Steps"
                     fill
                     className="object-cover"

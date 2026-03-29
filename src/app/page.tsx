@@ -11,8 +11,9 @@ import Footer from "@/components/layout/Footer";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Sweet Steps | Jaipur's #1 Baby Impression Keepsake Frames",
-  description: "Capture the tiny moments forever with premium 3D baby hand and feet impressions. Newborn safe, handcrafted with love in Jaipur. Book now!",
+  title: "Sweet Steps | Baby Hand Casting Jaipur | Newborn 3D Impressions",
+  description: "Preserve your baby's tiny hands and feet forever with Jaipur's most premium 3D casting service. Handcrafted frames, 100% safe, at-home sessions available in Jaipur.",
+  keywords: ["baby hand casting Jaipur", "3D impressions Jaipur", "newborn casting Jaipur", "baby keepsakes Jaipur"],
   alternates: {
     canonical: "https://sweetsteps.in",
   },
@@ -22,18 +23,38 @@ const jsonLd = [
   {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    name: "Sweet Steps",
-    description: "Premium handcrafted 3D impression frames of your baby's hands and feet. Based in Jaipur, India.",
-    address: {
+    "name": "Sweet Steps",
+    "description": "Premium baby hand and feet 3D casting service in Jaipur, Rajasthan.",
+    "address": {
       "@type": "PostalAddress",
-      addressLocality: "Jaipur",
-      addressRegion: "Rajasthan",
-      addressCountry: "IN"
+      "addressLocality": "Jaipur",
+      "addressRegion": "Rajasthan",
+      "addressCountry": "IN"
     },
-    telephone: "+91-8302419714",
-    url: "https://sweetsteps.in",
-    image: "https://sweetsteps.in/hero-frame.jpg",
-    priceRange: "₹3,999 - ₹12,499"
+    "telephone": "+91-8302419714",
+    "url": "https://sweetsteps.in",
+    "image": "https://sweetsteps.in/logo.webp",
+    "priceRange": "₹3999 - ₹12499",
+    "areaServed": "Jaipur",
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 26.9124,
+      "longitude": 75.7873
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Baby Hand and Feet Casting",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "Sweet Steps"
+    },
+    "areaServed": {
+      "@type": "City",
+      "name": "Jaipur"
+    },
+    "description": "Professional 3D casting service for newborns and families in Jaipur."
   },
   {
     "@context": "https://schema.org",
@@ -56,6 +77,9 @@ const jsonLd = [
   }
 ];
 
+import VideoTestimonials from "@/components/sections/VideoTestimonials";
+import ChatWidget from "@/components/common/ChatWidget";
+
 export default function Home() {
   return (
     <>
@@ -69,8 +93,9 @@ export default function Home() {
       <BeforeAfterSection />
       <ProductGrid />
       <Testimonials />
+      <VideoTestimonials />
       <Footer />
-      <WhatsAppButton />
+      <ChatWidget />
       <ExitPopup />
     </>
   );

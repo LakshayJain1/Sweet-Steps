@@ -7,8 +7,9 @@ const inter = Inter({ subsets: ["latin"], weight: "400", variable: "--font-inter
 const playfair = Playfair_Display({ subsets: ["latin"], weight: ["400", "700"], variable: "--font-playfair" });
 
 export const metadata: Metadata = {
-  title: "Sweet Steps | Premium Baby Hand & Feet Impressions",
-  description: "Handcrafted 3D impression frames of your baby's hands and feet. Made with love in Jaipur. Capture tiny moments that grow up too fast.",
+  title: "Sweet Steps | Baby Hand Casting Jaipur | 3D Newborn Impressions",
+  description: "Jaipur's #1 premium 3D baby hand and feet impressions. Handcrafted keepsake frames in Jaipur. Safe for newborns, preserved for a lifetime. Book your home session today!",
+  keywords: ["baby hand casting Jaipur", "3D baby impressions Jaipur", "newborn hand and feet casting Jaipur", "keepsake frames Jaipur", "baby casting service India"],
 };
 
 export default function RootLayout({

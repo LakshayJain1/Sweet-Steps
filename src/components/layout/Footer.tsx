@@ -89,9 +89,15 @@ export default function Footer() {
           </ScrollReveal>
         </div>
         
-        <div className="pt-8 border-t border-neutral-200 text-center flex items-center justify-center">
-           <p className="text-neutral-500 text-sm">
-             Made with love in Jaipur 🍼 • © {new Date().getFullYear()} Sweet Steps
+        <div className="pt-8 border-t border-neutral-200 text-center flex flex-col items-center justify-center space-y-2">
+           <address className="not-italic text-neutral-500 text-sm">
+             Sweet Steps Baby Impressions • Jaipur, Rajasthan 302017
+           </address>
+           <p className="text-neutral-400 text-xs font-medium uppercase tracking-widest">
+             Serving all of Jaipur 🍼
+           </p>
+           <p className="text-neutral-500 text-xs pt-4">
+             © {new Date().getFullYear()} Sweet Steps • Handcrafted with love
            </p>
         </div>
       </div>

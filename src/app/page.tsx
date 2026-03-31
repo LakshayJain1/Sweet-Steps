@@ -23,24 +23,38 @@ const jsonLd = [
   {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
+    "@id": "https://sweetsteps.vercel.app",
     "name": "Sweet Steps",
     "description": "Premium baby hand and feet 3D casting service in Jaipur, Rajasthan.",
+    "url": "https://sweetsteps.vercel.app",
+    "telephone": "+91-8302419714",
+    "priceRange": "₹₹",
+    "image": "https://sweetsteps.vercel.app/logo.webp",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Jaipur",
       "addressRegion": "Rajasthan",
+      "postalCode": "302017",
       "addressCountry": "IN"
     },
-    "telephone": "+91-8302419714",
-    "url": "https://sweetsteps.in",
-    "image": "https://sweetsteps.in/logo.webp",
-    "priceRange": "$$",
-    "areaServed": "Jaipur",
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": 26.9124,
-      "longitude": 75.7873
-    }
+      "latitude": 26.8530,
+      "longitude": 75.8242
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        "opens": "09:00",
+        "closes": "21:00"
+      }
+    ],
+    "sameAs": [
+      "https://www.instagram.com/sweetsteps.in",
+      "https://www.facebook.com/sweetsteps.in"
+      // Add your Google Business Profile URL here
+    ]
   },
   {
     "@context": "https://schema.org",
@@ -48,26 +62,37 @@ const jsonLd = [
     "serviceType": "Baby Hand and Feet Casting",
     "provider": {
       "@type": "LocalBusiness",
-      "name": "Sweet Steps"
+      "name": "Sweet Steps",
+      "url": "https://sweetsteps.vercel.app"
     },
-    "areaServed": {
-      "@type": "City",
-      "name": "Jaipur"
-    },
-    "description": "Professional 3D casting service for newborns and families in Jaipur."
+    "areaServed": [
+      {
+        "@type": "City",
+        "name": "Jaipur"
+      },
+      {
+        "@type": "City",
+        "name": "Rajasthan"
+      }
+    ],
+    "description": "Professional 3D casting service for newborns and families in Jaipur. 100% baby safe materials."
   },
   {
     "@context": "https://schema.org",
     "@type": "Product",
     "name": "Custom 3D Baby Impression Frames",
-    "description": "Handcrafted 3D impression frames - customizable for families. Contact for pricing.",
-    "image": "https://sweetsteps.in/product-1.jpg",
+    "description": "Handcrafted 3D impression frames - customizable for families. Capture every tiny wrinkle and detail.",
+    "image": "https://sweetsteps.vercel.app/product-1.jpg",
+    "brand": {
+      "@type": "Brand",
+      "name": "Sweet Steps"
+    },
     "offers": {
-      "@type": "Offer",
-      "price": "0",
+      "@type": "AggregateOffer",
+      "lowPrice": "0",
       "priceCurrency": "INR",
-      "availability": "https://schema.org/InStock",
-      "url": "https://sweetsteps.in/products"
+      "offerCount": "10",
+      "url": "https://sweetsteps.vercel.app/products"
     },
     "aggregateRating": {
       "@type": "AggregateRating",

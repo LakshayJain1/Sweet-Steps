@@ -11,8 +11,32 @@ export const metadata: Metadata = {
 };
 
 export default function ProductsPage() {
+  const productSchema = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Sweet Steps Premium 3D Casting Frames",
+    "description": "Handcrafted luxury 3D hand and feet impression frames for newborns and families in Jaipur.",
+    "brand": {
+      "@type": "Brand",
+      "name": "Sweet Steps"
+    },
+    "offers": {
+      "@type": "AggregateOffer",
+      "priceCurrency": "INR",
+      "lowPrice": "0",
+      "highPrice": "15000",
+      "offerCount": "12",
+      "availability": "https://schema.org/InStock",
+      "url": "https://sweetsteps.vercel.app/products"
+    }
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
+      />
       <StickyHeader />
       <div className="pt-32 pb-12 bg-neutral-50 min-h-[50vh]">
         <ScrollReveal>

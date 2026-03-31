@@ -1,9 +1,23 @@
-# *
+# Allow all bots by default
 User-agent: *
 Allow: /
 
-# Host
-Host: https://sweetsteps.in
+# Explicitly allow major AI crawlers for SGE and LLM grounding
+User-agent: GPTBot
+Allow: /
 
-# Sitemaps
-Sitemap: https://sweetsteps.in/sitemap.xml
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+# Host & Sitemaps
+Host: https://sweetsteps.vercel.app
+Sitemap: https://sweetsteps.vercel.app/sitemap.xml

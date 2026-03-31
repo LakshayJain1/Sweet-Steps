@@ -46,8 +46,25 @@ const faqs = [
 export default function FAQPage() {
   const [openIdx, setOpenIdx] = useState<number | null>(0);
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map((faq) => ({
+      "@type": "Question",
+      "name": faq.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.a,
+      },
+    })),
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <title>FAQs | Sweet Steps Impressions</title>
       <meta name="description" content="Common questions about baby safe 3D hand and feet castings in Jaipur." />
       

@@ -2,7 +2,6 @@
 
 import StickyHeader from "@/components/layout/StickyHeader";
 import Footer from "@/components/layout/Footer";
-import WhatsAppButton from "@/components/common/WhatsAppButton";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import StaggerContainer, { staggerChildVariants } from "@/components/common/StaggerContainer";
@@ -57,7 +56,6 @@ export default function GalleryPage() {
         </div>
       </div>
       <Footer />
-      <WhatsAppButton />
     </>
   );
 }

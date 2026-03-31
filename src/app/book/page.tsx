@@ -1,7 +1,7 @@
 import StickyHeader from "@/components/layout/StickyHeader";
 import Footer from "@/components/layout/Footer";
 import BookingForm from "@/components/sections/BookingForm";
-import WhatsAppButton from "@/components/common/WhatsAppButton";
+import ProductGrid from "@/components/sections/ProductGrid";
 import type { Metadata } from "next";
 import ScrollReveal from "@/components/common/ScrollReveal";
 
@@ -63,9 +63,9 @@ export default function BookPage() {
           </ScrollReveal>
 
         </div>
+        <ProductGrid />
       </div>
       <Footer />
-      <WhatsAppButton />
     </>
   );
 }

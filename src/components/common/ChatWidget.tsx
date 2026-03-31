@@ -17,7 +17,7 @@ export default function ChatWidget() {
   const waUrl = "https://wa.me/918302419714?text=Hi Sweet Steps, I'd like to inquire about a baby casting session.";
 
   return (
-    <div className="fixed bottom-2 right-2 z-[60] flex flex-col items-end">
+    <div className="fixed bottom-6 right-6 z-[60] flex flex-col items-end">
       {/* FAQ Popup */}
       <AnimatePresence>
         {isOpen && (

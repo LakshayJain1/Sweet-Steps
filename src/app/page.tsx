@@ -3,7 +3,6 @@ import HowItWorks from "@/components/sections/HowItWorks";
 import BeforeAfterSection from "@/components/sections/BeforeAfterSection";
 import ProductGrid from "@/components/sections/ProductGrid";
 import Testimonials from "@/components/sections/Testimonials";
-import WhatsAppButton from "@/components/common/WhatsAppButton";
 import ExitPopup from "@/components/common/ExitPopup";
 import StickyHeader from "@/components/layout/StickyHeader";
 import Footer from "@/components/layout/Footer";
@@ -15,7 +14,7 @@ export const metadata: Metadata = {
   description: "Preserve your baby's tiny hands and feet forever with Jaipur's most premium 3D casting service. Handcrafted frames, 100% safe, at-home sessions available in Jaipur.",
   keywords: ["baby hand casting Jaipur", "3D impressions Jaipur", "newborn casting Jaipur", "baby keepsakes Jaipur"],
   alternates: {
-    canonical: "https://sweetsteps.in",
+    canonical: "https://sweetsteps.vercel.app",
   },
 };
 
@@ -51,8 +50,8 @@ const jsonLd = [
       }
     ],
     "sameAs": [
-      "https://www.instagram.com/sweetsteps.in",
-      "https://www.facebook.com/sweetsteps.in"
+      "https://www.instagram.com/sweetsteps.vercel.app",
+      "https://www.facebook.com/sweetsteps.vercel.app"
       // Add your Google Business Profile URL here
     ]
   },
@@ -122,7 +121,6 @@ export default function Home() {
       <Footer />
       <ChatWidget />
       <ExitPopup />
-      <WhatsAppButton />
     </>
   );
 }

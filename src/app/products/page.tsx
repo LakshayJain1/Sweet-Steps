@@ -1,7 +1,6 @@
 import StickyHeader from "@/components/layout/StickyHeader";
 import Footer from "@/components/layout/Footer";
 import ProductGrid from "@/components/sections/ProductGrid";
-import WhatsAppButton from "@/components/common/WhatsAppButton";
 import type { Metadata } from "next";
 import ScrollReveal from "@/components/common/ScrollReveal";
 
@@ -51,7 +50,6 @@ export default function ProductsPage() {
       </div>
       <ProductGrid />
       <Footer />
-      <WhatsAppButton />
     </>
   );
 }

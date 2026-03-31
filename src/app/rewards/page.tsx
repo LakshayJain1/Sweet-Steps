@@ -75,7 +75,7 @@ export default function RewardsPage() {
             <div className="mt-24 glass-panel p-12 text-center max-w-4xl mx-auto space-y-8 bg-white/30">
               <h2 className="text-3xl font-heading font-medium text-neutral-900">Want to earn your first reward?</h2>
               <p className="text-xl text-neutral-500 mb-8">
-                Share your unboxing story on Instagram, tag @sweetsteps.in, 
+                Share your unboxing story on Instagram, tag @sweetsteps.vercel.app, 
                 and get an instant discount voucher for your next family session!
               </p>
               <a 

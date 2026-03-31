@@ -1,6 +1,5 @@
 import StickyHeader from "@/components/layout/StickyHeader";
 import Footer from "@/components/layout/Footer";
-import WhatsAppButton from "@/components/common/WhatsAppButton";
 import Link from "next/link";
 import { CheckCircle2 } from "lucide-react";
 import type { Metadata } from "next";
@@ -57,7 +56,6 @@ export default function ThankYouPage() {
         </div>
       </div>
       <Footer />
-      <WhatsAppButton />
     </>
   );
 }

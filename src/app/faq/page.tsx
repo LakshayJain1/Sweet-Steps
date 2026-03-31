@@ -3,7 +3,6 @@
 import { useState } from "react";
 import StickyHeader from "@/components/layout/StickyHeader";
 import Footer from "@/components/layout/Footer";
-import WhatsAppButton from "@/components/common/WhatsAppButton";
 import { ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import ScrollReveal from "@/components/common/ScrollReveal";
@@ -128,7 +127,6 @@ export default function FAQPage() {
         </div>
       </div>
       <Footer />
-      <WhatsAppButton />
     </>
   );
 }

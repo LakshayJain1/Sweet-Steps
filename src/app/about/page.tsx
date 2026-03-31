@@ -1,6 +1,5 @@
 import StickyHeader from "@/components/layout/StickyHeader";
 import Footer from "@/components/layout/Footer";
-import WhatsAppButton from "@/components/common/WhatsAppButton";
 import Image from "next/image";
 import type { Metadata } from "next";
 import ScrollReveal from "@/components/common/ScrollReveal";
@@ -89,7 +88,6 @@ export default function AboutPage() {
         </div>
       </div>
       <Footer />
-      <WhatsAppButton />
     </>
   );
 }

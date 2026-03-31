@@ -97,6 +97,7 @@ export default function Home() {
       <Footer />
       <ChatWidget />
       <ExitPopup />
+      <WhatsAppButton />
     </>
   );
 }

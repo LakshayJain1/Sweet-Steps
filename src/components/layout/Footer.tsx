@@ -3,6 +3,8 @@
 import Link from "next/link";
 import { useState } from "react";
 import { Instagram, Facebook, MessageCircle } from "lucide-react";
+import { motion } from "framer-motion";
+import ScrollReveal from "@/components/common/ScrollReveal";
 
 export default function Footer() {
   const [email, setEmail] = useState("");
@@ -10,7 +12,6 @@ export default function Footer() {
 
   const handleSubscribe = (e: React.FormEvent) => {
     e.preventDefault();
-    // In a real implementation this would ping a newsletter API
     console.log("Subscribed:", name, email);
     setEmail("");
     setName("");
@@ -18,66 +19,78 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-card py-16 md:py-24 border-t border-brown-secondary/10">
+    <footer className="bg-neutral-100 py-16 md:py-24 border-t border-neutral-200">
       <div className="container mx-auto px-6 max-w-[1200px]">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8 mb-16">
-          <div className="col-span-1 md:col-span-2 space-y-6">
-            <h2 className="text-3xl font-heading font-bold text-brown-primary">Sweet Steps</h2>
-            <p className="text-brown-secondary prose">
-              Capture the tiny moments that grow up too fast. Handcrafted 3D impression frames of your baby's hands and feet, delivered to your doorstep.
-            </p>
-            <div className="flex items-center space-x-4">
-              <Link href="https://instagram.com" className="h-10 w-10 flex items-center justify-center rounded-full bg-[#FFFBF7] hover:bg-pink-accent hover:text-white transition-colors text-brown-primary text-xl shadow-sm border border-brown-secondary/5">
-                <Instagram size={20} />
-              </Link>
-              <Link href="https://facebook.com" className="h-10 w-10 flex items-center justify-center rounded-full bg-[#FFFBF7] hover:bg-gold-accent hover:text-white transition-colors text-brown-primary text-xl shadow-sm border border-brown-secondary/5">
-                <Facebook size={20} />
-              </Link>
-              <Link href="https://wa.me/918302419714" className="h-10 w-10 flex items-center justify-center rounded-full bg-[#FFFBF7] hover:bg-[#25D366] hover:text-white transition-colors text-brown-primary text-xl shadow-sm border border-brown-secondary/5">
-                <MessageCircle size={20} />
-              </Link>
+          <ScrollReveal className="col-span-1 md:col-span-2" delay={0}>
+            <div className="space-y-6">
+              <h2 className="text-3xl font-heading font-bold text-neutral-900">Sweet Steps</h2>
+              <p className="text-neutral-500 prose">
+                Capture the tiny moments that grow up too fast. Handcrafted 3D impression frames of your baby's hands and feet, delivered to your doorstep.
+              </p>
+              <div className="flex items-center space-x-4">
+                <motion.div whileHover={{ scale: 1.1 }} transition={{ type: "spring", stiffness: 400, damping: 17 }}>
+                  <Link href="https://instagram.com" className="h-10 w-10 flex items-center justify-center rounded-full bg-white hover:bg-neutral-900 hover:text-white transition-colors text-neutral-700 shadow-glass-soft border border-neutral-200">
+                    <Instagram size={20} />
+                  </Link>
+                </motion.div>
+                <motion.div whileHover={{ scale: 1.1 }} transition={{ type: "spring", stiffness: 400, damping: 17 }}>
+                  <Link href="https://facebook.com" className="h-10 w-10 flex items-center justify-center rounded-full bg-white hover:bg-neutral-900 hover:text-white transition-colors text-neutral-700 shadow-glass-soft border border-neutral-200">
+                    <Facebook size={20} />
+                  </Link>
+                </motion.div>
+                <motion.div whileHover={{ scale: 1.1 }} transition={{ type: "spring", stiffness: 400, damping: 17 }}>
+                  <Link href="https://wa.me/918302419714" className="h-10 w-10 flex items-center justify-center rounded-full bg-white hover:bg-[#25D366] hover:text-white transition-colors text-neutral-700 shadow-glass-soft border border-neutral-200">
+                    <MessageCircle size={20} />
+                  </Link>
+                </motion.div>
+              </div>
             </div>
-          </div>
+          </ScrollReveal>
           
-          <div className="space-y-6">
-            <h3 className="text-xl font-bold font-heading">Quick Links</h3>
-            <ul className="space-y-4 text-brown-secondary">
-              <li><Link href="/book" className="hover:text-gold-accent transition-colors">Book a Session</Link></li>
-              <li><Link href="/products" className="hover:text-gold-accent transition-colors">Pricing & Frames</Link></li>
-              <li><Link href="/gallery" className="hover:text-gold-accent transition-colors">Gallery</Link></li>
-              <li><Link href="/faq" className="hover:text-gold-accent transition-colors">FAQs</Link></li>
-            </ul>
-          </div>
+          <ScrollReveal delay={0.1}>
+            <div className="space-y-6">
+              <h3 className="text-xl font-bold font-heading text-neutral-900">Quick Links</h3>
+              <ul className="space-y-4 text-neutral-500">
+                <li><Link href="/book" className="hover:text-neutral-900 transition-colors">Book a Session</Link></li>
+                <li><Link href="/products" className="hover:text-neutral-900 transition-colors">Pricing &amp; Frames</Link></li>
+                <li><Link href="/gallery" className="hover:text-neutral-900 transition-colors">Gallery</Link></li>
+                <li><Link href="/faq" className="hover:text-neutral-900 transition-colors">FAQs</Link></li>
+              </ul>
+            </div>
+          </ScrollReveal>
 
-          <div className="space-y-6">
-            <h3 className="text-xl font-bold font-heading">Newsletter</h3>
-            <p className="text-brown-secondary text-sm">Join our newsletter for updates on special offers and pop-ups.</p>
-            <form onSubmit={handleSubscribe} className="space-y-3">
-              <input
-                type="text"
-                required
-                placeholder="Your Name"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                className="w-full bg-[#FFFBF7] border border-brown-secondary/20 rounded-input px-4 py-3 text-brown-primary focus:outline-none focus:border-gold-accent"
-              />
-              <input
-                type="email"
-                required
-                placeholder="Email Address"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="w-full bg-[#FFFBF7] border border-brown-secondary/20 rounded-input px-4 py-3 text-brown-primary focus:outline-none focus:border-gold-accent"
-              />
-              <button type="submit" className="w-full bg-gold-accent text-brown-primary px-4 py-3 font-medium rounded-input hover:brightness-105 transition-all">
-                Sign Up
-              </button>
-            </form>
-          </div>
+          <ScrollReveal delay={0.2}>
+            <div className="space-y-6">
+              <h3 className="text-xl font-bold font-heading text-neutral-900">Newsletter</h3>
+              <p className="text-neutral-500 text-sm">Join our newsletter for updates on special offers and pop-ups.</p>
+              <form onSubmit={handleSubscribe} className="space-y-3">
+                <input
+                  type="text"
+                  required
+                  placeholder="Your Name"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  className="w-full bg-white border border-neutral-200 rounded-input px-4 py-3 text-neutral-900 placeholder:text-neutral-400 focus:outline-none focus:border-neutral-900 transition-colors"
+                />
+                <input
+                  type="email"
+                  required
+                  placeholder="Email Address"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="w-full bg-white border border-neutral-200 rounded-input px-4 py-3 text-neutral-900 placeholder:text-neutral-400 focus:outline-none focus:border-neutral-900 transition-colors"
+                />
+                <button type="submit" className="w-full bg-neutral-900 text-white px-4 py-3 font-medium rounded-input hover:bg-neutral-800 transition-all">
+                  Sign Up
+                </button>
+              </form>
+            </div>
+          </ScrollReveal>
         </div>
         
-        <div className="pt-8 border-t border-brown-secondary/20 text-center flex items-center justify-center">
-           <p className="text-brown-secondary text-sm">
+        <div className="pt-8 border-t border-neutral-200 text-center flex items-center justify-center">
+           <p className="text-neutral-500 text-sm">
              Made with love in Jaipur 🍼 • © {new Date().getFullYear()} Sweet Steps
            </p>
         </div>

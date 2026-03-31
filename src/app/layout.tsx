@@ -18,7 +18,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
+    <html lang="en" className={`${inter.variable} ${playfair.variable} scroll-smooth`}>
       <head>
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-9DF9S56TG5"
@@ -34,7 +34,7 @@ export default function RootLayout({
         </Script>
       </head>
       <body>
-        <main className="min-h-screen bg-background text-brown-primary">
+        <main className="min-h-screen bg-neutral-50 text-neutral-900">
           {children}
         </main>
       </body>

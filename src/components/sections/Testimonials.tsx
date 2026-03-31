@@ -1,4 +1,9 @@
+"use client";
+
 import { Star } from "lucide-react";
+import { motion } from "framer-motion";
+import StaggerContainer, { staggerChildVariants } from "@/components/common/StaggerContainer";
+import ScrollReveal from "@/components/common/ScrollReveal";
 
 const reviews = [
   {
@@ -26,38 +31,44 @@ const reviews = [
 
 export default function Testimonials() {
   return (
-    <section className="bg-[#FFF0F3] section-padding">
+    <section className="bg-neutral-100 section-padding">
       <div className="container mx-auto max-w-[1200px] px-6">
-        <div className="text-center mb-16">
-          <h2 className="mb-4">From Our Happy Parents</h2>
-          <p className="text-xl text-brown-secondary">Real stories from real families in Jaipur.</p>
-        </div>
+        <ScrollReveal>
+          <div className="text-center mb-16">
+            <h2 className="mb-4">From Our Happy Parents</h2>
+            <p className="text-xl text-neutral-500">Real stories from real families in Jaipur.</p>
+          </div>
+        </ScrollReveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+        <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-8 relative" staggerDelay={0.12}>
           {reviews.map((review) => (
-            <div key={review.id} className="glass-card p-8 flex flex-col justify-between group">
+            <motion.div
+              key={review.id}
+              variants={staggerChildVariants}
+              className="glass-card p-8 flex flex-col justify-between group bg-white/70"
+            >
               <div>
-                <div className="flex text-gold-accent mb-6 space-x-1">
+                <div className="flex text-neutral-900 mb-6 space-x-1">
                   {Array.from({ length: 5 }).map((_, i) => (
-                    <Star key={i} className="h-5 w-5 fill-current drop-shadow-[0_0_8px_rgba(232,168,56,0.3)]" />
+                    <Star key={i} className="h-5 w-5 fill-current" />
                   ))}
                 </div>
-                <p className="text-xl text-brown-secondary leading-relaxed italic mb-10 relative">
-                  <span className="absolute -top-4 -left-2 text-4xl text-gold-accent/20 font-serif">"</span>
+                <p className="text-xl text-neutral-500 leading-relaxed italic mb-10 relative">
+                  <span className="absolute -top-4 -left-2 text-4xl text-neutral-300 font-serif">"</span>
                   {review.text}
                 </p>
               </div>
-              <div className="border-t border-white/30 pt-6">
-                <p className="font-heading font-bold text-xl text-brown-primary">{review.parent}</p>
-                <div className="text-sm text-brown-secondary mt-1 flex flex-col sm:flex-row sm:gap-2 opacity-80">
+              <div className="border-t border-neutral-200 pt-6">
+                <p className="font-heading font-bold text-xl text-neutral-900">{review.parent}</p>
+                <div className="text-sm text-neutral-500 mt-1 flex flex-col sm:flex-row sm:gap-2 opacity-80">
                   <span>{review.babyAge}</span>
                   <span className="hidden sm:inline">•</span>
                   <span>{review.city}</span>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </StaggerContainer>
       </div>
     </section>
   );

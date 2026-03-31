@@ -1,13 +1,12 @@
+"use client";
+
 import StickyHeader from "@/components/layout/StickyHeader";
 import Footer from "@/components/layout/Footer";
 import WhatsAppButton from "@/components/common/WhatsAppButton";
 import Image from "next/image";
-import type { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Impression Gallery | Sweet Steps Baby Keepsakes",
-  description: "View our portfolio of beautiful 3D hand and feet impressions done in Jaipur.",
-};
+import { motion } from "framer-motion";
+import StaggerContainer, { staggerChildVariants } from "@/components/common/StaggerContainer";
+import ScrollReveal from "@/components/common/ScrollReveal";
 
 const images = [
   "/products/two-imp/616561075_17884532361431293_6748449571348436754_n.jpg",
@@ -25,29 +24,36 @@ export default function GalleryPage() {
   return (
     <>
       <StickyHeader />
-      <div className="pt-32 pb-20 bg-background min-h-screen">
+      <div className="pt-32 pb-20 bg-neutral-50 min-h-screen">
         <div className="container mx-auto px-6">
-          <div className="text-center max-w-[800px] mx-auto mb-16">
-            <h1 className="mb-6">Our Work Gallery</h1>
-            <p className="text-xl text-brown-secondary leading-relaxed">
-              Every fold, every line, captured natively in 3D. Browse through keepsakes of happy families across Jaipur.
-            </p>
-          </div>
+          <ScrollReveal>
+            <div className="text-center max-w-[800px] mx-auto mb-16">
+              <h1 className="mb-6 text-neutral-900">Our Work Gallery</h1>
+              <p className="text-xl text-neutral-500 leading-relaxed">
+                Every fold, every line, captured natively in 3D. Browse through keepsakes of happy families across Jaipur.
+              </p>
+            </div>
+          </ScrollReveal>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-8">
+          <StaggerContainer className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-8" staggerDelay={0.07}>
             {images.map((src, i) => (
-              <div key={i} className="relative aspect-square w-full rounded-image overflow-hidden shadow-sm group">
+              <motion.div
+                key={i}
+                variants={staggerChildVariants}
+                className="relative aspect-square w-full rounded-image overflow-hidden shadow-glass border border-neutral-200/60 group"
+              >
                 <Image
                   src={src}
                   alt={`Sweet steps gallery image ${i + 1}`}
                   fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="object-cover group-hover:scale-105 transition-transform duration-700"
                   loading={i < 4 ? "eager" : "lazy"}
                   priority={i < 4}
                 />
-              </div>
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500" />
+              </motion.div>
             ))}
-          </div>
+          </StaggerContainer>
         </div>
       </div>
       <Footer />

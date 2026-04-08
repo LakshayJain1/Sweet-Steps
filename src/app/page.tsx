@@ -10,9 +10,9 @@ import Footer from "@/components/layout/Footer";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Sweet Steps | Baby Hand Casting Jaipur | Newborn 3D Impressions",
-  description: "Preserve your baby's tiny hands and feet forever with Jaipur's most premium 3D casting service. Handcrafted frames, 100% safe, at-home sessions available in Jaipur.",
-  keywords: ["baby hand casting Jaipur", "3D impressions Jaipur", "newborn casting Jaipur", "baby keepsakes Jaipur"],
+  title: "Sweet Steps | Premium 3D Casting Jaipur | Baby, Sibling & Couple Impressions",
+  description: "Preserve precious bonds forever with Jaipur's premium 3D casting service. Handcrafted frames for babies, siblings, couples, and elders. 100% skin safe, at-home sessions available.",
+  keywords: ["baby hand casting Jaipur", "3D family impressions Jaipur", "sibling casting Jaipur", "couple hand casting Jaipur", "elder blessing casting Jaipur"],
   alternates: {
     canonical: "https://sweetsteps.vercel.app",
   },
@@ -24,7 +24,7 @@ const jsonLd = [
     "@type": "LocalBusiness",
     "@id": "https://sweetsteps.vercel.app",
     "name": "Sweet Steps",
-    "description": "Premium baby hand and feet 3D casting service in Jaipur, Rajasthan.",
+    "description": "Premium 3D hand and feet casting service for babies, siblings, couples, and elders in Jaipur, Rajasthan.",
     "url": "https://sweetsteps.vercel.app",
     "telephone": "+91-8302419714",
     "priceRange": "₹₹",
@@ -58,7 +58,7 @@ const jsonLd = [
   {
     "@context": "https://schema.org",
     "@type": "Service",
-    "serviceType": "Baby Hand and Feet Casting",
+    "serviceType": "3D Hand and Feet Casting Impressions",
     "provider": {
       "@type": "LocalBusiness",
       "name": "Sweet Steps",
@@ -74,13 +74,13 @@ const jsonLd = [
         "name": "Rajasthan"
       }
     ],
-    "description": "Professional 3D casting service for newborns and families in Jaipur. 100% baby safe materials."
+    "description": "Professional 3D casting service for newborns, siblings, couples, and elders in Jaipur. 100% skin safe materials."
   },
   {
     "@context": "https://schema.org",
     "@type": "Product",
-    "name": "Custom 3D Baby Impression Frames",
-    "description": "Handcrafted 3D impression frames - customizable for families. Capture every tiny wrinkle and detail.",
+    "name": "Custom 3D Family Impression Frames",
+    "description": "Handcrafted 3D impression frames - customizable for babies, siblings, couples, and elders. Capture every tiny detail and bond.",
     "image": "https://sweetsteps.vercel.app/product-1.jpg",
     "brand": {
       "@type": "Brand",

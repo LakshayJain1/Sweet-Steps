@@ -7,32 +7,7 @@ import { motion } from "framer-motion";
 import StaggerContainer, { staggerChildVariants } from "@/components/common/StaggerContainer";
 import ScrollReveal from "@/components/common/ScrollReveal";
 
-const products = [
-  {
-    id: 1,
-    name: "Classic Two Impression Frame",
-    desc: "Perfect for one hand and one foot impression of your newborn.",
-    img: "/product-1.jpg",
-  },
-  {
-    id: 2,
-    name: "Premium Four Impression Frame",
-    desc: "Both hands and feet alongside a beautiful photo placeholder.",
-    img: "/product-2.jpg",
-  },
-  {
-    id: 3,
-    name: "Elder Blessing Keepsake",
-    desc: "Capture the precious bond between grandparent and baby.",
-    img: "/product-3.jpg",
-  },
-  {
-    id: 4,
-    name: "Golden Family Circle",
-    desc: "A stunning masterpiece capturing the whole family's hands.",
-    img: "/og-image.jpg",
-  },
-];
+import { products } from "@/data/products";
 
 export default function ProductGrid() {
   return (
@@ -42,7 +17,7 @@ export default function ProductGrid() {
           <div className="text-center mb-20 max-w-2xl mx-auto space-y-4">
             <h2 className="text-4xl md:text-5xl">Our keepsake frames</h2>
             <p className="text-xl text-neutral-500 leading-relaxed">
-              Browse our signature collection of 3D casting frames, designed to complement any nursery.
+              Explore our signature 3D casting collections for babies, siblings, couples, and elders.
             </p>
           </div>
         </ScrollReveal>
@@ -50,13 +25,13 @@ export default function ProductGrid() {
         <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16" staggerDelay={0.12}>
           {products.map((product) => (
             <motion.div
-              key={product.id}
+              key={product.slug}
               variants={staggerChildVariants}
               className="glass-card group flex flex-col h-full border-neutral-200/60"
             >
               <div className="relative aspect-[4/3] w-full overflow-hidden">
                 <Image
-                  src={product.img}
+                  src={product.mainImg}
                   alt={product.name}
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-700"
@@ -70,10 +45,10 @@ export default function ProductGrid() {
                   <h3 className="text-2xl font-bold text-neutral-900">{product.name}</h3>
                 </div>
                 <p className="text-neutral-500 mb-8 flex-1 text-lg leading-relaxed">
-                  {product.desc}
+                  {product.shortDesc}
                 </p>
                 <div className="pt-6 border-t border-neutral-200/60 flex items-center justify-between mt-auto">
-                  <Link href="/products" className="inline-flex items-center text-neutral-900 font-bold hover:text-neutral-600 transition-colors text-lg group/link">
+                  <Link href={`/products/${product.slug}`} className="inline-flex items-center text-neutral-900 font-bold hover:text-neutral-600 transition-colors text-lg group/link">
                     View details 
                     <ArrowRight className="ml-2 h-5 w-5 transform group-hover/link:translate-x-2 transition-transform duration-300" />
                   </Link>

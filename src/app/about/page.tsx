@@ -5,8 +5,8 @@ import type { Metadata } from "next";
 import ScrollReveal from "@/components/common/ScrollReveal";
 
 export const metadata: Metadata = {
-  title: "About Us | Sweet Steps Baby Impressions Jaipur",
-  description: "Learn about the passionate team behind Sweet Steps and why parents in Jaipur trust us with their newborn keepsakes.",
+  title: "About Us | Sweet Steps 3D Impressions Jaipur",
+  description: "Learn about the passionate team behind Sweet Steps and why families in Jaipur trust us with their most precious keepsakes.",
 };
 
 export default function AboutPage() {
@@ -47,15 +47,14 @@ export default function AboutPage() {
               </ScrollReveal>
               <ScrollReveal delay={0.25}>
                 <p className="text-lg text-neutral-500 leading-relaxed">
-                  Sweet Steps started with a simple realization: babies grow up faster than we expect. 
-                  What begins as tiny wrinkles and perfect fingernails quickly turns into running feet. 
-                  I wanted to give parents in Jaipur a way to freeze those first few months into something tangible.
+                  Sweet Steps started with a simple realization: the most meaningful moments in life—from a newborn's first tiny grasp to a couple's wedding bond or a grandparent's blessing—are the ones that pass us by the fastest. 
+                  I wanted to give families in Jaipur a way to freeze these connections into something tangible.
                 </p>
               </ScrollReveal>
               <ScrollReveal delay={0.35}>
                 <p className="text-lg text-neutral-500 leading-relaxed">
                   Using 100% skin-safe, non-toxic molding materials, we capture the deepest, 
-                  most intricate details of your baby's hands and feet, casting them into timeless 3D art.
+                  most intricate details of life's precious moments, casting them into timeless 3D art for babies, siblings, couples, and elders.
                 </p>
               </ScrollReveal>
             </div>
@@ -67,7 +66,7 @@ export default function AboutPage() {
               <h2 className="mb-10 text-3xl text-neutral-900">Why Families Trust Us</h2>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
                 {[
-                  { icon: "🛡️", title: "100% Baby Safe", desc: "Non-toxic, hypoallergenic casting materials." },
+                  { icon: "🛡️", title: "100% Skin Safe", desc: "Non-toxic, hypoallergenic casting materials." },
                   { icon: "🏠", title: "At-Home Service", desc: "We travel to you anywhere in Jaipur." },
                   { icon: "✨", title: "Premium Quality", desc: "Golden finish with high-quality framing glass." },
                 ].map((item, i) => (

@@ -5,7 +5,6 @@ import Link from "next/link";
 import { CheckCircle2, MapPin } from "lucide-react";
 import { motion } from "framer-motion";
 import ScrollReveal from "@/components/common/ScrollReveal";
-import UrgencyBadge from "@/components/common/UrgencyBadge";
 
 export default function Hero() {
   return (
@@ -29,13 +28,7 @@ export default function Hero() {
         <ScrollReveal>
           <div className="glass-panel p-8 md:p-16 max-w-3xl border-neutral-200/40" style={{ transition: "box-shadow 700ms cubic-bezier(0.16,1,0.3,1)" }}>
             <div className="space-y-8">
-              <motion.div
-                initial={{ opacity: 0, x: -10 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-              >
-                <UrgencyBadge />
-              </motion.div>
+
               <motion.h1 
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -51,8 +44,8 @@ export default function Hero() {
                 transition={{ duration: 0.7, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
                 className="text-xl md:text-2xl text-neutral-500 font-medium leading-relaxed"
               >
-                Handcrafted 3D impression frames of your baby's hands and feet. 
-                Made with love in Jaipur.
+                Handcrafted 3D impression frames for babies, siblings, couples, and elders. 
+                Preserve your family's most precious bonds in Jaipur.
               </motion.p>
 
               <motion.div 
@@ -82,7 +75,7 @@ export default function Hero() {
                 <div className="hidden md:block w-px h-6 bg-neutral-300" />
                 <div className="flex items-center gap-3">
                   <CheckCircle2 className="h-5 w-5 text-neutral-900" />
-                  <span>100% Baby Safe</span>
+                  <span>100% Skin Safe</span>
                 </div>
                 <div className="hidden md:block w-px h-6 bg-neutral-300" />
                 <div className="flex items-center gap-3">

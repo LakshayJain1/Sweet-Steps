@@ -9,11 +9,11 @@ const playfair = Playfair_Display({ subsets: ["latin"], weight: ["400", "700"], 
 export const metadata: Metadata = {
   metadataBase: new URL("https://sweetsteps.vercel.app"),
   title: {
-    default: "Sweet Steps | Baby Hand Casting Jaipur | 3D Newborn Impressions",
+    default: "Sweet Steps | Premium 3D Casting Jaipur | Baby, Sibling & Couple Impressions",
     template: "%s | Sweet Steps Jaipur",
   },
-  description: "Jaipur's #1 premium 3D baby hand and feet impressions. Handcrafted keepsake frames in Jaipur. Safe for newborns, preserved for a lifetime. Book your home session today!",
-  keywords: ["baby hand casting Jaipur", "3D baby impressions Jaipur", "newborn hand and feet casting Jaipur", "keepsake frames Jaipur", "baby casting service India"],
+  description: "Jaipur's #1 premium 3D casting service for babies, siblings, couples, and elders. Handcrafted keepsake frames. 100% skin safe, preserved for a lifetime. Book your session today!",
+  keywords: ["baby hand casting Jaipur", "3D family impressions Jaipur", "sibling hand casting Jaipur", "couple hand casting Jaipur", "elder blessing casting Jaipur", "keepsake frames Jaipur"],
   authors: [{ name: "Sweet Steps Jaipur" }],
   creator: "Sweet Steps",
   publisher: "Sweet Steps",
@@ -27,8 +27,8 @@ export const metadata: Metadata = {
     locale: "en_IN",
     url: "https://sweetsteps.vercel.app",
     siteName: "Sweet Steps Jaipur",
-    title: "Sweet Steps | Premium Baby Casting in Jaipur",
-    description: "Capture the tiny moments that grow up too fast with Jaipur's favorite 3D hand and feet impression service.",
+    title: "Sweet Steps | Premium 3D Casting in Jaipur",
+    description: "Capture precious bonds that last a lifetime with Jaipur's favorite 3D hand and feet impression service for all ages.",
     images: [
       {
         url: "/og-image.jpg",
@@ -40,8 +40,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Sweet Steps | Baby Hand Casting Jaipur",
-    description: "Jaipur's #1 premium newborn 100% safe 3D impressions.",
+    title: "Sweet Steps | Premium 3D Casting Jaipur",
+    description: "Jaipur's #1 premium 3D impressions for babies, couples, and families. 100% skin safe.",
     images: ["/og-image.jpg"],
   },
   robots: {

@@ -12,8 +12,8 @@ export default function Hero() {
       {/* Background Depth Effects */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/hero-frame.jpg"
-          alt="Sweet Steps Baby Impression Keepsake"
+          src="/Assets/Frame_10.png"
+          alt="Sweet Steps Premium 3D Impression Keepsake"
           fill
           priority
           className="object-cover object-right md:object-center opacity-50"
@@ -35,7 +35,7 @@ export default function Hero() {
                 transition={{ duration: 0.7, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
                 className="leading-tight text-neutral-900"
               >
-                Capture the <span className="text-neutral-400 italic">tiny moments</span> that grow up too fast.
+                Capture the <span className="text-neutral-400 italic">precious bonds</span> that last a lifetime.
               </motion.h1>
               
               <motion.p 
@@ -44,8 +44,8 @@ export default function Hero() {
                 transition={{ duration: 0.7, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
                 className="text-xl md:text-2xl text-neutral-500 font-medium leading-relaxed"
               >
-                Handcrafted 3D impression frames for babies, siblings, couples, and elders. 
-                Preserve your family's most precious bonds in Jaipur.
+                Premium 3D impression frames for families, siblings, couples, and elders. 
+                Preserve your most cherished relationships with timeless art in Jaipur.
               </motion.p>
 
               <motion.div 
@@ -69,8 +69,8 @@ export default function Hero() {
                 className="flex flex-wrap items-center gap-6 pt-8 text-neutral-500 font-medium border-t border-neutral-200/40"
               >
                 <div className="flex items-center gap-3">
-                  <span className="text-2xl">🍼</span>
-                  <span>200+ families</span>
+                  <span className="text-2xl">✨</span>
+                  <span>500+ memories captured</span>
                 </div>
                 <div className="hidden md:block w-px h-6 bg-neutral-300" />
                 <div className="flex items-center gap-3">

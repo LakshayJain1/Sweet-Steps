@@ -48,12 +48,12 @@ export default function ProductGrid() {
                   {product.shortDesc}
                 </p>
                 <div className="pt-6 border-t border-neutral-200/60 flex items-center justify-between mt-auto">
-                  <Link href={`/products/${product.slug}`} className="inline-flex items-center text-neutral-900 font-bold hover:text-neutral-600 transition-colors text-lg group/link">
+                  <Link href="/gallery" className="inline-flex items-center text-neutral-900 font-bold hover:text-neutral-600 transition-colors text-lg group/link">
                     View details 
                     <ArrowRight className="ml-2 h-5 w-5 transform group-hover/link:translate-x-2 transition-transform duration-300" />
                   </Link>
                   <Link 
-                    href="/book" 
+                    href="/gallery" 
                     className="inline-flex items-center gap-2 text-neutral-500 font-bold hover:text-neutral-900 transition-colors text-lg"
                   >
                     <MessageCircle className="h-5 w-5" />
@@ -67,7 +67,7 @@ export default function ProductGrid() {
         
         <ScrollReveal delay={0.2}>
           <div className="mt-16 text-center">
-            <Link href="/products" className="btn-primary">
+            <Link href="/gallery" className="btn-primary">
               See all styles &amp; customizations
             </Link>
           </div>

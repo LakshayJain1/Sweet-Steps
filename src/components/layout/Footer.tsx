@@ -53,7 +53,7 @@ export default function Footer() {
               <h3 className="text-xl font-bold font-heading text-neutral-900">Quick Links</h3>
               <ul className="space-y-4 text-neutral-500">
                 <li><Link href="/book" className="hover:text-neutral-900 transition-colors">Book a Session</Link></li>
-                <li><Link href="/products" className="hover:text-neutral-900 transition-colors">Pricing &amp; Frames</Link></li>
+                <li><Link href="/gallery" className="hover:text-neutral-900 transition-colors">Our Designs</Link></li>
                 <li><Link href="/gallery" className="hover:text-neutral-900 transition-colors">Gallery</Link></li>
                 <li><Link href="/faq" className="hover:text-neutral-900 transition-colors">FAQs</Link></li>
               </ul>
@@ -91,10 +91,10 @@ export default function Footer() {
         
         <div className="pt-8 border-t border-neutral-200 text-center flex flex-col items-center justify-center space-y-2">
            <address className="not-italic text-neutral-500 text-sm">
-             Sweet Steps Baby Impressions • Jaipur, Rajasthan 302017
+             Sweet Steps Impressions • Jaipur, Rajasthan 302017
            </address>
            <p className="text-neutral-400 text-xs font-medium uppercase tracking-widest">
-             Serving all of Jaipur 🍼
+             Serving all of Jaipur ✨
            </p>
            <p className="text-neutral-500 text-xs pt-4">
              © {new Date().getFullYear()} Sweet Steps • Handcrafted with love

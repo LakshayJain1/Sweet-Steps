@@ -81,7 +81,7 @@ const jsonLd = [
     "@type": "Product",
     "name": "Custom 3D Family Impression Frames",
     "description": "Handcrafted 3D impression frames - customizable for babies, siblings, couples, and elders. Capture every tiny detail and bond.",
-    "image": "https://sweetsteps.vercel.app/product-1.jpg",
+    "image": "https://sweetsteps.vercel.app/Assets/Frame_01.png",
     "brand": {
       "@type": "Brand",
       "name": "Sweet Steps"
@@ -91,7 +91,7 @@ const jsonLd = [
       "lowPrice": "0",
       "priceCurrency": "INR",
       "offerCount": "10",
-      "url": "https://sweetsteps.vercel.app/products"
+      "url": "https://sweetsteps.vercel.app/gallery"
     },
     "aggregateRating": {
       "@type": "AggregateRating",

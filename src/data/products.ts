@@ -18,12 +18,10 @@ export const products: Product[] = [
     name: "Classic Two Impression Frame",
     shortDesc: "Perfect for one hand and one foot impression of your newborn.",
     fullDesc: "Capture the start of a beautiful journey with our Classic Two Impression Frame. This signature piece is our most popular choice for newborns, providing a perfectly balanced display for one tiny hand and one tiny foot. Every wrinkle and line is captured with scientific precision to create a lifetime of memories.",
-    mainImg: "/product-1.jpg",
+    mainImg: "/Assets/Frame_01.png",
     galleryImages: [
-      "/products/two-imp/616561075_17884532361431293_6748449571348436754_n.jpg",
-      "/products/two-imp/624027004_18080704790020495_1901701617521697128_n.jpg",
-      "/products/two-imp/624872407_18079786994584308_3771641984599392725_n.jpg",
-      "/products/two-imp/627446331_18106562986766187_3381016230724678298_n.jpg"
+      "/Assets/Frame_01_01.png",
+      "/Assets/Frame_01.png"
     ],
     details: {
       frameTexture: "Premium Teak Wood with Matte/Gloss Finish",
@@ -40,11 +38,10 @@ export const products: Product[] = [
     name: "Sibling Bond Keepsake",
     shortDesc: "A beautiful representation of the unbreakable bond between brothers and sisters.",
     fullDesc: "There is no bond quite like that between siblings. Our Sibling Bond Keepsake captures the hands of brothers and sisters together, creating a powerful visual reminder of their lifelong connection. Whether they are toddlers or older children, this casting preserves a moment of unity forever.",
-    mainImg: "/product-2.jpg",
+    mainImg: "/Assets/Frame_02.png",
     galleryImages: [
-      "/products/four-imp/623791658_18082922257965629_7135710008465237176_n.jpg",
-      "/products/four-imp/625014262_18037330799541096_3734195408163251281_n.jpg",
-      "/product-2.jpg"
+      "/Assets/Frame_02_01.png",
+      "/Assets/Frame_02.png"
     ],
     details: {
       frameTexture: "Solid European Ash Wood",
@@ -61,11 +58,10 @@ export const products: Product[] = [
     name: "Eternal Couple Casting",
     shortDesc: "Hold hands forever with a stunning life-like 3D sculpture of your togetherness.",
     fullDesc: "Designed for anniversaries, weddings, or 'just because', our Eternal Couple Casting is a masterpiece of intimacy. We capture your hands intertwined, preserving the unique textures and rings that define your relationship. It's more than art—it's a vow rendered in 3D.",
-    mainImg: "/og-image.jpg",
+    mainImg: "/Assets/Frame_03.png",
     galleryImages: [
-      "/og-image.jpg",
-      "/product-1.jpg",
-      "/product-2.jpg"
+      "/Assets/Frame_03_01.png",
+      "/Assets/Frame_03.png"
     ],
     details: {
       frameTexture: "Modern Shadowbox with Metallic Accents",
@@ -82,11 +78,10 @@ export const products: Product[] = [
     name: "Elder Blessing Keepsake",
     shortDesc: "Capture the precious bond and wisdom of grandparents for generations to come.",
     fullDesc: "The hands of our elders tell stories of wisdom, struggle, and immense love. Our Elder Blessing Keepsake captures the hands of grandparents holding their grandchildren, or simply the hands of the family patriarch/matriarch. It is a heritage piece that will be cherished by generations to come.",
-    mainImg: "/product-3.jpg",
+    mainImg: "/Assets/Frame_04.png",
     galleryImages: [
-      "/products/elder-blessing/565952625_17863936869481205_1499331118673531301_n.webp",
-      "/products/elder-blessing/625008219_18092323357985877_3288329523995516286_n.jpg",
-      "/product-3.jpg"
+      "/Assets/Frame_04_01.png",
+      "/Assets/Frame_04.png"
     ],
     details: {
       frameTexture: "Distressed Heritage Wood Frame",
@@ -95,6 +90,46 @@ export const products: Product[] = [
         "Classic Monochrome or Bronze Finish",
         "Space for Family Tree Inscription",
         "UV-Protected Museum Glass"
+      ]
+    }
+  },
+  {
+    slug: "luxury-family-trio",
+    name: "Luxury Family Trio",
+    shortDesc: "A grand display for three impressions, perfect for small families or growing toddlers.",
+    fullDesc: "Our Luxury Family Trio is designed to celebrate the beautiful trinity of your family. Whether it's both parents with a baby, or three siblings together, this wide-format frame provides a sophisticated stage for your most treasured connections.",
+    mainImg: "/Assets/Frame_05.png",
+    galleryImages: [
+      "/Assets/Frame_05_01.png",
+      "/Assets/Frame_05.png"
+    ],
+    details: {
+      frameTexture: "Hand-finished Imperial Mahogany",
+      quality: "Premium high-density casting with silk finish",
+      customizations: [
+        "Triple Matting Options",
+        "Golden Calligraphy",
+        "Integrated LED Spotlight"
+      ]
+    }
+  },
+  {
+    slug: "newborn-solo-keepsake",
+    name: "Newborn Solo Keepsake",
+    shortDesc: "A delicate single-impression frame focused on the smallest details.",
+    fullDesc: "Sometimes, one tiny hand is all you need to tell the whole story. Our Newborn Solo Keepsake focuses entirely on a single hand or foot, emphasizing the incredible detail and smallness of your baby's earliest days.",
+    mainImg: "/Assets/Single Hand.png",
+    galleryImages: [
+      "/Assets/Single Hand.png",
+      "/Assets/Frame_06.png"
+    ],
+    details: {
+      frameTexture: "Minimalist Nordic Pine",
+      quality: "Ultra-fine detail reproduction",
+      customizations: [
+        "Pastel Color Matting",
+        "Birth Date Engraving",
+        "Desktop or Wall Mount"
       ]
     }
   }

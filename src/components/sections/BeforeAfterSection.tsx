@@ -11,14 +11,14 @@ export default function BeforeAfterSection() {
           <div className="space-y-8 order-2 lg:order-1">
             <ScrollReveal delay={0.1}>
               <h2 className="text-4xl md:text-5xl leading-tight">
-                From <span className="text-neutral-400 italic">tiny toes</span> to timeless treasures.
+                From <span className="text-neutral-400 italic">intimate details</span> to timeless treasures.
               </h2>
             </ScrollReveal>
             <ScrollReveal delay={0.2}>
               <p className="text-xl text-neutral-500 leading-relaxed max-w-lg">
                 Photos capture the look, but our 3D impressions capture the feeling. 
-                The exact scale, every tiny wrinkle, and the preciousness of their first few months, 
-                frozen forever in a beautiful handcrafted frame.
+                The exact scale, every unique line, and the preciousness of your most 
+                cherished bonds, frozen forever in a beautiful handcrafted frame.
               </p>
             </ScrollReveal>
             
@@ -30,7 +30,7 @@ export default function BeforeAfterSection() {
                   </div>
                   <div>
                     <h4 className="font-bold text-xl mb-1 text-neutral-900">Unmatched Detail</h4>
-                    <p className="text-neutral-500">Captures fingerprints and skin texture with 100% accuracy.</p>
+                    <p className="text-neutral-500">Captures fingerprints and skin texture with 100% accuracy for all ages.</p>
                   </div>
                 </div>
               </ScrollReveal>
@@ -42,7 +42,7 @@ export default function BeforeAfterSection() {
                   </div>
                   <div>
                     <h4 className="font-bold text-xl mb-1 text-neutral-900">Home Comfort</h4>
-                    <p className="text-neutral-500">We visit you, so your baby stays happy in their own environment.</p>
+                    <p className="text-neutral-500">We visit you, ensuring a comfortable experience in your own environment.</p>
                   </div>
                 </div>
               </ScrollReveal>
@@ -52,10 +52,10 @@ export default function BeforeAfterSection() {
           <div className="order-1 lg:order-2">
             <ScrollReveal delay={0.15} y={20}>
               <BeforeAfterSlider
-                beforeImage="/product-1.jpg" 
-                afterImage="/product-2.jpg"
-                beforeLabel="Newborn Days"
-                afterLabel="A Lifetime Memory"
+                beforeImage="/Assets/Frame_01.png" 
+                afterImage="/Assets/Frame_01_01.png"
+                beforeLabel="Initial Impression"
+                afterLabel="Final Masterpiece"
                 caption="Slide to see how we transform a fleeting moment into a lasting masterpiece."
               />
             </ScrollReveal>

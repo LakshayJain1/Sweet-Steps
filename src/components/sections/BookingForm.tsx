@@ -8,7 +8,7 @@ export default function BookingForm() {
     name: "",
     phone: "",
     city: "",
-    babyAge: "",
+    subjectDetails: "",
     date: "",
   });
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
@@ -25,14 +25,14 @@ export default function BookingForm() {
           from_name: formData.name,
           phone: formData.phone,
           city: formData.city,
-          baby_age: formData.babyAge,
+          baby_age: formData.subjectDetails,
           preferred_date: formData.date,
-          message: `Name: ${formData.name}\nPhone: ${formData.phone}\nCity: ${formData.city}\nBaby Age: ${formData.babyAge}\nPreferred Date: ${formData.date}`
+          message: `Name: ${formData.name}\nPhone: ${formData.phone}\nCity: ${formData.city}\nDetails: ${formData.subjectDetails}\nPreferred Date: ${formData.date}`
         },
         "MdPYAn2rmEEjW9s7e" 
       );
       setStatus("success");
-      setFormData({ name: "", phone: "", city: "", babyAge: "", date: "" });
+      setFormData({ name: "", phone: "", city: "", subjectDetails: "", date: "" });
       window.location.href = "/thank-you";
       
     } catch (error) {
@@ -65,7 +65,7 @@ export default function BookingForm() {
       <form onSubmit={handleSubmit} className="space-y-6">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           <div className="space-y-2">
-            <label className="text-sm font-bold text-neutral-700 block ml-1">Parent's Name *</label>
+            <label className="text-sm font-bold text-neutral-700 block ml-1">Your Name *</label>
             <input
               required
               type="text"
@@ -103,14 +103,14 @@ export default function BookingForm() {
           </div>
           
           <div className="space-y-2">
-            <label className="text-sm font-bold text-neutral-700 block ml-1">Baby's Age *</label>
+            <label className="text-sm font-bold text-neutral-700 block ml-1">Age / Occasion *</label>
             <input
               required
               type="text"
-              value={formData.babyAge}
-              onChange={(e) => setFormData({ ...formData, babyAge: e.target.value })}
+              value={formData.subjectDetails}
+              onChange={(e) => setFormData({ ...formData, subjectDetails: e.target.value })}
               className={inputClass}
-              placeholder="e.g. 2 Months"
+              placeholder="e.g. 2 Months, Couple, Family"
             />
           </div>
         </div>

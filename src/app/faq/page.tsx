@@ -9,8 +9,8 @@ import ScrollReveal from "@/components/common/ScrollReveal";
 
 const faqs = [
   {
-    q: "Is the material safe for my newborn?",
-    a: "Absolutely. We use 100% skin-safe, non-toxic, and hypoallergenic alginate. It's the same material dentists use for oral impressions."
+    q: "Is the material skin-safe?",
+    a: "Absolutely. We use 100% skin-safe, non-toxic, and hypoallergenic alginate. It's the same material dentists use for oral impressions and is safe for everyone from newborns to elders."
   },
   {
     q: "How long does the process take?",
@@ -18,11 +18,11 @@ const faqs = [
   },
   {
     q: "Do I have to come to your studio?",
-    a: "No! We provide an at-home service anywhere in Jaipur. Your baby stays comfortable in their own environment."
+    a: "No! We provide an at-home service anywhere in Jaipur. You stay comfortable in your own environment."
   },
   {
     q: "What is the best age to get an impression?",
-    a: "We recommend between 0-6 months for the deepest newborn wrinkles, but we can do castings for children and adults of any age."
+    a: "For babies, we recommend between 0-6 months for the best newborn wrinkles, but we can do castings for individuals, couples, and families of any age."
   },
   {
     q: "When will I receive my finished frame?",
@@ -33,8 +33,8 @@ const faqs = [
     a: "Yes, you can select from our collection of premium frames during our visit. Popular choices include gold, silver, and classic white."
   },
   {
-    q: "What if my baby moves during the casting?",
-    a: "The material sets very quickly. Even if they wiggle, it usually captures perfectly. If not, we simply try again at no extra cost!"
+    q: "What if there is movement during the casting?",
+    a: "The material sets very quickly. Even with some movement, it usually captures perfectly. If not, we simply try again at no extra cost!"
   },
   {
     q: "How do I book a session?",
@@ -65,7 +65,7 @@ export default function FAQPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <title>FAQs | Sweet Steps Impressions</title>
-      <meta name="description" content="Common questions about baby safe 3D hand and feet castings in Jaipur." />
+      <meta name="description" content="Common questions about skin-safe 3D hand and feet castings in Jaipur." />
       
       <StickyHeader />
       <div className="pt-32 pb-24 bg-neutral-50 min-h-screen">
@@ -74,7 +74,7 @@ export default function FAQPage() {
             <div className="text-center mb-16">
               <h1 className="mb-6 text-neutral-900">Frequently Asked Questions</h1>
               <p className="text-xl text-neutral-500 prose mx-auto">
-                Everything you need to know about capturing your baby's first moments.
+                Everything you need to know about capturing your most precious bonds.
               </p>
             </div>
           </ScrollReveal>

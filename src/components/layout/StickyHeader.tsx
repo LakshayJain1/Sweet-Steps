@@ -20,7 +20,6 @@ export default function StickyHeader() {
 
   const navLinks = [
     { href: "/", label: "Home" },
-    { href: "/products", label: "Products" },
     { href: "/gallery", label: "Gallery" },
     { href: "/about", label: "About" },
     { href: "/faq", label: "FAQ" },

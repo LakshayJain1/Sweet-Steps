@@ -10,13 +10,13 @@ export default function VideoTestimonials() {
     {
       title: "Baby Arish's First Casting",
       location: "Malviya Nagar, Jaipur",
-      thumbnail: "/product-1.jpg",
+      thumbnail: "/Assets/Frame_04.png",
       url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
     },
     {
       title: "Family Hand Casting",
       location: "Vaishali Nagar, Jaipur",
-      thumbnail: "/product-3.jpg",
+      thumbnail: "/Assets/Frame_08.png",
       url: "#"
     }
   ];
@@ -28,7 +28,7 @@ export default function VideoTestimonials() {
           <div className="text-center mb-16 max-w-2xl mx-auto">
             <h2 className="text-4xl md:text-5xl mb-6">Real stories, real tears.</h2>
             <p className="text-xl text-neutral-500 leading-relaxed">
-              See the emotional reaction of our Jaipur families as they unbox their baby's 3D hand and feet impressions for the first time.
+              See the emotional reactions of our Jaipur clients as they unbox their 3D impression frames and relive their most cherished memories for the first time.
             </p>
           </div>
         </ScrollReveal>

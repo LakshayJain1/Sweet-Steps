@@ -28,11 +28,11 @@ export default function GalleryView({ images, designs }: GalleryViewProps) {
   };
 
   return (
-    <div className="container mx-auto px-6">
+    <div className="container mx-auto px-4 md:px-6">
       <ScrollReveal>
         <div className="text-center max-w-[800px] mx-auto mb-20">
           <h1 className="mb-6 text-neutral-900">Design Gallery</h1>
-          <p className="text-xl text-neutral-500 leading-relaxed font-medium">
+          <p className="text-xl text-neutral-600 leading-relaxed font-medium">
             Explore our collections and custom-made keepsakes that celebrate the most precious bonds across all generations.
           </p>
         </div>
@@ -41,8 +41,8 @@ export default function GalleryView({ images, designs }: GalleryViewProps) {
       {/* Main Gallery Section */}
       <div className="mb-20">
         <ScrollReveal>
-          <div className="flex items-center gap-4 mb-12">
-            <h2 className="text-3xl font-bold text-neutral-900 italic">Our Creations</h2>
+          <div className="flex items-center gap-4 mb-8 md:mb-12">
+            <h2 className="text-2xl md:text-3xl font-bold text-neutral-900 italic">Our Creations</h2>
             <div className="h-[1px] flex-1 bg-neutral-200" />
           </div>
         </ScrollReveal>
@@ -147,7 +147,7 @@ export default function GalleryView({ images, designs }: GalleryViewProps) {
               </div>
 
               {/* Content side */}
-              <div className="w-full md:w-1/2 p-8 md:p-12 overflow-y-auto">
+              <div className="w-full md:w-1/2 p-6 md:p-12 overflow-y-auto">
                 <div className="space-y-8">
                   <div>
                     <span className="inline-block px-3 py-1 bg-neutral-900/5 rounded-full text-neutral-600 text-[10px] font-bold tracking-[0.1em] uppercase mb-4">
@@ -198,9 +198,9 @@ export default function GalleryView({ images, designs }: GalleryViewProps) {
                   <div className="pt-6">
                     <button 
                       onClick={() => openWhatsApp(selectedDesign)}
-                      className="liquid-button w-full text-center py-5 px-10 text-xl font-bold flex items-center justify-center gap-3"
+                      className="liquid-button w-full text-center py-4 md:py-5 px-6 md:px-10 text-lg md:text-xl font-bold flex items-center justify-center gap-3"
                     >
-                      <MessageCircle className="h-6 w-6" />
+                      <MessageCircle className="h-5 w-5 md:h-6 md:w-6" />
                       Contact for Pricing
                     </button>
                     <p className="text-center text-xs text-neutral-400 mt-4">

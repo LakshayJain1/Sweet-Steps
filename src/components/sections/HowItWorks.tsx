@@ -26,7 +26,7 @@ const steps = [
 export default function HowItWorks() {
   return (
     <section className="bg-neutral-50 section-padding">
-      <div className="container mx-auto max-w-[1200px] px-6">
+      <div className="container mx-auto max-w-[1200px] px-4 md:px-6">
         <ScrollReveal>
           <div className="text-center space-y-4 mb-20">
             <h2>How It Works</h2>
@@ -42,7 +42,7 @@ export default function HowItWorks() {
             <motion.div
               key={idx}
               variants={staggerChildVariants}
-              className="glass-card flex flex-col items-center p-8 text-center group"
+              className="glass-card flex flex-col items-center p-6 md:p-8 text-center group"
             >
               <div className="w-20 h-20 bg-white/60 backdrop-blur-xl rounded-full flex items-center justify-center shadow-glass mb-10 border border-neutral-200 group-hover:scale-110 group-hover:bg-white/80 group-hover:shadow-glass-raised transition-all duration-500">
                 <step.icon className="h-10 w-10 text-neutral-900 drop-shadow-sm" />

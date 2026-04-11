@@ -12,10 +12,10 @@ import { products } from "@/data/products";
 export default function ProductGrid() {
   return (
     <section className="bg-transparent section-padding">
-      <div className="container mx-auto max-w-[1200px] px-6">
+      <div className="container mx-auto max-w-[1200px] px-4 md:px-6">
         <ScrollReveal>
           <div className="text-center mb-20 max-w-2xl mx-auto space-y-4">
-            <h2 className="text-4xl md:text-5xl">Our keepsake frames</h2>
+            <h2 className="text-3xl md:text-5xl">Our keepsake frames</h2>
             <p className="text-xl text-neutral-500 leading-relaxed">
               Explore our signature 3D casting collections for babies, siblings, couples, and elders.
             </p>
@@ -40,23 +40,23 @@ export default function ProductGrid() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </div>
-              <div className="p-10 flex-1 flex flex-col">
+              <div className="p-6 md:p-10 flex-1 flex flex-col">
                 <div className="flex justify-between items-start mb-4 gap-4">
                   <h3 className="text-2xl font-bold text-neutral-900">{product.name}</h3>
                 </div>
                 <p className="text-neutral-500 mb-8 flex-1 text-lg leading-relaxed">
                   {product.shortDesc}
                 </p>
-                <div className="pt-6 border-t border-neutral-200/60 flex items-center justify-between mt-auto">
-                  <Link href="/gallery" className="inline-flex items-center text-neutral-900 font-bold hover:text-neutral-600 transition-colors text-lg group/link">
+                <div className="pt-6 border-t border-neutral-200/60 flex flex-col xs:flex-row items-start xs:items-center justify-between mt-auto gap-4 xs:gap-2">
+                  <Link href="/gallery" className="inline-flex items-center text-neutral-900 font-bold hover:text-neutral-600 transition-colors text-base md:text-lg group/link">
                     View details 
-                    <ArrowRight className="ml-2 h-5 w-5 transform group-hover/link:translate-x-2 transition-transform duration-300" />
+                    <ArrowRight className="ml-2 h-4 w-4 md:h-5 md:w-5 transform group-hover/link:translate-x-2 transition-transform duration-300" />
                   </Link>
                   <Link 
                     href="/gallery" 
-                    className="inline-flex items-center gap-2 text-neutral-500 font-bold hover:text-neutral-900 transition-colors text-lg"
+                    className="inline-flex items-center gap-2 text-neutral-500 font-bold hover:text-neutral-900 transition-colors text-base md:text-lg"
                   >
-                    <MessageCircle className="h-5 w-5" />
+                    <MessageCircle className="h-4 w-4 md:h-5 md:w-5" />
                     Contact for Price
                   </Link>
                 </div>

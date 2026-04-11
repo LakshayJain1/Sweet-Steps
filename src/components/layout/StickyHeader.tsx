@@ -37,13 +37,13 @@ export default function StickyHeader() {
       }`}
       style={{ transition: "background-color 500ms cubic-bezier(0.16,1,0.3,1), backdrop-filter 500ms cubic-bezier(0.16,1,0.3,1), border-color 500ms cubic-bezier(0.16,1,0.3,1), box-shadow 500ms cubic-bezier(0.16,1,0.3,1), padding 500ms cubic-bezier(0.16,1,0.3,1)" }}
     >
-      <div className="container mx-auto max-w-[1200px] px-6">
+      <div className="container mx-auto max-w-[1200px] px-4 md:px-6">
         <div className="flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-3 z-50">
-            <div className="relative h-10 w-10 overflow-hidden rounded-full">
+          <Link href="/" className="flex items-center gap-2 md:gap-3 z-50">
+            <div className="relative h-8 w-8 md:h-10 md:w-10 overflow-hidden rounded-full">
               <Image src="/logo.webp" alt="Sweet Steps Logo" fill className="object-cover" />
             </div>
-            <span className="font-heading text-2xl font-bold text-neutral-900">Sweet Steps</span>
+            <span className="font-heading text-lg md:text-2xl font-bold text-neutral-900 hidden xs:block">Sweet Steps</span>
           </Link>
 
           {/* Desktop Nav */}
@@ -60,9 +60,8 @@ export default function StickyHeader() {
             ))}
           </nav>
 
-          {/* CTA & Mobile Toggle */}
-          <div className="flex items-center space-x-4">
-            <Link href="/book" className="hidden md:inline-flex btn-primary px-6 py-2.5 text-sm shadow-none">
+          <div className="flex items-center gap-2 md:gap-4">
+            <Link href="/book" className="btn-primary !hidden lg:!inline-flex px-6 py-2.5 text-sm shadow-none">
               Book Now
             </Link>
             <button

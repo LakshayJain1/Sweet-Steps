@@ -41,12 +41,12 @@ export default function BookingForm() {
     }
   };
 
-  const inputClass = "w-full px-5 py-4 border border-neutral-200 rounded-input bg-neutral-50 focus:bg-white focus:ring-2 focus:ring-neutral-900/10 focus:border-neutral-900 outline-none transition-all placeholder:text-neutral-400 text-lg text-neutral-900";
+  const inputClass = "w-full px-4 md:px-5 py-3 md:py-4 border border-neutral-200 rounded-input bg-neutral-50 focus:bg-white focus:ring-2 focus:ring-neutral-900/10 focus:border-neutral-900 outline-none transition-all placeholder:text-neutral-400 text-base md:text-lg text-neutral-900";
 
   return (
-    <div className="glass-panel p-8 md:p-12 border-neutral-200/40">
-      <h2 className="text-3xl font-heading font-bold mb-6 text-neutral-900">Reserve Your Date</h2>
-      <p className="text-neutral-500 mb-8 text-lg leading-relaxed">
+    <div className="glass-panel p-6 md:p-12 border-neutral-200/40">
+      <h2 className="text-2xl md:text-3xl font-heading font-bold mb-4 md:mb-6 text-neutral-900">Reserve Your Date</h2>
+      <p className="text-neutral-500 mb-6 md:mb-8 text-base md:text-lg leading-relaxed">
         Fill out the details below and our team will get back to you within 24 hours to confirm your booking.
       </p>
 
@@ -129,7 +129,7 @@ export default function BookingForm() {
         <button
            type="submit"
            disabled={status === "loading"}
-           className={`liquid-button w-full text-xl mt-6 ${status === "loading" ? "opacity-75 cursor-wait" : ""}`}
+           className={`liquid-button w-full text-lg md:text-xl mt-4 md:mt-6 ${status === "loading" ? "opacity-75 cursor-wait" : ""}`}
         >
            {status === "loading" ? "Sending Request..." : "Request Booking →"}
         </button>

@@ -19,12 +19,12 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-neutral-100 py-16 md:py-24 border-t border-neutral-200">
-      <div className="container mx-auto px-6 max-w-[1200px]">
+    <footer className="bg-neutral-100 py-12 md:py-24 border-t border-neutral-200">
+      <div className="container mx-auto px-4 md:px-6 max-w-[1200px]">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8 mb-16">
           <ScrollReveal className="col-span-1 md:col-span-2" delay={0}>
             <div className="space-y-6">
-              <h2 className="text-3xl font-heading font-bold text-neutral-900">Sweet Steps</h2>
+              <h2 className="text-2xl md:text-3xl font-heading font-bold text-neutral-900">Sweet Steps</h2>
               <p className="text-neutral-500 prose">
                 Capture the tiny moments that grow up too fast. Handcrafted 3D impression frames of your baby's hands and feet, delivered to your doorstep.
               </p>

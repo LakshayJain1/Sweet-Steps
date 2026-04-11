@@ -34,13 +34,13 @@ html {
   }
 
   h1 {
-    @apply text-[36px] md:text-[52px];
+    @apply text-[30px] md:text-[52px] tracking-tight;
   }
   h2 {
-    @apply text-[28px] md:text-[36px];
+    @apply text-[24px] md:text-[36px] tracking-tight;
   }
   h3 {
-    @apply text-[18px] md:text-[22px];
+    @apply text-[20px] md:text-[22px];
   }
   
   .prose {

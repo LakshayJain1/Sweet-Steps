@@ -24,9 +24,9 @@ export default function Hero() {
         <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-neutral-400/15 rounded-full blur-[120px] animate-float-slow" />
       </div>
 
-      <div className="container mx-auto max-w-[1200px] px-6 relative z-10">
+      <div className="container mx-auto max-w-[1200px] px-4 md:px-6 relative z-10">
         <ScrollReveal>
-          <div className="glass-panel p-8 md:p-16 max-w-3xl border-neutral-200/40" style={{ transition: "box-shadow 700ms cubic-bezier(0.16,1,0.3,1)" }}>
+          <div className="glass-panel p-6 md:p-16 max-w-3xl border-neutral-200/40" style={{ transition: "box-shadow 700ms cubic-bezier(0.16,1,0.3,1)" }}>
             <div className="space-y-8">
 
               <motion.h1 
@@ -66,21 +66,21 @@ export default function Hero() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.65, ease: [0.16, 1, 0.3, 1] }}
-                className="flex flex-wrap items-center gap-6 pt-8 text-neutral-500 font-medium border-t border-neutral-200/40"
+                className="flex flex-wrap items-center gap-4 md:gap-6 pt-8 text-neutral-500 font-medium border-t border-neutral-200/40"
               >
-                <div className="flex items-center gap-3">
-                  <span className="text-2xl">✨</span>
-                  <span>500+ memories captured</span>
+                <div className="flex items-center gap-2 md:gap-3">
+                  <span className="text-xl md:text-2xl">✨</span>
+                  <span className="text-sm md:text-base">500+ memories captured</span>
                 </div>
                 <div className="hidden md:block w-px h-6 bg-neutral-300" />
-                <div className="flex items-center gap-3">
-                  <CheckCircle2 className="h-5 w-5 text-neutral-900" />
-                  <span>100% Skin Safe</span>
+                <div className="flex items-center gap-2 md:gap-3">
+                  <CheckCircle2 className="h-4 w-4 md:h-5 md:w-5 text-neutral-900" />
+                  <span className="text-sm md:text-base">100% Skin Safe</span>
                 </div>
                 <div className="hidden md:block w-px h-6 bg-neutral-300" />
-                <div className="flex items-center gap-3">
-                  <MapPin className="h-5 w-5 text-neutral-900" />
-                  <span>Jaipur, India</span>
+                <div className="flex items-center gap-2 md:gap-3">
+                  <MapPin className="h-4 w-4 md:h-5 md:w-5 text-neutral-900" />
+                  <span className="text-sm md:text-base">Jaipur, India</span>
                 </div>
               </motion.div>
             </div>

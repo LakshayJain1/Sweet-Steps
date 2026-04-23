@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { Play } from "lucide-react";
 import { motion } from "framer-motion";
 import StaggerContainer, { staggerChildVariants } from "@/components/common/StaggerContainer";
@@ -41,9 +42,12 @@ export default function VideoTestimonials() {
               className="glass-card group overflow-hidden border-neutral-200/60"
             >
               <div className="relative aspect-video w-full cursor-pointer overflow-hidden">
-                <div 
-                  className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
-                  style={{ backgroundImage: `url(${video.thumbnail})` }}
+                <Image
+                  src={video.thumbnail}
+                  alt={video.title}
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  sizes="(max-width: 768px) 100vw, 50vw"
                 />
                 <div className="absolute inset-0 bg-black/20 backdrop-blur-[2px] transition-colors group-hover:bg-black/40" />
                 

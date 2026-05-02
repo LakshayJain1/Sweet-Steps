@@ -4,8 +4,8 @@ import { Inter, Playfair_Display } from "next/font/google";
 import Script from "next/script";
 import ScrollRevealProvider from "@/components/common/ScrollRevealProvider";
 
-const inter = Inter({ subsets: ["latin"], weight: "400", variable: "--font-inter" });
-const playfair = Playfair_Display({ subsets: ["latin"], weight: ["400", "700"], variable: "--font-playfair" });
+const inter = Inter({ subsets: ["latin"], weight: "400", display: "swap", variable: "--font-inter" });
+const playfair = Playfair_Display({ subsets: ["latin"], weight: ["400", "700"], display: "swap", variable: "--font-playfair" });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://sweetsteps.vercel.app"),
@@ -66,6 +66,8 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${playfair.variable} scroll-smooth`}>
       <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-9DF9S56TG5"
           strategy="afterInteractive"

@@ -103,7 +103,10 @@ const jsonLd = [
   }
 ];
 
-const VideoTestimonials = dynamic(() => import("@/components/sections/VideoTestimonials"));
+const VideoTestimonials = dynamic(() => import("@/components/sections/VideoTestimonials"), {
+  ssr: false,
+  loading: () => null,
+});
 const ChatWidget = dynamic(() => import("@/components/common/ChatWidget"), { ssr: false });
 
 export default function Home() {

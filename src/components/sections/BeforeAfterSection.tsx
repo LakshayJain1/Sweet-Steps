@@ -52,7 +52,7 @@ export default function BeforeAfterSection() {
           <div className="order-1 lg:order-2">
             <ScrollReveal delay={2} from="scale">
               <BeforeAfterSlider
-                beforeImage="/Assets/Initial.jpg" 
+                beforeImage="/Assets/Initial.webp" 
                 afterImage="/Assets/Frame_09.png"
                 beforeLabel="Initial Impression"
                 afterLabel="Final Masterpiece"

@@ -68,7 +68,7 @@ export default function Hero() {
             <div className="absolute -inset-6 rounded-[2rem] border border-neutral-200/60" />
             <div className="relative aspect-[4/5] w-full rounded-[1.5rem] overflow-hidden bg-neutral-100 shadow-glass-raised">
               <Image
-                src="/Assets/Frame_09.png"
+                src="/Assets/Frame_09.webp"
                 alt="Sweet Steps Premium 3D Impression Frame"
                 fill
                 priority

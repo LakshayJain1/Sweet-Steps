@@ -16,7 +16,7 @@ export default function ThankYouPage() {
       <StickyHeader />
       <div className="pt-32 pb-20 bg-neutral-50 min-h-[90vh] flex flex-col justify-center">
         <div className="container mx-auto px-6 text-center max-w-[800px]">
-          <ScrollReveal y={10}>
+          <ScrollReveal>
             <div className="relative inline-flex items-center justify-center p-6 bg-neutral-100 rounded-full mb-8 border border-neutral-200">
               <CheckCircle2 className="h-16 w-16 text-neutral-900" />
               <div className="absolute inset-0 animate-ping rounded-full border border-neutral-400/40"></div>

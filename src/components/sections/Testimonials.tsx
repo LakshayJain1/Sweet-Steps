@@ -1,8 +1,4 @@
-"use client";
-
 import { Star } from "lucide-react";
-import { motion } from "framer-motion";
-import StaggerContainer, { staggerChildVariants } from "@/components/common/StaggerContainer";
 import ScrollReveal from "@/components/common/ScrollReveal";
 
 const reviews = [
@@ -40,35 +36,33 @@ export default function Testimonials() {
           </div>
         </ScrollReveal>
 
-        <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-8 relative" staggerDelay={0.12}>
-          {reviews.map((review) => (
-            <motion.div
-              key={review.id}
-              variants={staggerChildVariants}
-              className="glass-card p-8 flex flex-col justify-between group bg-white/70"
-            >
-              <div>
-                <div className="flex text-neutral-900 mb-6 space-x-1">
-                  {Array.from({ length: 5 }).map((_, i) => (
-                    <Star key={i} className="h-5 w-5 fill-current" />
-                  ))}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+          {reviews.map((review, idx) => (
+            <ScrollReveal key={review.id} delay={idx + 1}>
+              <div className="glass-card p-8 flex flex-col justify-between group bg-white/70">
+                <div>
+                  <div className="flex text-neutral-900 mb-6 space-x-1">
+                    {Array.from({ length: 5 }).map((_, i) => (
+                      <Star key={i} className="h-5 w-5 fill-current" />
+                    ))}
+                  </div>
+                  <p className="text-xl text-neutral-500 leading-relaxed italic mb-10 relative">
+                    <span className="absolute -top-4 -left-2 text-4xl text-neutral-300 font-serif">"</span>
+                    {review.text}
+                  </p>
                 </div>
-                <p className="text-xl text-neutral-500 leading-relaxed italic mb-10 relative">
-                  <span className="absolute -top-4 -left-2 text-4xl text-neutral-300 font-serif">"</span>
-                  {review.text}
-                </p>
-              </div>
-              <div className="border-t border-neutral-200 pt-6">
-                <p className="font-heading font-bold text-xl text-neutral-900">{review.parent}</p>
-                <div className="text-sm text-neutral-500 mt-1 flex flex-col sm:flex-row sm:gap-2 opacity-80">
-                  <span>{review.babyAge}</span>
-                  <span className="hidden sm:inline">•</span>
-                  <span>{review.city}</span>
+                <div className="border-t border-neutral-200 pt-6">
+                  <p className="font-heading font-bold text-xl text-neutral-900">{review.parent}</p>
+                  <div className="text-sm text-neutral-500 mt-1 flex flex-col sm:flex-row sm:gap-2 opacity-80">
+                    <span>{review.babyAge}</span>
+                    <span className="hidden sm:inline">•</span>
+                    <span>{review.city}</span>
+                  </div>
                 </div>
               </div>
-            </motion.div>
+            </ScrollReveal>
           ))}
-        </StaggerContainer>
+        </div>
       </div>
     </section>
   );

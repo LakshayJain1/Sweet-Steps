@@ -26,11 +26,8 @@ export default function StickyHeader() {
   ];
 
   return (
-    <motion.header
-      initial={{ opacity: 0, y: -20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-      className={`fixed top-4 left-4 right-4 md:top-6 md:left-12 md:right-12 z-50 rounded-full will-change-[backdrop-filter] ${
+    <header
+      className={`fixed top-4 left-4 right-4 md:top-6 md:left-12 md:right-12 z-50 rounded-full will-change-[backdrop-filter] animate-slide-down ${
         isScrolled 
           ? "bg-white/50 backdrop-blur-[40px] border border-neutral-200/60 shadow-glass py-3" 
           : "bg-transparent py-4"
@@ -111,6 +108,6 @@ export default function StickyHeader() {
           )}
         </AnimatePresence>
       </div>
-    </motion.header>
+    </header>
   );
 }

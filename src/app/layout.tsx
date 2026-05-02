@@ -2,6 +2,7 @@ import "@/styles/globals.css";
 import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import Script from "next/script";
+import ScrollRevealProvider from "@/components/common/ScrollRevealProvider";
 
 const inter = Inter({ subsets: ["latin"], weight: "400", variable: "--font-inter" });
 const playfair = Playfair_Display({ subsets: ["latin"], weight: ["400", "700"], variable: "--font-playfair" });
@@ -79,6 +80,7 @@ export default function RootLayout({
         </Script>
       </head>
       <body>
+        <ScrollRevealProvider />
         <main className="min-h-screen bg-neutral-50 text-neutral-900">
           {children}
         </main>

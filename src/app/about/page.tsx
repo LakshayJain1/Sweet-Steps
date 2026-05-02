@@ -26,7 +26,7 @@ export default function AboutPage() {
           </ScrollReveal>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 items-center mb-24">
-            <ScrollReveal delay={0.1} y={20}>
+            <ScrollReveal delay={0.1}>
               <div className="relative aspect-square md:aspect-[4/5] w-full max-w-sm mx-auto">
                 <div className="absolute inset-0 rounded-full border-[3px] border-neutral-300 overflow-hidden shadow-lg p-1">
                   <div className="relative w-full h-full rounded-full overflow-hidden bg-white">

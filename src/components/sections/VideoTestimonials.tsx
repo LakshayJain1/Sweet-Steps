@@ -1,46 +1,38 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import ScrollReveal from "@/components/common/ScrollReveal";
 import { Instagram } from "lucide-react";
 
 const REELS = [
-  {
-    url: "https://www.instagram.com/reel/DR7OPtdE3zf/embed",
-    profile: "sweet_.steps__",
-  },
-  {
-    url: "https://www.instagram.com/reel/DWG_lJwAacq/embed",
-    profile: "sweet_.steps__",
-  },
+  "https://www.instagram.com/reel/DR7OPtdE3zf/",
+  "https://www.instagram.com/reel/DWG_lJwAacq/",
 ];
 
 export default function VideoTestimonials() {
-  const [loaded, setLoaded] = useState<number[]>([]);
-  const [failed, setFailed] = useState<number[]>([]);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [loaded, setLoaded] = useState(0);
 
   useEffect(() => {
-    const script = document.getElementById("ig-embed-script");
-    if (!script) {
-      const s = document.createElement("script");
-      s.id = "ig-embed-script";
-      s.src = "//www.instagram.com/embed.js";
-      s.async = true;
-      document.body.appendChild(s);
-    } else {
+    const loadEmbedScript = () => {
       if ((window as any).instgrm) {
         (window as any).instgrm.Embeds.process();
+        return;
       }
-    }
+      const script = document.createElement("script");
+      script.src = "//www.instagram.com/embed.js";
+      script.async = true;
+      script.onload = () => {
+        if ((window as any).instgrm) {
+          (window as any).instgrm.Embeds.process();
+        }
+      };
+      document.body.appendChild(script);
+    };
+
+    const timer = setTimeout(loadEmbedScript, 100);
+    return () => clearTimeout(timer);
   }, []);
-
-  const handleLoad = (idx: number) => {
-    setLoaded((prev) => [...prev, idx]);
-  };
-
-  const handleError = (idx: number) => {
-    setFailed((prev) => [...prev, idx]);
-  };
 
   return (
     <section className="section-padding bg-transparent">
@@ -55,37 +47,26 @@ export default function VideoTestimonials() {
           </div>
         </ScrollReveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 justify-items-center">
-          {REELS.map((reel, idx) => (
+        <div ref={containerRef} className="grid grid-cols-1 md:grid-cols-2 gap-10 justify-items-center">
+          {REELS.map((url, idx) => (
             <ScrollReveal key={idx}>
-              <div className="w-full max-w-[400px] rounded-card overflow-hidden shadow-glass border border-neutral-200/60 bg-white min-h-[500px] flex items-center justify-center">
-                {failed.includes(idx) ? (
-                  <a
-                    href={`https://www.instagram.com/${reel.profile}/`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex flex-col items-center justify-center p-10 text-center gap-4 text-neutral-600 hover:text-neutral-900 transition-colors"
-                  >
-                    <Instagram className="w-12 h-12 text-pink-accent" />
-                    <p className="font-medium text-lg">View on Instagram</p>
-                    <p className="text-sm text-neutral-400">
-                      Tap to see our latest reels @{reel.profile}
-                    </p>
-                  </a>
-                ) : (
-                  <iframe
-                    src={reel.url}
-                    width="100%"
-                    height="480"
-                    frameBorder="0"
-                    scrolling="no"
-                    allowFullScreen
-                    onLoad={() => handleLoad(idx)}
-                    onError={() => handleError(idx)}
-                    className="bg-white"
-                    title={`Instagram Reel ${idx + 1}`}
-                  />
-                )}
+              <div className="w-full max-w-[420px] bg-transparent">
+                <blockquote
+                  className="instagram-media"
+                  data-instgrm-permalink={`${url}?utm_source=ig_embed&utm_campaign=loading`}
+                  data-instgrm-version="14"
+                  style={{
+                    background: "#FFF",
+                    border: 0,
+                    borderRadius: "16px",
+                    boxShadow: "0 4px 24px rgba(0,0,0,0.08)",
+                    margin: "0 auto",
+                    maxWidth: "420px",
+                    minWidth: "326px",
+                    padding: 0,
+                    width: "calc(100% - 2px)",
+                  }}
+                />
               </div>
             </ScrollReveal>
           ))}

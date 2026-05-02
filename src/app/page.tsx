@@ -78,12 +78,12 @@ const jsonLd = [
     ],
     "description": "Professional 3D casting service for newborns, siblings, couples, and elders in Jaipur. 100% skin safe materials."
   },
-  {
+    {
     "@context": "https://schema.org",
     "@type": "Product",
     "name": "Custom 3D Family Impression Frames",
     "description": "Handcrafted 3D impression frames - customizable for babies, siblings, couples, and elders. Capture every tiny detail and bond.",
-    "image": "https://sweetsteps.vercel.app/Assets/Frame_01.png",
+    "image": "https://sweetsteps.vercel.app/Assets/Frame_01.webp",
     "brand": {
       "@type": "Brand",
       "name": "Sweet Steps"

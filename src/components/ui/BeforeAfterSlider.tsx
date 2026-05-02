@@ -14,12 +14,11 @@ interface BeforeAfterSliderProps {
 export default function BeforeAfterSlider({
   beforeImage,
   afterImage,
-  beforeLabel = "Then",
-  afterLabel = "Forever",
+  beforeLabel = "Before",
+  afterLabel = "After",
   caption,
 }: BeforeAfterSliderProps) {
   const [sliderPosition, setSliderPosition] = useState(50);
-  const [isResizing, setIsResizing] = useState(false);
   const [isDragging, setIsDragging] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -31,78 +30,83 @@ export default function BeforeAfterSlider({
   };
 
   const onMouseMove = (e: MouseEvent) => {
-    if (isResizing) handleCursorMove(e.clientX);
+    if (isDragging) handleCursorMove(e.clientX);
   };
 
   const onTouchMove = (e: TouchEvent) => {
-    if (isResizing) handleCursorMove(e.touches[0].clientX);
+    if (isDragging) handleCursorMove(e.touches[0].clientX);
   };
 
   useEffect(() => {
-    const handleMouseUp = () => { setIsResizing(false); setIsDragging(false); };
-    window.addEventListener("mouseup", handleMouseUp);
-    window.addEventListener("touchend", handleMouseUp);
+    const handleEnd = () => setIsDragging(false);
+    window.addEventListener("mouseup", handleEnd);
+    window.addEventListener("touchend", handleEnd);
     return () => {
-      window.removeEventListener("mouseup", handleMouseUp);
-      window.removeEventListener("touchend", handleMouseUp);
+      window.removeEventListener("mouseup", handleEnd);
+      window.removeEventListener("touchend", handleEnd);
     };
   }, []);
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-4">
       <div
         ref={containerRef}
         className="relative aspect-[4/3] w-full overflow-hidden rounded-card glass-panel border-neutral-200/40 select-none shadow-glass-raised"
         style={{ cursor: isDragging ? "grabbing" : "ew-resize" }}
         onMouseMove={onMouseMove}
         onTouchMove={onTouchMove}
-        onMouseDown={() => { setIsResizing(true); setIsDragging(true); }}
-        onTouchStart={() => { setIsResizing(true); setIsDragging(true); }}
+        onMouseDown={() => setIsDragging(true)}
+        onTouchStart={() => setIsDragging(true)}
       >
-        {/* After Image (Background) */}
+        {/* After Image (Full Background) */}
         <div className="absolute inset-0">
           <Image
             src={afterImage}
-            alt="After"
+            alt="After - Final impression frame"
             fill
             className="object-cover"
             draggable={false}
+            priority
           />
-          <div className="absolute bottom-6 right-6 px-4 py-2 bg-white/50 backdrop-blur-md rounded-full border border-neutral-200/60 text-neutral-900 font-medium text-sm">
-            {afterLabel}
-          </div>
         </div>
 
-        {/* Before Image (Foreground Clipped) */}
+        {/* Before Image (Clipped with clip-path) */}
         <div
-          className="absolute inset-0 overflow-hidden"
-          style={{ width: `${sliderPosition}%` }}
+          className="absolute inset-0 z-10"
+          style={{
+            clipPath: `inset(0 ${100 - sliderPosition}% 0 0)`,
+          }}
         >
-          <div className="absolute inset-0" style={{ width: containerRef.current?.offsetWidth }}>
-            <Image
-              src={beforeImage}
-              alt="Before"
-              fill
-              className="object-cover"
-              draggable={false}
-            />
-          </div>
-          <div className="absolute bottom-6 left-6 px-4 py-2 bg-white/50 backdrop-blur-md rounded-full border border-neutral-200/60 text-neutral-900 font-medium text-sm">
-            {beforeLabel}
-          </div>
+          <Image
+            src={beforeImage}
+            alt="Before - Initial impression"
+            fill
+            className="object-cover"
+            draggable={false}
+            priority
+          />
+        </div>
+
+        {/* Labels */}
+        <div className="absolute top-4 left-4 px-3 py-1.5 bg-white/70 backdrop-blur-sm rounded-full text-neutral-900 font-medium text-xs z-20 pointer-events-none">
+          {beforeLabel}
+        </div>
+        <div className="absolute top-4 right-4 px-3 py-1.5 bg-white/70 backdrop-blur-sm rounded-full text-neutral-900 font-medium text-xs z-20 pointer-events-none">
+          {afterLabel}
         </div>
 
         {/* Slider Handle */}
         <div
-          className="absolute inset-y-0 z-10 pointer-events-none"
+          className="absolute inset-y-0 z-30 pointer-events-none"
           style={{ left: `${sliderPosition}%` }}
         >
-          {/* Vertical line */}
-          <div className="absolute inset-y-0 left-0 w-[2px] bg-white/80 shadow-[0_0_8px_rgba(0,0,0,0.2)]" />
-          {/* Handle circle */}
+          <div className="absolute inset-y-0 left-0 w-0.5 bg-white/90 shadow-[0_0_8px_rgba(0,0,0,0.3)]" />
           <div
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-white rounded-full shadow-glass-elevated flex items-center justify-center border border-neutral-200"
-            style={{ boxShadow: isDragging ? "0 0 0 4px rgba(23,23,23,0.08), 0 8px 24px rgba(0,0,0,0.15)" : "" }}
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-11 h-11 bg-white rounded-full flex items-center justify-center shadow-lg border border-neutral-200"
+            style={{
+              transform: `translate(-50%,-50%) scale(${isDragging ? 1.1 : 1})`,
+              transition: "transform 150ms ease",
+            }}
           >
             <div className="flex gap-1.5">
               <div className="w-0.5 h-4 bg-neutral-400 rounded-full" />
@@ -113,7 +117,7 @@ export default function BeforeAfterSlider({
       </div>
       
       {caption && (
-        <p className="text-center text-neutral-500 italic text-lg lg:text-xl px-4">
+        <p className="text-center text-neutral-500 italic text-sm lg:text-base px-4">
           {caption}
         </p>
       )}

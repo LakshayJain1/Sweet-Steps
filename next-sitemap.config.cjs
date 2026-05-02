@@ -1,7 +1,8 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: 'https://sweetsteps.vercel.app', // Using the specified Vercel deployment URL
-  generateRobotsTxt: true, // Auto-generate robots.txt along with sitemap
+  siteUrl: 'https://sweetsteps.vercel.app',
+  generateIndexSitemap: false, // Output a single sitemap.xml, not a sitemap index
+  generateRobotsTxt: true,
   robotsTxtOptions: {
     policies: [
       {

@@ -68,6 +68,8 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://www.instagram.com" />
+        <link rel="preconnect" href="https://static.cdninstagram.com" />
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-9DF9S56TG5"
           strategy="afterInteractive"

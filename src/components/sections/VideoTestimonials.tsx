@@ -14,13 +14,15 @@ export default function VideoTestimonials() {
   const [loaded, setLoaded] = useState(0);
 
   useEffect(() => {
+    // Lazy-load Instagram embed script when the section enters the viewport
+    let observer: IntersectionObserver | null = null;
     const loadEmbedScript = () => {
       if ((window as any).instgrm) {
         (window as any).instgrm.Embeds.process();
         return;
       }
       const script = document.createElement("script");
-      script.src = "//www.instagram.com/embed.js";
+      script.src = "https://www.instagram.com/embed.js";
       script.async = true;
       script.onload = () => {
         if ((window as any).instgrm) {
@@ -30,8 +32,23 @@ export default function VideoTestimonials() {
       document.body.appendChild(script);
     };
 
-    const timer = setTimeout(loadEmbedScript, 100);
-    return () => clearTimeout(timer);
+    if (typeof IntersectionObserver !== "undefined" && containerRef.current) {
+      observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            loadEmbedScript();
+            if (observer) observer.disconnect();
+          }
+        });
+      }, { rootMargin: "200px" });
+      observer.observe(containerRef.current);
+    } else {
+      // Fallback for browsers without IntersectionObserver
+      loadEmbedScript();
+    }
+    return () => {
+      if (observer) observer.disconnect();
+    };
   }, []);
 
   return (

@@ -1,56 +1,14 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
 import ScrollReveal from "@/components/common/ScrollReveal";
 import { Instagram } from "lucide-react";
 
 const REELS = [
-  "https://www.instagram.com/reel/DR7OPtdE3zf/",
-  "https://www.instagram.com/reel/DWG_lJwAacq/",
+  { url: "https://www.instagram.com/reel/DR7OPtdE3zf/", embedId: "DR7OPtdE3zf" },
+  { url: "https://www.instagram.com/reel/DWG_lJwAacq/", embedId: "DWG_lJwAacq" },
 ];
 
 export default function VideoTestimonials() {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const [loaded, setLoaded] = useState(0);
-
-  useEffect(() => {
-    // Lazy-load Instagram embed script when the section enters the viewport
-    let observer: IntersectionObserver | null = null;
-    const loadEmbedScript = () => {
-      if ((window as any).instgrm) {
-        (window as any).instgrm.Embeds.process();
-        return;
-      }
-      const script = document.createElement("script");
-      script.src = "https://www.instagram.com/embed.js";
-      script.async = true;
-      script.onload = () => {
-        if ((window as any).instgrm) {
-          (window as any).instgrm.Embeds.process();
-        }
-      };
-      document.body.appendChild(script);
-    };
-
-    if (typeof IntersectionObserver !== "undefined" && containerRef.current) {
-      observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            loadEmbedScript();
-            if (observer) observer.disconnect();
-          }
-        });
-      }, { rootMargin: "200px" });
-      observer.observe(containerRef.current);
-    } else {
-      // Fallback for browsers without IntersectionObserver
-      loadEmbedScript();
-    }
-    return () => {
-      if (observer) observer.disconnect();
-    };
-  }, []);
-
   return (
     <section className="section-padding bg-transparent">
       <div className="container mx-auto max-w-[1200px] px-6">
@@ -64,24 +22,30 @@ export default function VideoTestimonials() {
           </div>
         </ScrollReveal>
 
-        <div ref={containerRef} className="grid grid-cols-1 md:grid-cols-2 gap-10 justify-items-center">
-          {REELS.map((url, idx) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 justify-items-center">
+          {REELS.map((reel, idx) => (
             <ScrollReveal key={idx}>
-              <div className="w-full max-w-[420px] bg-transparent">
-                <blockquote
-                  className="instagram-media"
-                  data-instgrm-permalink={`${url}?utm_source=ig_embed&utm_campaign=loading`}
-                  data-instgrm-version="14"
+              <div className="w-full max-w-[420px]">
+                <iframe
+                  src={`https://www.instagram.com/reel/${reel.embedId}/embed/`}
+                  width="420"
+                  height="740"
+                  frameBorder="0"
+                  scrolling="no"
+                  allowTransparency={true}
+                  allow="encrypted-media"
+                  loading="lazy"
+                  title={`Sweet Steps client reel ${idx + 1}`}
                   style={{
-                    background: "#FFF",
-                    border: 0,
-                    borderRadius: "16px",
-                    boxShadow: "0 4px 24px rgba(0,0,0,0.08)",
-                    margin: "0 auto",
+                    width: "100%",
                     maxWidth: "420px",
                     minWidth: "326px",
-                    padding: 0,
-                    width: "calc(100% - 2px)",
+                    height: "740px",
+                    border: "none",
+                    borderRadius: "16px",
+                    overflow: "hidden",
+                    boxShadow: "0 4px 24px rgba(0,0,0,0.08)",
+                    display: "block",
                   }}
                 />
               </div>

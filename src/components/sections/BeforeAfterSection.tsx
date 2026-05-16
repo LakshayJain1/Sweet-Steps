@@ -29,7 +29,7 @@ export default function BeforeAfterSection() {
                     ✨
                   </div>
                   <div>
-                    <h4 className="font-bold text-xl mb-1 text-neutral-900">Unmatched Detail</h4>
+                    <h3 className="font-bold text-xl mb-1 text-neutral-900">Unmatched Detail</h3>
                     <p className="text-neutral-500">Captures fingerprints and skin texture with 100% accuracy for all ages.</p>
                   </div>
                 </div>
@@ -41,7 +41,7 @@ export default function BeforeAfterSection() {
                     🏠
                   </div>
                   <div>
-                    <h4 className="font-bold text-xl mb-1 text-neutral-900">Home Comfort</h4>
+                    <h3 className="font-bold text-xl mb-1 text-neutral-900">Home Comfort</h3>
                     <p className="text-neutral-500">We visit you, ensuring a comfortable experience in your own environment.</p>
                   </div>
                 </div>
@@ -53,7 +53,7 @@ export default function BeforeAfterSection() {
             <ScrollReveal delay={2} from="scale">
               <BeforeAfterSlider
                 beforeImage="/Assets/Initial-optimized.webp" 
-                afterImage="/Assets/Frame_09.png"
+                afterImage="/Assets/Frame_09.webp"
                 beforeLabel="Initial Impression"
                 afterLabel="Final Masterpiece"
                 caption="Slide to see how we transform a fleeting moment into a lasting masterpiece."

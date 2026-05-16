@@ -16,7 +16,7 @@ export default function Hero() {
           {/* Left — Text Content */}
           <div className="space-y-8">
             <div className="scroll-reveal" data-delay="1">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-neutral-100 border border-neutral-200 text-neutral-500 text-sm font-medium">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-neutral-100 border border-neutral-200 text-neutral-700 text-sm font-medium">
                 <MapPin className="h-3.5 w-3.5" />
                 Jaipur, India
               </div>
@@ -31,7 +31,7 @@ export default function Hero() {
             </div>
 
             <div className="scroll-reveal" data-delay="2">
-              <p className="text-lg md:text-xl text-neutral-500 font-medium leading-relaxed max-w-lg">
+              <p className="text-lg md:text-xl text-neutral-700 font-medium leading-relaxed max-w-lg">
                 Premium 3D impression frames for families, siblings, couples, and elders.
                 Preserve your most cherished relationships with timeless art.
               </p>

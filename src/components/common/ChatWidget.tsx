@@ -77,7 +77,7 @@ export default function ChatWidget() {
               >
                 <div className="flex items-center gap-3">
                   <div className="relative h-12 w-12 rounded-full overflow-hidden border-2 border-neutral-200 shadow-sm shrink-0">
-                    <Image src="/founder.png" alt="Founder" fill className="object-cover" />
+                    <Image src="/founder.webp" alt="Founder" fill className="object-cover" />
                   </div>
                   <div>
                     <p className="text-sm font-bold text-neutral-900">Message Founder</p>

@@ -2,11 +2,11 @@ import dynamic from "next/dynamic";
 import Hero from "@/components/sections/Hero";
 import StickyHeader from "@/components/layout/StickyHeader";
 
-const HowItWorks = dynamic(() => import("@/components/sections/HowItWorks"));
-const BeforeAfterSection = dynamic(() => import("@/components/sections/BeforeAfterSection"));
-const ProductGrid = dynamic(() => import("@/components/sections/ProductGrid"));
-const Testimonials = dynamic(() => import("@/components/sections/Testimonials"));
-const Footer = dynamic(() => import("@/components/layout/Footer"));
+import HowItWorks from "@/components/sections/HowItWorks";
+import BeforeAfterSection from "@/components/sections/BeforeAfterSection";
+import ProductGrid from "@/components/sections/ProductGrid";
+import Testimonials from "@/components/sections/Testimonials";
+import Footer from "@/components/layout/Footer";
 const ExitPopup = dynamic(() => import("@/components/common/ExitPopup"), { ssr: false });
 
 import { Metadata } from "next";

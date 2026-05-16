@@ -63,7 +63,8 @@ export default function GalleryView({ images, designs }: GalleryViewProps) {
                     width={500}
                     height={700}
                     className="w-full h-auto object-cover group-hover:scale-110 transition-transform duration-700"
-                    loading={i < 6 ? "eager" : "lazy"}
+                    priority={i < 4}
+                    loading={i < 4 ? undefined : "lazy"}
                   />
                   
                   {/* Hover Overlay */}
@@ -168,7 +169,7 @@ export default function GalleryView({ images, designs }: GalleryViewProps) {
                         <Ruler className="h-5 w-5 text-neutral-900" />
                       </div>
                       <div>
-                        <h4 className="font-bold text-neutral-900 text-sm">Frame Detail</h4>
+                        <h3 className="font-bold text-neutral-900 text-sm">Frame Detail</h3>
                         <p className="text-neutral-500 text-xs leading-relaxed">{selectedDesign.details.frameTexture}</p>
                       </div>
                     </div>
@@ -177,14 +178,14 @@ export default function GalleryView({ images, designs }: GalleryViewProps) {
                         <Star className="h-5 w-5 text-neutral-900" />
                       </div>
                       <div>
-                        <h4 className="font-bold text-neutral-900 text-sm">Quality</h4>
+                        <h3 className="font-bold text-neutral-900 text-sm">Quality</h3>
                         <p className="text-neutral-500 text-xs leading-relaxed">{selectedDesign.details.quality}</p>
                       </div>
                     </div>
                   </div>
 
                   <div className="space-y-4">
-                    <h4 className="text-sm font-bold text-neutral-900 uppercase tracking-wider">Customizations</h4>
+                    <h3 className="text-sm font-bold text-neutral-900 uppercase tracking-wider">Customizations</h3>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                       {selectedDesign.details.customizations.map((item, i) => (
                         <div key={i} className="flex items-center gap-2 py-2 px-3 bg-neutral-50 rounded-lg">

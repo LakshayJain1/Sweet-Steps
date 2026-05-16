@@ -31,7 +31,7 @@ export default function AboutPage() {
                 <div className="absolute inset-0 rounded-full border-[3px] border-neutral-300 overflow-hidden shadow-lg p-1">
                   <div className="relative w-full h-full rounded-full overflow-hidden bg-white">
                     <Image 
-                      src="/founder.png" 
+                      src="/founder.webp" 
                       alt="Founder of Sweet Steps"
                       fill
                       className="object-cover"
@@ -75,8 +75,8 @@ export default function AboutPage() {
                       <div className="w-16 h-16 bg-white rounded-full mx-auto flex items-center justify-center text-3xl shadow-glass-soft border border-neutral-200">
                         {item.icon}
                       </div>
-                      <h4 className="font-bold text-xl text-neutral-900">{item.title}</h4>
-                      <p className="text-neutral-500">{item.desc}</p>
+                      <h3 className="font-bold text-xl text-neutral-900">{item.title}</h3>
+                      <p className="text-neutral-600">{item.desc}</p>
                     </div>
                   </ScrollReveal>
                 ))}

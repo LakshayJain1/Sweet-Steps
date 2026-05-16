@@ -10,17 +10,17 @@ export default function Footer() {
           <ScrollReveal className="col-span-1 md:col-span-1">
             <div className="space-y-6">
               <h2 className="text-2xl md:text-3xl font-heading font-bold text-neutral-900">Sweet Steps</h2>
-              <p className="text-neutral-500 prose">
+              <p className="text-neutral-600 prose">
                 Capture the tiny moments that grow up too fast. Handcrafted 3D impression frames of your baby's hands and feet, delivered to your doorstep.
               </p>
               <div className="flex items-center space-x-4">
-                <Link href="https://instagram.com/sweet_.steps__" target="_blank" rel="noopener noreferrer" className="h-10 w-10 flex items-center justify-center rounded-full bg-white hover:bg-neutral-900 hover:text-white transition-colors text-neutral-700 shadow-glass-soft border border-neutral-200">
+                <Link href="https://instagram.com/sweet_.steps__" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="h-10 w-10 flex items-center justify-center rounded-full bg-white hover:bg-neutral-900 hover:text-white transition-colors shadow-glass-soft border border-neutral-200">
                   <Instagram size={20} />
                 </Link>
-                <Link href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="h-10 w-10 flex items-center justify-center rounded-full bg-white hover:bg-neutral-900 hover:text-white transition-colors text-neutral-700 shadow-glass-soft border border-neutral-200">
+                <Link href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="h-10 w-10 flex items-center justify-center rounded-full bg-white hover:bg-neutral-900 hover:text-white transition-colors text-neutral-700 shadow-glass-soft border border-neutral-200">
                   <Facebook size={20} />
                 </Link>
-                <Link href="https://wa.me/918302419714" target="_blank" rel="noopener noreferrer" className="h-10 w-10 flex items-center justify-center rounded-full bg-white hover:bg-[#25D366] hover:text-white transition-colors text-neutral-700 shadow-glass-soft border border-neutral-200">
+                <Link href="https://wa.me/918302419714" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="h-10 w-10 flex items-center justify-center rounded-full bg-white hover:bg-[#25D366] hover:text-white transition-colors text-neutral-700 shadow-glass-soft border border-neutral-200">
                   <MessageCircle size={20} />
                 </Link>
               </div>

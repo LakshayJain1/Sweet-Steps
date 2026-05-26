@@ -19,7 +19,7 @@ export default function ProductGrid() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16">
           {products.map((product, idx) => (
-            <ScrollReveal key={product.slug} delay={idx + 1}>
+            <ScrollReveal key={product.slug} delay={idx * 0.1}>
               <div className="glass-card group flex flex-col h-full border-neutral-200/60">
                 <div className="relative aspect-[4/3] w-full overflow-hidden">
                   <Image
@@ -58,7 +58,7 @@ export default function ProductGrid() {
           ))}
         </div>
         
-        <ScrollReveal delay={2}>
+        <ScrollReveal delay={0.15}>
           <div className="mt-16 text-center">
             <Link href="/gallery" className="btn-primary">
               See all styles &amp; customizations

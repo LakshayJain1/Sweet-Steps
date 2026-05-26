@@ -27,7 +27,7 @@ export default function Footer() {
             </div>
           </ScrollReveal>
           
-          <ScrollReveal delay={2}>
+          <ScrollReveal delay={0.1}>
             <div className="space-y-6">
               <h3 className="text-xl font-bold font-heading text-neutral-900">Quick Links</h3>
               <ul className="space-y-4 text-neutral-500">
@@ -39,7 +39,7 @@ export default function Footer() {
             </div>
           </ScrollReveal>
 
-          <ScrollReveal delay={3}>
+          <ScrollReveal delay={0.2}>
             <div className="space-y-6">
               <h3 className="text-xl font-bold font-heading text-neutral-900">Contact Us</h3>
               <div className="space-y-3 text-neutral-500 text-sm">

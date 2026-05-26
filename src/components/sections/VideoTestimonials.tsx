@@ -29,7 +29,7 @@ export default function VideoTestimonials() {
                 <iframe
                   src={`https://www.instagram.com/reel/${reel.embedId}/embed/`}
                   width="420"
-                  height="740"
+                  height="580"
                   frameBorder="0"
                   scrolling="no"
                   allowTransparency={true}
@@ -40,7 +40,7 @@ export default function VideoTestimonials() {
                     width: "100%",
                     maxWidth: "420px",
                     minWidth: "326px",
-                    height: "740px",
+                    height: "580px",
                     border: "none",
                     borderRadius: "16px",
                     overflow: "hidden",

@@ -38,7 +38,7 @@ export default function Testimonials() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
           {reviews.map((review, idx) => (
-            <ScrollReveal key={review.id} delay={idx + 1}>
+            <ScrollReveal key={review.id} delay={idx * 0.1}>
               <div className="glass-card p-8 flex flex-col justify-between group bg-white/70">
                 <div>
                   <div className="flex text-neutral-900 mb-6 space-x-1">

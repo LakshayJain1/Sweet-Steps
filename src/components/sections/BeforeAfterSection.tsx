@@ -9,12 +9,12 @@ export default function BeforeAfterSection() {
       <div className="container mx-auto max-w-[1200px] px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="space-y-8 order-2 lg:order-1">
-            <ScrollReveal delay={1}>
+            <ScrollReveal delay={0.05}>
               <h2 className="text-4xl md:text-5xl leading-tight">
                 From <span className="text-neutral-400 italic">intimate details</span> to timeless treasures.
               </h2>
             </ScrollReveal>
-            <ScrollReveal delay={2}>
+            <ScrollReveal delay={0.1}>
               <p className="text-xl text-neutral-500 leading-relaxed max-w-lg">
                 Photos capture the look, but our 3D impressions capture the feeling. 
                 The exact scale, every unique line, and the preciousness of your most 
@@ -23,7 +23,7 @@ export default function BeforeAfterSection() {
             </ScrollReveal>
             
             <div className="space-y-6 pt-4">
-              <ScrollReveal delay={3}>
+              <ScrollReveal delay={0.2}>
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 rounded-full bg-neutral-100 flex items-center justify-center text-neutral-700 shrink-0">
                     ✨
@@ -35,7 +35,7 @@ export default function BeforeAfterSection() {
                 </div>
               </ScrollReveal>
               
-              <ScrollReveal delay={4}>
+              <ScrollReveal delay={0.3}>
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 rounded-full bg-neutral-100 flex items-center justify-center text-neutral-700 shrink-0">
                     🏠
@@ -50,7 +50,7 @@ export default function BeforeAfterSection() {
           </div>
 
           <div className="order-1 lg:order-2">
-            <ScrollReveal delay={2} from="scale">
+            <ScrollReveal delay={0.15} from="scale">
               <BeforeAfterSlider
                 beforeImage="/Assets/Initial-optimized.webp" 
                 afterImage="/Assets/Frame_09.webp"

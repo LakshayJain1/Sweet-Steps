@@ -2,6 +2,7 @@ import "@/styles/globals.css";
 import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import Script from "next/script";
+import { Analytics } from "@vercel/analytics/next";
 import ScrollRevealProvider from "@/components/common/ScrollRevealProvider";
 
 const inter = Inter({ subsets: ["latin"], weight: "400", display: "swap", variable: "--font-inter" });
@@ -88,6 +89,7 @@ export default function RootLayout({
         <main className="min-h-screen bg-neutral-50 text-neutral-900">
           {children}
         </main>
+        <Analytics />
       </body>
     </html>
   );

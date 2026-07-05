@@ -34,6 +34,7 @@ export default function AboutPage() {
                       src="/founder.webp"
                       alt="Founder of Sweet Steps"
                       fill
+                      sizes="(max-width: 768px) 100vw, 384px"
                       className="object-cover"
                     />
                   </div>

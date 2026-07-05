@@ -38,7 +38,7 @@ export default function StickyHeader() {
         <div className="flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2 md:gap-3 z-50">
             <div className="relative h-8 w-8 md:h-10 md:w-10 overflow-hidden rounded-full">
-              <Image src="/logo.webp" alt="Sweet Steps Logo" fill className="object-cover" />
+              <Image src="/logo.webp" alt="Sweet Steps Logo" fill sizes="40px" className="object-cover" />
             </div>
             <span className="font-heading text-lg md:text-2xl font-bold text-neutral-900 hidden xs:block">Sweet Steps</span>
           </Link>

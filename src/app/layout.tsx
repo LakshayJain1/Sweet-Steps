@@ -71,11 +71,12 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://www.instagram.com" />
         <link rel="preconnect" href="https://static.cdninstagram.com" />
+        <link rel="preload" as="image" href="/Assets/Frame_09.webp" imageSrcSet="/Assets/Frame_09.webp 1024w" imageSizes="50vw" />
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-9DF9S56TG5"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
-        <Script id="google-analytics" strategy="afterInteractive">
+        <Script id="google-analytics" strategy="lazyOnload">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}

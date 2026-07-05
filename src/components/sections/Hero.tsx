@@ -26,7 +26,7 @@ export default function Hero() {
             <ScrollReveal delay={0.1}>
               <h1 className="leading-tight text-neutral-900">
                 Capture the{" "}
-                <span className="text-neutral-400 italic">precious bonds</span>{" "}
+                <span className="text-neutral-600 italic">precious bonds</span>{" "}
                 that last a lifetime.
               </h1>
             </ScrollReveal>
@@ -74,6 +74,7 @@ export default function Hero() {
                   alt="Sweet Steps Premium 3D Impression Frame"
                   fill
                   priority
+                  sizes="(max-width: 1024px) 0px, 50vw"
                   className="object-cover object-center"
                 />
                 <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-neutral-50/60 to-transparent" />

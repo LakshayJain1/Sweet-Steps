@@ -64,6 +64,7 @@ export default function BeforeAfterSlider({
             src={afterImage}
             alt="After - Final impression frame"
             fill
+            sizes="100vw"
             className="object-cover"
             draggable={false}
             priority
@@ -81,6 +82,7 @@ export default function BeforeAfterSlider({
             src={beforeImage}
             alt="Before - Initial impression"
             fill
+            sizes="100vw"
             className="object-cover"
             draggable={false}
             priority

@@ -30,7 +30,7 @@ export default function Footer() {
           <ScrollReveal delay={0.1}>
             <div className="space-y-6">
               <h3 className="text-xl font-bold font-heading text-neutral-900">Quick Links</h3>
-              <ul className="space-y-4 text-neutral-500">
+              <ul className="space-y-4 text-neutral-600">
                 <li><Link href="/book" className="hover:text-neutral-900 transition-colors">Book a Session</Link></li>
                 <li><Link href="/gallery" className="hover:text-neutral-900 transition-colors">Our Designs</Link></li>
                 <li><Link href="/gallery" className="hover:text-neutral-900 transition-colors">Gallery</Link></li>
@@ -42,10 +42,10 @@ export default function Footer() {
           <ScrollReveal delay={0.2}>
             <div className="space-y-6">
               <h3 className="text-xl font-bold font-heading text-neutral-900">Contact Us</h3>
-              <div className="space-y-3 text-neutral-500 text-sm">
+              <div className="space-y-3 text-neutral-600 text-sm">
                 <p>Sweet Steps Impressions</p>
                 <p>Jaipur, Rajasthan 302017</p>
-                <p className="text-neutral-400 text-xs font-medium uppercase tracking-widest">
+                <p className="text-neutral-500 text-xs font-medium uppercase tracking-widest">
                   Serving all of Jaipur ✨
                 </p>
               </div>
@@ -54,7 +54,7 @@ export default function Footer() {
         </div>
         
         <div className="pt-8 border-t border-neutral-200 text-center flex flex-col items-center justify-center space-y-2">
-            <p className="text-neutral-500 text-xs pt-2">
+            <p className="text-neutral-600 text-xs pt-2">
               © {new Date().getFullYear()} Sweet Steps • Handcrafted with love
             </p>
         </div>

@@ -15,12 +15,12 @@ export default function AboutPage() {
       <StickyHeader />
       <div className="pt-32 pb-20 bg-neutral-50 min-h-screen">
         <div className="container mx-auto px-6 max-w-[1000px]">
-          
+
           <ScrollReveal>
             <div className="text-center mb-16">
               <h1 className="mb-6 text-neutral-900">Our Story</h1>
               <p className="text-xl text-neutral-500 prose mx-auto">
-                We believe some moments are too precious to exist only in photos. 
+                We believe some moments are too precious to exist only in photos.
               </p>
             </div>
           </ScrollReveal>
@@ -30,8 +30,8 @@ export default function AboutPage() {
               <div className="relative aspect-square md:aspect-[4/5] w-full max-w-sm mx-auto">
                 <div className="absolute inset-0 rounded-full border-[3px] border-neutral-300 overflow-hidden shadow-lg p-1">
                   <div className="relative w-full h-full rounded-full overflow-hidden bg-white">
-                    <Image 
-                      src="/founder.webp" 
+                    <Image
+                      src="/founder.webp"
                       alt="Founder of Sweet Steps"
                       fill
                       className="object-cover"
@@ -47,13 +47,13 @@ export default function AboutPage() {
               </ScrollReveal>
               <ScrollReveal delay={0.25}>
                 <p className="text-lg text-neutral-500 leading-relaxed">
-                  Sweet Steps started with a simple realization: the most meaningful moments in life—from a newborn's first tiny grasp to a couple's wedding bond or a grandparent's blessing—are the ones that pass us by the fastest. 
+                  Sweet Steps started with a simple realization: the most meaningful moments in life, from a newborn's first tiny grasp to a couple's wedding bond or a grandparent's blessing, are the ones that pass us by the fastest.
                   I wanted to give families in Jaipur a way to freeze these connections into something tangible.
                 </p>
               </ScrollReveal>
               <ScrollReveal delay={0.35}>
                 <p className="text-lg text-neutral-500 leading-relaxed">
-                  Using 100% skin-safe, non-toxic molding materials, we capture the deepest, 
+                  Using 100% skin-safe, non-toxic molding materials, we capture the deepest,
                   most intricate details of life's precious moments, casting them into timeless 3D art for babies, siblings, couples, and elders.
                 </p>
               </ScrollReveal>

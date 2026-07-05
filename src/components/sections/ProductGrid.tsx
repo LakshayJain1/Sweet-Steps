@@ -4,7 +4,16 @@ import { ArrowRight, MessageCircle } from "lucide-react";
 import ScrollReveal from "@/components/common/ScrollReveal";
 import { products } from "@/data/products";
 
+const featuredSlugs = [
+  "grandmothers-blessing-frame",
+  "baby-silver-quad-impression",
+  "family-casting-frame",
+  "classic-siblings-quad-dual",
+];
+
 export default function ProductGrid() {
+  const featured = products.filter(p => featuredSlugs.includes(p.slug));
+
   return (
     <section className="bg-transparent section-padding">
       <div className="container mx-auto max-w-[1200px] px-4 md:px-6">
@@ -18,7 +27,7 @@ export default function ProductGrid() {
         </ScrollReveal>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16">
-          {products.map((product, idx) => (
+          {featured.map((product, idx) => (
             <ScrollReveal key={product.slug} delay={idx * 0.1}>
               <div className="glass-card group flex flex-col h-full border-neutral-200/60">
                 <div className="relative aspect-[4/3] w-full overflow-hidden">

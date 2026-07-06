@@ -67,6 +67,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${playfair.variable} scroll-smooth`}>
       <head>
+        <meta name="google-site-verification" content="evSHeP88q1nZr80cWHM5iqaF9j22jMffWOKa-fl1tVc" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://www.instagram.com" />

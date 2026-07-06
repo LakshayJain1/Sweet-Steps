@@ -1,73 +1,79 @@
-# Welcome to your Lovable project
+# Sweet Steps - 3D Baby Casting Jaipur
 
-## Project info
+A premium 3D baby hand and foot casting service website built with Next.js. Capture precious bonds that last a lifetime with Jaipur's favorite 3D impression service for babies, siblings, couples, and elders.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+**Live Site:** [sweetsteps.vercel.app](https://sweetsteps.vercel.app)
 
-## How can I edit this code?
+---
 
-There are several ways of editing your application.
+## Features
 
-**Use Lovable**
+- **Product Showcase** - 17 unique casting frame designs with 3D previews
+- **Booking System** - Real-time appointment booking with Notion integration
+- **Gallery** - Masonry layout with product detail modals
+- **Loyalty Program** - Rewards and referral system
+- **WhatsApp Chat** - Integrated chat widget with mini FAQ
+- **SEO Optimized** - Structured data, sitemap, Open Graph tags
+- **Analytics** - Google Analytics integration
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+## Tech Stack
 
-Changes made via Lovable will be committed automatically to this repo.
+| Technology | Purpose |
+|------------|---------|
+| Next.js 14 | App Router, Server Components |
+| TypeScript | Type safety |
+| Tailwind CSS | Styling, design tokens |
+| Framer Motion | Animations |
+| EmailJS | Booking form emails |
+| Vercel | Hosting & deployment |
 
-**Use your preferred IDE**
+## Getting Started
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+```bash
+# Clone the repository
+git clone https://github.com/LakshayJain1/Sweet-Steps.git
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+# Install dependencies
+npm install
 
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+## Project Structure
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+```
+sweetsteps/
+├── src/
+│   ├── app/          # Pages (home, about, book, faq, gallery, rewards)
+│   ├── components/   # Reusable UI components
+│   ├── data/         # Product data and configurations
+│   ├── lib/          # Utility functions
+│   └── styles/       # Global styles and animations
+├── public/           # Static assets and images
+└── api/              # Vercel serverless functions
+```
 
-**Use GitHub Codespaces**
+## Environment Variables
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+```env
+# EmailJS
+NEXT_PUBLIC_EMAILJS_SERVICE_ID=your_service_id
+NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=your_template_id
+NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=your_public_key
 
-## What technologies are used for this project?
+# Analytics
+NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX
+```
 
-This project is built with:
+## Contributing
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-## How can I deploy this project?
+## License
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+This project is proprietary. All rights reserved.
 
-## Can I connect a custom domain to my Lovable project?
+---
 
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+**Built with passion for preserving precious memories**

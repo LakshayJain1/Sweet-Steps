@@ -29,4 +29,9 @@ dist-ssr
 # Next.js
 /.next/
 /out/
-build
+build
+
+# Lighthouse reports
+.lighthouseci/
+lighthouse-*.report.html
+lighthouse-*.report.json

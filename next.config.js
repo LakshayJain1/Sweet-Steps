@@ -6,6 +6,19 @@ const nextConfig = {
     deviceSizes: [640, 750, 828, 1080],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
   },
+  async headers() {
+    return [
+      {
+        source: '/thank-you',
+        headers: [
+          {
+            key: 'X-Robots-Tag',
+            value: 'noindex, nofollow',
+          },
+        ],
+      },
+    ];
+  },
   async redirects() {
     return [
       {

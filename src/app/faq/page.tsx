@@ -66,6 +66,7 @@ export default function FAQPage() {
       />
       <title>FAQs | Sweet Steps Impressions</title>
       <meta name="description" content="Common questions about skin-safe 3D hand and feet castings in Jaipur." />
+      <meta name="keywords" content="baby casting FAQ Jaipur, is 3D casting safe for newborns, how long does hand casting take, at home casting process Jaipur, best age for baby hand impression, casting frame delivery time Jaipur, casting frame customization options, baby casting movement during process" />
       
       <StickyHeader />
       <div className="pt-32 pb-24 bg-neutral-50 min-h-screen">

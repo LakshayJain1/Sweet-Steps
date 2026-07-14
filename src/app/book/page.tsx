@@ -8,6 +8,16 @@ import ScrollReveal from "@/components/common/ScrollReveal";
 export const metadata: Metadata = {
   title: "Book a Session | Sweet Steps Jaipur",
   description: "Schedule your at-home baby 3D casting session in Jaipur today. Fill out our simple booking form.",
+  keywords: [
+    "book baby casting session Jaipur",
+    "schedule 3D hand impression Jaipur",
+    "book at home casting Jaipur",
+    "baby casting appointment Jaipur",
+    "custom casting booking Jaipur",
+    "hand impression session price Jaipur",
+    "book sibling casting Jaipur",
+    "couple casting booking Jaipur"
+  ],
 };
 
 export default function BookPage() {

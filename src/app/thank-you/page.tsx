@@ -8,6 +8,13 @@ import ScrollReveal from "@/components/common/ScrollReveal";
 export const metadata: Metadata = {
   title: "Thank You! | Sweet Steps Session Confirmed",
   description: "Your session request has been received by Sweet Steps. We'll be in touch shortly.",
+  keywords: [
+    "booking confirmation Sweet Steps Jaipur",
+    "baby casting booking received Jaipur",
+    "what happens after booking casting session",
+    "Sweet Steps contact WhatsApp Jaipur",
+    "casting session next steps Jaipur"
+  ],
 };
 
 export default function ThankYouPage() {

@@ -8,6 +8,14 @@ import ScrollReveal from "@/components/common/ScrollReveal";
 export const metadata: Metadata = {
   title: "Sweet Rewards | Loyalty Program for Sweet Steps Families",
   description: "Join the Sweet Steps loyalty program in Jaipur. Earn rewards for every referral and multiple casting sessions as your baby grows.",
+  keywords: [
+    "baby casting loyalty program Jaipur",
+    "referral discount hand casting Jaipur",
+    "repeat customer discount 3D casting Jaipur",
+    "baby milestone casting discounts Jaipur",
+    "family casting rewards Jaipur",
+    "Sweet Steps referral program"
+  ],
 };
 
 const rewards = [

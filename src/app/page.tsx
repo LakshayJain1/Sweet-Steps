@@ -10,6 +10,7 @@ import Footer from "@/components/layout/Footer";
 const ExitPopup = dynamic(() => import("@/components/common/ExitPopup"), { ssr: false });
 
 import { Metadata } from "next";
+import { googleTotalReviews, googleAverageRating, googleBusinessUrl } from "@/data/google-reviews";
 
 export const metadata: Metadata = {
   title: "Sweet Steps | Premium 3D Casting Jaipur | Baby, Sibling & Couple Impressions",
@@ -51,10 +52,17 @@ const jsonLd = [
         "closes": "21:00"
       }
     ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": googleAverageRating,
+      "reviewCount": googleTotalReviews,
+      "bestRating": "5",
+      "worstRating": "1"
+    },
     "sameAs": [
       "https://www.instagram.com/sweetsteps.vercel.app",
-      "https://www.facebook.com/sweetsteps.vercel.app"
-      // Add your Google Business Profile URL here
+      "https://www.facebook.com/sweetsteps.vercel.app",
+      googleBusinessUrl
     ]
   },
   {
@@ -97,8 +105,10 @@ const jsonLd = [
     },
     "aggregateRating": {
       "@type": "AggregateRating",
-      "ratingValue": "5.0",
-      "reviewCount": "214"
+      "ratingValue": googleAverageRating,
+      "reviewCount": googleTotalReviews,
+      "bestRating": "5",
+      "worstRating": "1"
     }
   }
 ];

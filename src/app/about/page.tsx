@@ -7,6 +7,16 @@ import ScrollReveal from "@/components/common/ScrollReveal";
 export const metadata: Metadata = {
   title: "About Us | Sweet Steps 3D Impressions Jaipur",
   description: "Learn about the passionate team behind Sweet Steps and why families in Jaipur trust us with their most precious keepsakes.",
+  keywords: [
+    "Sweet Steps Jaipur about",
+    "3D casting artist Jaipur",
+    "baby casting studio Jaipur",
+    "hand impression artist Jaipur",
+    "skin safe casting expert Jaipur",
+    "Jaipur baby keepsake maker",
+    "professional casting service Jaipur",
+    "family impression artist Rajasthan"
+  ],
 };
 
 export default function AboutPage() {

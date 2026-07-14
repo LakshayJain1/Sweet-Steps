@@ -134,6 +134,7 @@ function ReelCard({ reel }: { reel: (typeof REELS)[0] }) {
         {/* Mute Button */}
         <button
           onClick={toggleMute}
+          aria-label={muted ? "Unmute video" : "Mute video"}
           className="absolute top-4 right-4 rounded-full bg-black/50 backdrop-blur-md p-2 text-white transition hover:bg-black/70"
         >
           {muted ? (
@@ -149,6 +150,7 @@ function ReelCard({ reel }: { reel: (typeof REELS)[0] }) {
             href={reel.instagram}
             target="_blank"
             rel="noopener noreferrer"
+            aria-label={`View ${reel.likes} likes on Instagram`}
             className="flex flex-col items-center transition hover:scale-110"
           >
             <div className="rounded-full bg-white/10 backdrop-blur-md p-3">
@@ -167,6 +169,7 @@ function ReelCard({ reel }: { reel: (typeof REELS)[0] }) {
             href={reel.instagram}
             target="_blank"
             rel="noopener noreferrer"
+            aria-label={`View ${reel.comments} comments on Instagram`}
             className="flex flex-col items-center transition hover:scale-110"
           >
             <div className="rounded-full bg-white/10 backdrop-blur-md p-3">
@@ -182,6 +185,7 @@ function ReelCard({ reel }: { reel: (typeof REELS)[0] }) {
             href={reel.instagram}
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Share on Instagram"
             className="transition hover:scale-110"
           >
             <div className="rounded-full bg-white/10 backdrop-blur-md p-3">
@@ -193,6 +197,7 @@ function ReelCard({ reel }: { reel: (typeof REELS)[0] }) {
             href={reel.instagram}
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Save on Instagram"
             className="transition hover:scale-110"
           >
             <div className="rounded-full bg-white/10 backdrop-blur-md p-3">

@@ -3,6 +3,10 @@
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
 
+const EMAILJS_SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "service_xs1r1ij";
+const EMAILJS_TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "template_466ohrx";
+const EMAILJS_PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "MdPYAn2rmEEjW9s7e";
+
 export default function BookingForm() {
   const [formData, setFormData] = useState({
     name: "",
@@ -19,8 +23,8 @@ export default function BookingForm() {
     
     try {
       await emailjs.send(
-        "service_xs1r1ij", 
-        "template_466ohrx", 
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
         {
           from_name: formData.name,
           phone: formData.phone,
@@ -29,7 +33,7 @@ export default function BookingForm() {
           preferred_date: formData.date,
           message: `Name: ${formData.name}\nPhone: ${formData.phone}\nCity: ${formData.city}\nDetails: ${formData.subjectDetails}\nPreferred Date: ${formData.date}`
         },
-        "MdPYAn2rmEEjW9s7e" 
+        EMAILJS_PUBLIC_KEY
       );
       setStatus("success");
       setFormData({ name: "", phone: "", city: "", subjectDetails: "", date: "" });

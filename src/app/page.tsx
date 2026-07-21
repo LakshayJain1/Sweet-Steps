@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   description: "Preserve precious bonds forever with Jaipur's premium 3D casting service. Handcrafted frames for babies, siblings, couples, and elders. 100% skin safe, at-home sessions available.",
   keywords: ["baby hand casting Jaipur", "3D family impressions Jaipur", "sibling casting Jaipur", "couple hand casting Jaipur", "elder blessing casting Jaipur"],
   alternates: {
-    canonical: "https://sweetsteps.vercel.app",
+    canonical: "https://sweetsteps.online",
   },
 };
 
@@ -25,13 +25,13 @@ const jsonLd = [
   {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "@id": "https://sweetsteps.vercel.app",
+    "@id": "https://sweetsteps.online",
     "name": "Sweet Steps",
     "description": "Premium 3D hand and feet casting service for babies, siblings, couples, and elders in Jaipur, Rajasthan.",
-    "url": "https://sweetsteps.vercel.app",
+    "url": "https://sweetsteps.online",
     "telephone": "+91-8302419714",
     "priceRange": "₹₹",
-    "image": "https://sweetsteps.vercel.app/logo.webp",
+    "image": "https://sweetsteps.online/logo.webp",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Jaipur",
@@ -60,8 +60,8 @@ const jsonLd = [
       "worstRating": "1"
     },
     "sameAs": [
-      "https://www.instagram.com/sweetsteps.vercel.app",
-      "https://www.facebook.com/sweetsteps.vercel.app",
+      "https://www.instagram.com/sweet_.steps__",
+      "https://www.facebook.com/sweetstepsjaipur",
       googleBusinessUrl
     ]
   },
@@ -72,7 +72,7 @@ const jsonLd = [
     "provider": {
       "@type": "LocalBusiness",
       "name": "Sweet Steps",
-      "url": "https://sweetsteps.vercel.app"
+      "url": "https://sweetsteps.online"
     },
     "areaServed": [
       {
@@ -91,7 +91,7 @@ const jsonLd = [
     "@type": "Product",
     "name": "Custom 3D Family Impression Frames",
     "description": "Handcrafted 3D impression frames - customizable for babies, siblings, couples, and elders. Capture every tiny detail and bond.",
-    "image": "https://sweetsteps.vercel.app/Assets/Frame_01.webp",
+    "image": "https://sweetsteps.online/Assets/Frame_01.webp",
     "brand": {
       "@type": "Brand",
       "name": "Sweet Steps"
@@ -101,7 +101,7 @@ const jsonLd = [
       "lowPrice": "0",
       "priceCurrency": "INR",
       "offerCount": "10",
-      "url": "https://sweetsteps.vercel.app/gallery"
+      "url": "https://sweetsteps.online/gallery"
     },
     "aggregateRating": {
       "@type": "AggregateRating",

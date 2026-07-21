@@ -64,7 +64,7 @@ html {
     @apply shadow-glass-raised -translate-y-1;
   }
 
-  /* ─── Liquid Button (Primary CTA — Dark) ─── */
+  /* ─── Liquid Button (Primary CTA: Dark) ─── */
   .liquid-button {
     @apply relative inline-flex items-center justify-center font-medium px-8 py-4 overflow-hidden rounded-button;
     @apply bg-neutral-900 text-white shadow-button-glow;
@@ -85,7 +85,7 @@ html {
     @apply translate-x-[200%];
   }
 
-  /* ─── Ghost Button (Secondary — Frosted) ─── */
+  /* ─── Ghost Button (Secondary: Frosted) ─── */
   .btn-ghost {
     @apply bg-white/50 backdrop-blur-md border border-neutral-200 text-neutral-900 font-medium px-8 py-4 rounded-button shadow-sm inline-flex items-center justify-center;
     transition: all 400ms var(--ease-premium);

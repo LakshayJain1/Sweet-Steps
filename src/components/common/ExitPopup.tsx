@@ -5,6 +5,10 @@ import emailjs from "@emailjs/browser";
 import { X, MessageCircle } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
+const EMAILJS_SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "service_xs1r1ij";
+const EMAILJS_TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "template_466ohrx";
+const EMAILJS_PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "MdPYAn2rmEEjW9s7e";
+
 export default function ExitPopup() {
   const [isVisible, setIsVisible] = useState(false);
   const [hasShown, setHasShown] = useState(false);
@@ -31,14 +35,14 @@ export default function ExitPopup() {
     setStatus("loading");
     try {
       await emailjs.send(
-        "service_xs1r1ij",
-        "template_466ohrx",
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
         {
           from_name: formData.name,
           reply_to: formData.whatsapp,
           message: `Lead from Exit Popup! Name: ${formData.name}, WhatsApp: ${formData.whatsapp}`,
         },
-        "MdPYAn2rmEEjW9s7e"
+        EMAILJS_PUBLIC_KEY
       );
       setStatus("success");
     } catch (error) {

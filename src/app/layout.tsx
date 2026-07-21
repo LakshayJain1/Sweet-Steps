@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ["latin"], weight: "400", display: "swap", variab
 const playfair = Playfair_Display({ subsets: ["latin"], weight: ["400", "700"], display: "swap", variable: "--font-playfair" });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://sweetsteps.vercel.app"),
+  metadataBase: new URL("https://sweetsteps.online"),
   title: {
     default: "Sweet Steps | Premium 3D Casting Jaipur | Baby, Sibling & Couple Impressions",
     template: "%s | Sweet Steps Jaipur",
@@ -25,22 +25,17 @@ export const metadata: Metadata = {
     telephone: true,
   },
   alternates: {
-    canonical: "https://sweetsteps.vercel.app",
+    canonical: "https://sweetsteps.online",
   },
   icons: {
-    icon: [
-      { url: "/favicon.ico", sizes: "32x32" },
-      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
-      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
-      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
-    ],
-    shortcut: "/favicon-16x16.png",
-    apple: "/apple-touch-icon.png",
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/favicon.ico",
   },
   openGraph: {
     type: "website",
     locale: "en_IN",
-    url: "https://sweetsteps.vercel.app",
+    url: "https://sweetsteps.online",
     siteName: "Sweet Steps Jaipur",
     title: "Sweet Steps | Premium 3D Casting in Jaipur",
     description: "Capture precious bonds that last a lifetime with Jaipur's favorite 3D hand and feet impression service for all ages.",

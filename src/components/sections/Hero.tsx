@@ -14,7 +14,7 @@ export default function Hero() {
       <div className="container mx-auto max-w-[1200px] px-4 md:px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
-          {/* Left — Text Content */}
+          {/* Left: Text Content */}
           <div className="space-y-8">
             <ScrollReveal delay={0.1}>
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-neutral-100 border border-neutral-200 text-neutral-700 text-sm font-medium">
@@ -64,7 +64,7 @@ export default function Hero() {
             </ScrollReveal>
           </div>
 
-          {/* Right — Product Image */}
+          {/* Right: Product Image */}
           <ScrollReveal from="scale" delay={0.2} className="relative hidden lg:block" >
             <div style={{ minHeight: '520px' }} className="relative">
               <div className="absolute -inset-6 rounded-[2rem] border border-neutral-200/60" />

@@ -20,9 +20,9 @@ export default function GalleryView({ images, designs }: GalleryViewProps) {
     return designs.find(d => d.mainImg === src || d.galleryImages.includes(src));
   };
 
-  const openWhatsApp = (design: Product | { name: string; mainImg: string }) => {
+  const openWhatsApp = (design: Product | { name: string; mainImg: string; src?: string }) => {
     const name = 'name' in design ? design.name : 'this design';
-    const img = 'mainImg' in design ? design.mainImg : (design as any).src;
+    const img = 'mainImg' in design ? design.mainImg : (design as { src?: string }).src;
     const text = `Hi Sweet Steps, I want to know more/enquire about the details of this frame: *${name}*. \n\nReference Image: ${window.location.origin}${img}`;
     window.open(`https://wa.me/918302419714?text=${encodeURIComponent(text)}`, "_blank");
   };

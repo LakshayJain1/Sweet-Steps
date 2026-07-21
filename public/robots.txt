@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://sweetsteps.vercel.app
+Host: https://sweetsteps.online
 
 # Sitemaps
-Sitemap: https://sweetsteps.vercel.app/sitemap.xml
+Sitemap: https://sweetsteps.online/sitemap.xml

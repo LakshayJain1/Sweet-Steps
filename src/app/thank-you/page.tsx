@@ -15,6 +15,9 @@ export const metadata: Metadata = {
     "Sweet Steps contact WhatsApp Jaipur",
     "casting session next steps Jaipur"
   ],
+  alternates: {
+    canonical: "https://sweetsteps.online/thank-you",
+  },
 };
 
 export default function ThankYouPage() {

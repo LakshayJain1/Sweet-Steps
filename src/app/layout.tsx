@@ -24,9 +24,6 @@ export const metadata: Metadata = {
     address: true,
     telephone: true,
   },
-  alternates: {
-    canonical: "https://sweetsteps.online",
-  },
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon.ico",

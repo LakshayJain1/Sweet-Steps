@@ -17,6 +17,9 @@ export const metadata: Metadata = {
     "professional casting service Jaipur",
     "family impression artist Rajasthan"
   ],
+  alternates: {
+    canonical: "https://sweetsteps.online/about",
+  },
 };
 
 export default function AboutPage() {

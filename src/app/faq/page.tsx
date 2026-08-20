@@ -1,11 +1,29 @@
-"use client";
-
-import { useState } from "react";
+import type { Metadata } from "next";
 import StickyHeader from "@/components/layout/StickyHeader";
 import Footer from "@/components/layout/Footer";
-import { ChevronDown } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
 import ScrollReveal from "@/components/common/ScrollReveal";
+import FaqAccordion from "@/components/sections/FaqAccordion";
+
+export const metadata: Metadata = {
+  title: {
+    absolute: "FAQs | Sweet Steps Impressions",
+  },
+  description:
+    "Common questions about skin-safe 3D hand and feet castings in Jaipur.",
+  keywords: [
+    "baby casting FAQ Jaipur",
+    "is 3D casting safe for newborns",
+    "how long does hand casting take",
+    "at home casting process Jaipur",
+    "best age for baby hand impression",
+    "casting frame delivery time Jaipur",
+    "casting frame customization options",
+    "baby casting movement during process",
+  ],
+  alternates: {
+    canonical: "https://sweetsteps.online/faq",
+  },
+};
 
 const faqs = [
   {
@@ -43,8 +61,6 @@ const faqs = [
 ];
 
 export default function FAQPage() {
-  const [openIdx, setOpenIdx] = useState<number | null>(0);
-
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -64,10 +80,6 @@ export default function FAQPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      <title>FAQs | Sweet Steps Impressions</title>
-      <meta name="description" content="Common questions about skin-safe 3D hand and feet castings in Jaipur." />
-      <meta name="keywords" content="baby casting FAQ Jaipur, is 3D casting safe for newborns, how long does hand casting take, at home casting process Jaipur, best age for baby hand impression, casting frame delivery time Jaipur, casting frame customization options, baby casting movement during process" />
-      
       <StickyHeader />
       <div className="pt-32 pb-24 bg-neutral-50 min-h-screen">
         <div className="container mx-auto px-6 max-w-[800px]">
@@ -80,43 +92,8 @@ export default function FAQPage() {
             </div>
           </ScrollReveal>
 
-          <div className="space-y-3">
-            {faqs.map((faq, idx) => (
-              <ScrollReveal key={idx} delay={idx * 0.05}>
-                <div className="bg-white rounded-card border border-neutral-200 overflow-hidden shadow-glass-soft">
-                  <button
-                    onClick={() => setOpenIdx(openIdx === idx ? null : idx)}
-                    className="w-full text-left px-6 py-5 flex justify-between items-center hover:bg-neutral-50 transition-colors"
-                  >
-                    <span className="font-heading font-bold text-lg text-neutral-900 pr-8">{faq.q}</span>
-                    <motion.div
-                      animate={{ rotate: openIdx === idx ? 180 : 0 }}
-                      transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-                      className="shrink-0"
-                    >
-                      <ChevronDown className="h-5 w-5 text-neutral-900" />
-                    </motion.div>
-                  </button>
-                  <AnimatePresence initial={false}>
-                    {openIdx === idx && (
-                      <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-                        className="overflow-hidden"
-                      >
-                        <div className="px-6 pb-6 pt-2 text-neutral-500 leading-relaxed border-t border-neutral-100">
-                          {faq.a}
-                        </div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-          
+          <FaqAccordion faqs={faqs} />
+
           <ScrollReveal delay={0.2}>
             <div className="mt-16 text-center">
               <p className="text-lg text-neutral-500 mb-4">Still have questions?</p>

@@ -18,6 +18,9 @@ export const metadata: Metadata = {
     "book sibling casting Jaipur",
     "couple casting booking Jaipur"
   ],
+  alternates: {
+    canonical: "https://sweetsteps.online/book",
+  },
 };
 
 export default function BookPage() {

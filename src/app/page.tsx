@@ -36,7 +36,7 @@ const jsonLd = [
       "@type": "PostalAddress",
       "addressLocality": "Jaipur",
       "addressRegion": "Rajasthan",
-      "postalCode": "302017",
+      "postalCode": "302020",
       "addressCountry": "IN"
     },
     "geo": {

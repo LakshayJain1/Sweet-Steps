@@ -16,6 +16,9 @@ export const metadata: Metadata = {
     "family casting rewards Jaipur",
     "Sweet Steps referral program"
   ],
+  alternates: {
+    canonical: "https://sweetsteps.online/rewards",
+  },
 };
 
 const rewards = [

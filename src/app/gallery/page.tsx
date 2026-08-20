@@ -17,6 +17,9 @@ export const metadata: Metadata = {
     "casting frame styles Jaipur",
     "premium 3D art frames Jaipur"
   ],
+  alternates: {
+    canonical: "https://sweetsteps.online/gallery",
+  },
 };
 
 import { products } from "@/data/products";

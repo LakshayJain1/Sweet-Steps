@@ -3,6 +3,7 @@ import Footer from "@/components/layout/Footer";
 import Image from "next/image";
 import type { Metadata } from "next";
 import ScrollReveal from "@/components/common/ScrollReveal";
+import { Shield, Home, Star } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "About Us | Sweet Steps 3D Impressions Jaipur",
@@ -80,17 +81,25 @@ export default function AboutPage() {
               <h2 className="mb-10 text-3xl text-neutral-900">Why Families Trust Us</h2>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
                 {[
-                  { icon: "🛡️", title: "100% Skin Safe", desc: "Non-toxic, hypoallergenic casting materials." },
-                  { icon: "🏠", title: "At-Home Service", desc: "We travel to you anywhere in Jaipur." },
-                  { icon: "✨", title: "Premium Quality", desc: "Golden finish with high-quality framing glass." },
+                  <Shield className="h-5 w-5 text-neutral-900" />,
+                  <Home className="h-5 w-5 text-neutral-900" />,
+                  <Star className="h-5 w-5 text-neutral-900" />,
                 ].map((item, i) => (
                   <ScrollReveal key={i} delay={i * 0.12}>
                     <div className="space-y-3">
                       <div className="w-16 h-16 bg-white rounded-full mx-auto flex items-center justify-center text-3xl shadow-glass-soft border border-neutral-200">
-                        {item.icon}
+                        {item}
                       </div>
-                      <h3 className="font-bold text-xl text-neutral-900">{item.title}</h3>
-                      <p className="text-neutral-600">{item.desc}</p>
+                      <h3 className="font-bold text-xl text-neutral-900">{[
+                        "100% Skin Safe",
+                        "At-Home Service",
+                        "Premium Quality"
+                      ][i]}</h3>
+                      <p className="text-neutral-600">{[
+                        "Non-toxic, hypoallergenic casting materials.",
+                        "We travel to you anywhere in Jaipur.",
+                        "Golden finish with high-quality framing glass."
+                      ][i]}</p>
                     </div>
                   </ScrollReveal>
                 ))}

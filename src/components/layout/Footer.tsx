@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Instagram, Facebook, MessageCircle, MapPin } from "lucide-react";
+import { Instagram, Facebook, MessageCircle, MapPin, Mail } from "lucide-react";
 import ScrollReveal from "@/components/common/ScrollReveal";
 
 export default function Footer() {
@@ -56,7 +56,7 @@ export default function Footer() {
                   <span>+91 83024 19714</span>
                 </a>
                 <a href="mailto:sweetsteps05@gmail.com" className="flex items-center gap-2 hover:text-neutral-900 transition-colors">
-                  <span className="h-4 w-4">✉</span>
+                  <Mail className="h-4 w-4" />
                   <span>sweetsteps05@gmail.com</span>
                 </a>
               </div>

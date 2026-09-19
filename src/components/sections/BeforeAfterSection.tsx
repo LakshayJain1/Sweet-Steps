@@ -2,6 +2,7 @@
 
 import BeforeAfterSlider from "@/components/ui/BeforeAfterSlider";
 import ScrollReveal from "@/components/common/ScrollReveal";
+import { Star } from "lucide-react";
 
 export default function BeforeAfterSection() {
   return (
@@ -26,7 +27,7 @@ export default function BeforeAfterSection() {
               <ScrollReveal delay={0.2}>
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 rounded-full bg-neutral-100 flex items-center justify-center text-neutral-700 shrink-0">
-                    ✨
+                    <Star className="h-4 w-4 text-neutral-900 shrink-0" />
                   </div>
                   <div>
                     <h3 className="font-bold text-xl mb-1 text-neutral-900">Unmatched Detail</h3>

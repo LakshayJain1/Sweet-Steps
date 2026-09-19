@@ -30,7 +30,7 @@ export default function ProductGrid() {
           {featured.map((product, idx) => (
             <ScrollReveal key={product.slug} delay={idx * 0.1}>
               <div className="glass-card group flex flex-col h-full border-neutral-200/60">
-                <div className="relative aspect-[4/3] w-full overflow-hidden">
+                <div className="relative aspect-[1/1] w-full overflow-hidden">
                   <Image
                     src={product.mainImg}
                     alt={product.name}

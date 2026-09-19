@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { CheckCircle2, MapPin } from "lucide-react";
+import { CheckCircle2, MapPin, Star, Trophy } from "lucide-react";
 import ScrollReveal from "@/components/common/ScrollReveal";
 
 export default function Hero() {
@@ -52,7 +52,7 @@ export default function Hero() {
             <ScrollReveal delay={0.4}>
               <div className="flex flex-wrap items-center gap-4 md:gap-6 pt-4 text-neutral-500 font-medium border-t border-neutral-200">
                 <div className="flex items-center gap-2">
-                  <span className="text-lg">✨</span>
+                  <Star className="h-4 w-4 text-neutral-900" />
                   <span className="text-sm">500+ memories captured</span>
                 </div>
                 <div className="hidden md:block w-px h-5 bg-neutral-300" />
@@ -82,7 +82,7 @@ export default function Hero() {
 
               <ScrollReveal delay={0.4} className="absolute -bottom-5 -left-6">
                 <div className="glass-panel px-5 py-3 flex items-center gap-3 border-neutral-200/40">
-                  <span className="text-2xl">🏆</span>
+                  <Trophy className="h-6 w-6 text-neutral-900" />
                   <div>
                     <p className="text-xs font-bold text-neutral-900">Jaipur's #1</p>
                     <p className="text-[10px] text-neutral-500">3D Impression Studio</p>

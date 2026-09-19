@@ -60,8 +60,8 @@ export default function GalleryView({ images, designs }: GalleryViewProps) {
                   <Image
                     src={src}
                     alt={`Sweet steps gallery image ${i + 1}`}
-                    width={500}
-                    height={700}
+                    width={400}
+                    height={400}
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     className="w-full h-auto object-cover group-hover:scale-110 transition-transform duration-700"
                     priority={i < 4}

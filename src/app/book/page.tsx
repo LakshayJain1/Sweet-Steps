@@ -4,6 +4,7 @@ import BookingForm from "@/components/sections/BookingForm";
 import ProductGrid from "@/components/sections/ProductGrid";
 import type { Metadata } from "next";
 import ScrollReveal from "@/components/common/ScrollReveal";
+import { Check } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Book a Session | Sweet Steps Jaipur",
@@ -50,19 +51,19 @@ export default function BookPage() {
                 </h3>
                 <ul className="text-neutral-500 text-lg space-y-3">
                   <li className="flex items-start gap-3">
-                    <span className="text-neutral-900 font-bold">✓</span>
+                    <Check className="h-4 w-4 text-neutral-900 shrink-0" />
                     At-home session in just 45 minutes
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="text-neutral-900 font-bold">✓</span>
+                    <Check className="h-4 w-4 text-neutral-900 shrink-0" />
                     100% baby-safe organic materials
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="text-neutral-900 font-bold">✓</span>
+                    <Check className="h-4 w-4 text-neutral-900 shrink-0" />
                     Your custom frame delivered in 10-15 days
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="text-neutral-900 font-bold">✓</span>
+                    <Check className="h-4 w-4 text-neutral-900 shrink-0" />
                     Free delivery across Jaipur
                   </li>
                 </ul>

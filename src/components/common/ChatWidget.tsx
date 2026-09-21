@@ -3,7 +3,6 @@
 import { useState } from "react";
 import Image from "next/image";
 import { MessageCircle, X, ChevronRight, HelpCircle } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
 
 const miniFaqs = [
   { q: "Is it safe for my baby?", a: "Yes, 100%. We use organic, ph-neutral molding jelly that is hospital-grade and safe for newborns." },
@@ -19,14 +18,9 @@ export default function ChatWidget() {
   return (
     <div className="fixed bottom-6 right-6 z-[60] flex flex-col items-end">
       {/* FAQ Popup */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: 16, scale: 0.95 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: 16, scale: 0.95 }}
-            transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-            className="glass-panel w-80 md:w-96 mb-4 overflow-hidden border-neutral-200/60 shadow-glass-raised"
+      {isOpen && (
+          <div
+            className="glass-panel w-80 md:w-96 mb-4 overflow-hidden border-neutral-200/60 shadow-glass-raised animate-pop-in-fast"
           >
             <div className="bg-neutral-900 p-6 text-white flex justify-between items-center">
               <div>
@@ -51,21 +45,17 @@ export default function ChatWidget() {
                     <HelpCircle className="h-4 w-4 text-neutral-500 shrink-0" />
                     <span className="text-sm">{faq.q}</span>
                   </button>
-                  <AnimatePresence>
-                    {openFaq === idx && (
-                      <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-                        className="overflow-hidden"
-                      >
-                        <p className="text-sm text-neutral-500 px-4 pb-3 leading-relaxed pl-11">
-                          {faq.a}
-                        </p>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
+                  <div
+                    className={`grid transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+                      openFaq === idx ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+                    }`}
+                  >
+                    <div className="overflow-hidden">
+                      <p className="text-sm text-neutral-500 px-4 pb-3 leading-relaxed pl-11">
+                        {faq.a}
+                      </p>
+                    </div>
+                  </div>
                 </div>
               ))}
 
@@ -87,32 +77,27 @@ export default function ChatWidget() {
                 <ChevronRight className="h-5 w-5 text-neutral-700 group-hover:translate-x-1 transition-transform" />
               </a>
             </div>
-          </motion.div>
+          </div>
         )}
-      </AnimatePresence>
 
       {/* Main Button */}
-      <motion.button
+      <button
         onClick={() => setIsOpen(!isOpen)}
         aria-label={isOpen ? "Close help chat" : "Open help chat and FAQ"}
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.95 }}
-        transition={{ type: "spring", stiffness: 400, damping: 17 }}
-        className={`w-16 h-16 rounded-full flex items-center justify-center shadow-glass-raised relative ${
+        className={`w-16 h-16 rounded-full flex items-center justify-center shadow-glass-raised relative transition-transform duration-200 hover:scale-110 active:scale-95 ${
           isOpen ? "bg-white text-neutral-900" : "bg-neutral-900 text-white"
         }`}
-        style={{ transition: "background-color 300ms cubic-bezier(0.16,1,0.3,1)" }}
+        style={{ transition: "background-color 300ms cubic-bezier(0.16,1,0.3,1), transform 200ms ease" }}
       >
-        <motion.div
-          animate={{ rotate: isOpen ? 90 : 0 }}
-          transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+        <span
+          className={`inline-flex transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${isOpen ? "rotate-90" : ""}`}
         >
           {isOpen ? <X className="h-8 w-8" /> : <MessageCircle className="h-8 w-8" />}
-        </motion.div>
+        </span>
         {!isOpen && (
           <span className="absolute -top-1 -right-1 w-4 h-4 bg-neutral-500 rounded-full border-2 border-white animate-pulse-soft" />
         )}
-      </motion.button>
+      </button>
     </div>
   );
 }

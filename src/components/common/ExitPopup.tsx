@@ -1,9 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import emailjs from "@emailjs/browser";
-import { X, MessageCircle } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { X, MessageCircle, Sparkles } from "lucide-react";
 
 const EMAILJS_SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "service_xs1r1ij";
 const EMAILJS_TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "template_466ohrx";
@@ -34,6 +32,7 @@ export default function ExitPopup() {
 
     setStatus("loading");
     try {
+      const { default: emailjs } = await import("@emailjs/browser");
       await emailjs.send(
         EMAILJS_SERVICE_ID,
         EMAILJS_TEMPLATE_ID,
@@ -52,21 +51,13 @@ export default function ExitPopup() {
   };
 
   return (
-    <AnimatePresence>
+    <>
       {isVisible && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.4 }}
-          className="fixed inset-0 z-[100] flex items-center justify-center p-6 bg-black/40 backdrop-blur-md"
+        <div
+          className="fixed inset-0 z-[100] flex items-center justify-center p-6 bg-black/40 backdrop-blur-md animate-fade-in"
         >
-          <motion.div
-            initial={{ opacity: 0, scale: 0.92, y: 20 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.92, y: 20 }}
-            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-            className="relative glass-panel w-full max-w-lg overflow-hidden border-neutral-200/60 shadow-glass-elevated"
+          <div
+            className="relative glass-panel w-full max-w-lg overflow-hidden border-neutral-200/60 shadow-glass-elevated animate-pop-in"
           >
             <button
               onClick={() => setIsVisible(false)}
@@ -91,14 +82,12 @@ export default function ExitPopup() {
               </div>
 
               {status === "success" ? (
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  className="pt-6 space-y-6"
+                <div
+                  className="pt-6 space-y-6 animate-fade-in"
                 >
                   <div className="p-6 bg-neutral-100 text-neutral-900 rounded-xl font-bold flex flex-col items-center gap-2 border border-neutral-200">
-                    <span className="text-2xl">✨</span>
-                    We'll be in touch soon!
+                    <Sparkles className="h-6 w-6" />
+                    We&apos;ll be in touch soon!
                   </div>
                   <button
                     onClick={() => setIsVisible(false)}
@@ -106,7 +95,7 @@ export default function ExitPopup() {
                   >
                     Continue Browsing
                   </button>
-                </motion.div>
+                </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-5 pt-4">
                   <input
@@ -147,9 +136,9 @@ export default function ExitPopup() {
                 </form>
               )}
             </div>
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
       )}
-    </AnimatePresence>
+    </>
   );
 }

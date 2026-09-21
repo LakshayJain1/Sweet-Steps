@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Menu, X } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
 
 export default function StickyHeader() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -72,41 +71,34 @@ export default function StickyHeader() {
         </div>
 
         {/* Mobile Menu */}
-        <AnimatePresence>
-          {isOpen && (
-            <motion.div 
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-              className="md:hidden absolute top-full left-0 right-0 mt-2 bg-white/80 backdrop-blur-[40px] border border-neutral-200/60 rounded-card shadow-glass-raised py-6 px-6"
-            >
-              <nav className="flex flex-col space-y-1">
-                {navLinks.map((link, idx) => (
-                  <motion.div
-                    key={link.href}
-                    initial={{ opacity: 0, x: -10 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: idx * 0.05 + 0.1, duration: 0.3 }}
+        {isOpen && (
+          <div
+            className="md:hidden absolute top-full left-0 right-0 mt-2 bg-white/80 backdrop-blur-[40px] border border-neutral-200/60 rounded-card shadow-glass-raised py-6 px-6 animate-menu-drop"
+          >
+            <nav className="flex flex-col space-y-1">
+              {navLinks.map((link, idx) => (
+                <div
+                  key={link.href}
+                  className="animate-menu-item"
+                  style={{ animationDelay: `${idx * 50 + 100}ms` }}
+                >
+                  <Link
+                    href={link.href}
+                    onClick={() => setIsOpen(false)}
+                    className="block text-lg text-neutral-600 hover:text-neutral-900 py-2 transition-colors"
                   >
-                    <Link 
-                      href={link.href} 
-                      onClick={() => setIsOpen(false)} 
-                      className="block text-lg text-neutral-600 hover:text-neutral-900 py-2 transition-colors"
-                    >
-                      {link.label}
-                    </Link>
-                  </motion.div>
-                ))}
-                <div className="pt-4 mt-2 border-t border-neutral-200">
-                   <Link href="/book" onClick={() => setIsOpen(false)} className="btn-primary w-full text-center">
-                     Book Now
-                   </Link>
+                    {link.label}
+                  </Link>
                 </div>
-              </nav>
-            </motion.div>
-          )}
-        </AnimatePresence>
+              ))}
+              <div className="pt-4 mt-2 border-t border-neutral-200">
+                 <Link href="/book" onClick={() => setIsOpen(false)} className="btn-primary w-full text-center">
+                   Book Now
+                 </Link>
+              </div>
+            </nav>
+          </div>
+        )}
       </div>
     </header>
   );

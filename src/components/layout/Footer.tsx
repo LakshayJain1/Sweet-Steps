@@ -66,18 +66,24 @@ export default function Footer() {
           <ScrollReveal delay={0.3}>
             <div className="space-y-6">
               <h3 className="text-xl font-bold font-heading text-neutral-900">Find Us</h3>
-              <div className="aspect-video w-full rounded-xl overflow-hidden border border-neutral-200 bg-neutral-200">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3559.459442388231!2d75.76969559999999!3d26.857140299999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396db53962efcb8f%3A0xae986bdc5dc8e3ad!2sSweet%20Steps%20Impressions%20(3D%20Hand%20%26%20Foot%20Casting)!5e0!3m2!1sen!2sin!4v1784539758881!5m2!1sen!2sin"
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="strict-origin-when-cross-origin"
-                  title="Sweet Steps location in Jaipur">
-                </iframe>
-              </div>
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Sweet+Steps+Impressions+3D+Hand+Foot+Casting+Jaipur"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Open Sweet Steps location in Google Maps"
+                className="group flex aspect-video w-full flex-col items-center justify-center gap-3 rounded-xl border border-neutral-200 bg-white text-center shadow-glass-soft transition-colors hover:border-neutral-300"
+              >
+                <span className="flex h-12 w-12 items-center justify-center rounded-full bg-neutral-900 text-white transition-transform duration-300 group-hover:scale-110">
+                  <MapPin className="h-5 w-5" />
+                </span>
+                <span>
+                  <span className="block font-bold text-neutral-900">Sweet Steps Impressions</span>
+                  <span className="block text-sm text-neutral-500">Jaipur, Rajasthan 302020</span>
+                </span>
+                <span className="text-sm font-bold text-neutral-900 underline underline-offset-4">
+                  Open in Google Maps
+                </span>
+              </a>
             </div>
           </ScrollReveal>
         </div>

@@ -110,7 +110,14 @@ function ReelCard({ reel }: { reel: (typeof REELS)[0] }) {
           onPlay={() => setPlaying(true)}
           onPause={() => setPlaying(false)}
           className="aspect-[9/16] w-full object-cover cursor-pointer select-none"
-        />
+        >
+          <track
+            kind="captions"
+            srcLang="en"
+            label="English captions"
+            src="/captions/reel-captions.vtt"
+          />
+        </video>
 
         {/* Bottom Gradient */}
         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-64 bg-gradient-to-t from-black via-black/40 to-transparent" />
@@ -150,7 +157,7 @@ function ReelCard({ reel }: { reel: (typeof REELS)[0] }) {
             href={reel.instagram}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label={`View ${reel.likes} likes on Instagram`}
+            aria-label="Open this reel on Instagram"
             className="flex flex-col items-center transition hover:scale-110"
           >
             <div className="rounded-full bg-white/10 backdrop-blur-md p-3">
@@ -169,7 +176,7 @@ function ReelCard({ reel }: { reel: (typeof REELS)[0] }) {
             href={reel.instagram}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label={`View ${reel.comments} comments on Instagram`}
+            aria-label="Open this reel on Instagram"
             className="flex flex-col items-center transition hover:scale-110"
           >
             <div className="rounded-full bg-white/10 backdrop-blur-md p-3">
@@ -185,7 +192,7 @@ function ReelCard({ reel }: { reel: (typeof REELS)[0] }) {
             href={reel.instagram}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Share on Instagram"
+            aria-label="Open this reel on Instagram"
             className="transition hover:scale-110"
           >
             <div className="rounded-full bg-white/10 backdrop-blur-md p-3">
@@ -197,7 +204,7 @@ function ReelCard({ reel }: { reel: (typeof REELS)[0] }) {
             href={reel.instagram}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Save on Instagram"
+            aria-label="Open this reel on Instagram"
             className="transition hover:scale-110"
           >
             <div className="rounded-full bg-white/10 backdrop-blur-md p-3">

@@ -51,7 +51,7 @@ export default function BeforeAfterSlider({
     <div className="space-y-4">
       <div
         ref={containerRef}
-        className="relative aspect-[9/16] w-full max-w-[380px] mx-auto overflow-hidden rounded-card glass-panel border-neutral-200/40 select-none shadow-glass-raised"
+        className="relative aspect-[9/16] w-full max-w-[340px] sm:max-w-[380px] mx-auto overflow-hidden rounded-card glass-panel border-neutral-200/40 select-none shadow-glass-raised"
         style={{ cursor: isDragging ? "grabbing" : "ew-resize" }}
         onMouseMove={onMouseMove}
         onTouchMove={onTouchMove}
@@ -64,8 +64,8 @@ export default function BeforeAfterSlider({
             src={afterImage}
             alt="After - Final impression frame"
             fill
-            sizes="(max-width: 640px) 92vw, 380px"
-            quality={68}
+            sizes="(max-width: 640px) 88vw, 380px"
+            quality={64}
             className="object-cover object-center"
             draggable={false}
           />
@@ -82,8 +82,8 @@ export default function BeforeAfterSlider({
             src={beforeImage}
             alt="Before - Initial impression"
             fill
-            sizes="(max-width: 640px) 92vw, 380px"
-            quality={68}
+            sizes="(max-width: 640px) 88vw, 380px"
+            quality={64}
             className="object-cover object-center"
             draggable={false}
           />

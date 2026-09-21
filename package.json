@@ -65,6 +65,15 @@
     "vaul": "^0.9.9",
     "zod": "^3.25.76"
   },
+  "browserslist": [
+    "chrome >= 109",
+    "edge >= 109",
+    "firefox >= 109",
+    "safari >= 16.4",
+    "opera >= 95",
+    "ios_saf >= 16.4",
+    "samsung >= 21"
+  ],
   "devDependencies": {
     "@eslint/js": "^9.32.0",
     "@tailwindcss/typography": "^0.5.16",

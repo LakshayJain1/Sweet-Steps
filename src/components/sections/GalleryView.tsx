@@ -63,6 +63,7 @@ export default function GalleryView({ images, designs }: GalleryViewProps) {
                     width={400}
                     height={400}
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    quality={72}
                     className="w-full h-auto object-cover group-hover:scale-110 transition-transform duration-700"
                     priority={i < 4}
                     loading={i < 4 ? undefined : "lazy"}

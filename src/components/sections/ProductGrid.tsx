@@ -5,10 +5,10 @@ import ScrollReveal from "@/components/common/ScrollReveal";
 import { products } from "@/data/products";
 
 const featuredSlugs = [
-  "grandmothers-blessing-frame",
-  "baby-silver-quad-impression",
-  "family-casting-frame",
-  "classic-siblings-quad-dual",
+  "signature-baby-frame",
+  "heart-of-the-family-frame",
+  "gold-and-silver-sibling-frame",
+  "matriarchs-legacy-frame",
 ];
 
 export default function ProductGrid() {
@@ -33,7 +33,7 @@ export default function ProductGrid() {
                 <div className="relative aspect-[1/1] w-full overflow-hidden">
                   <Image
                     src={product.mainImg}
-                    alt={product.name}
+                    alt={product.imageAlts?.[product.mainImg] ?? product.name}
                     fill
                     className="object-cover group-hover:scale-110 transition-transform duration-700"
                     loading="lazy"

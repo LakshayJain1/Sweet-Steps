@@ -91,7 +91,7 @@ const jsonLd = [
     "@type": "Product",
     "name": "Custom 3D Family Impression Frames",
     "description": "Handcrafted 3D impression frames - customizable for babies, siblings, couples, and elders. Capture every tiny detail and bond.",
-    "image": "https://sweetsteps.online/Assets/Frame_01.webp",
+    "image": "https://sweetsteps.online/Assets/signature-baby-frame.webp",
     "brand": {
       "@type": "Brand",
       "name": "Sweet Steps"
@@ -100,7 +100,7 @@ const jsonLd = [
       "@type": "AggregateOffer",
       "lowPrice": "0",
       "priceCurrency": "INR",
-      "offerCount": "10",
+      "offerCount": "17",
       "url": "https://sweetsteps.online/gallery"
     },
     "aggregateRating": {

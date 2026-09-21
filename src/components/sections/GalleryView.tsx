@@ -59,7 +59,7 @@ export default function GalleryView({ images, designs }: GalleryViewProps) {
                 <div className="relative w-full h-full cursor-pointer">
                   <Image
                     src={src}
-                    alt={`Sweet steps gallery image ${i + 1}`}
+                    alt={product?.imageAlts?.[src] ?? product?.name ?? `Sweet steps gallery image ${i + 1}`}
                     width={400}
                     height={400}
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
@@ -142,7 +142,7 @@ export default function GalleryView({ images, designs }: GalleryViewProps) {
               <div className="w-full md:w-1/2 h-[300px] md:h-auto relative bg-neutral-100">
                 <Image
                   src={selectedDesign.mainImg}
-                  alt={selectedDesign.name}
+                  alt={selectedDesign.imageAlts?.[selectedDesign.mainImg] ?? selectedDesign.name}
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover"
@@ -154,16 +154,40 @@ export default function GalleryView({ images, designs }: GalleryViewProps) {
                 <div className="space-y-8">
                   <div>
                     <span className="inline-block px-3 py-1 bg-neutral-900/5 rounded-full text-neutral-600 text-[10px] font-bold tracking-[0.1em] uppercase mb-4">
-                      Signature Style
+                      {selectedDesign.collection ?? selectedDesign.category ?? "Signature Style"}
                     </span>
                     <h2 className="text-3xl md:text-4xl font-heading font-bold text-neutral-900">
                       {selectedDesign.name}
                     </h2>
+                    {selectedDesign.tagline && (
+                      <p className="text-neutral-900 font-semibold mt-2">{selectedDesign.tagline}</p>
+                    )}
                   </div>
 
                   <p className="text-lg text-neutral-500 leading-relaxed font-medium">
                     {selectedDesign.fullDesc}
                   </p>
+
+                  {selectedDesign.composition && selectedDesign.composition.length > 0 && (
+                    <div className="space-y-3">
+                      <h3 className="text-sm font-bold text-neutral-900 uppercase tracking-wider">What&apos;s included</h3>
+                      <ul className="list-disc pl-5 space-y-1 text-neutral-600 text-sm font-medium">
+                        {selectedDesign.composition.map((item, i) => (
+                          <li key={i}>{item}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+
+                  {selectedDesign.bestFor && selectedDesign.bestFor.length > 0 && (
+                    <div className="flex flex-wrap gap-2">
+                      {selectedDesign.bestFor.map((item, i) => (
+                        <span key={i} className="px-3 py-1 bg-neutral-100 rounded-full text-neutral-600 text-xs font-semibold">
+                          {item}
+                        </span>
+                      ))}
+                    </div>
+                  )}
 
                   <div className="grid grid-cols-1 gap-4 pt-4 border-t border-neutral-100">
                     <div className="flex gap-4">

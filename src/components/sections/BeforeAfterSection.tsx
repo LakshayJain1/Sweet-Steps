@@ -50,11 +50,11 @@ export default function BeforeAfterSection() {
             </div>
           </div>
 
-          <div className="order-1 lg:order-2">
+          <div className="order-1 lg:order-2 flex justify-center">
             <ScrollReveal delay={0.15} from="scale">
               <BeforeAfterSlider
                 beforeImage="/Assets/Initial-optimized.webp" 
-                afterImage="/Assets/Frame_09.webp"
+                afterImage="/Assets/signature-baby-frame.webp"
                 beforeLabel="Initial Impression"
                 afterLabel="Final Masterpiece"
                 caption="Slide to see how we transform a fleeting moment into a lasting masterpiece."

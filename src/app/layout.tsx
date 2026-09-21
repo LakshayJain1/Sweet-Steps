@@ -1,7 +1,6 @@
 import "@/styles/globals.css";
 import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
-import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
 import ScrollRevealProvider from "@/components/common/ScrollRevealProvider";
 
@@ -75,18 +74,6 @@ export default function RootLayout({
         <meta name="google-site-verification" content="evSHeP88q1nZr80cWHM5iqaF9j22jMffWOKa-fl1tVc" />
         <meta name="p:domain_verify" content="6bf4d06232909efc6ed5d6764b32ec39" />
         <link rel="preload" as="image" href="/Assets/signature-baby-frame.webp" imageSrcSet="/Assets/signature-baby-frame.webp 1024w" imageSizes="50vw" />
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-9DF9S56TG5"
-          strategy="lazyOnload"
-        />
-        <Script id="google-analytics" strategy="lazyOnload">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-9DF9S56TG5');
-          `}
-        </Script>
       </head>
       <body>
         <ScrollRevealProvider />

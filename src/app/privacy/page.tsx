@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-import Script from "next/script";
 import StickyHeader from "@/components/layout/StickyHeader";
 import Footer from "@/components/layout/Footer";
 import ScrollReveal from "@/components/common/ScrollReveal";
@@ -15,18 +14,6 @@ export const metadata: Metadata = {
 export default function PrivacyPage() {
   return (
     <>
-      <Script
-        src="https://www.googletagmanager.com/gtag/js?id=G-9DF9S56TG5"
-        strategy="lazyOnload"
-      />
-      <Script id="google-analytics" strategy="lazyOnload">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-9DF9S56TG5');
-        `}
-      </Script>
       <main className="min-h-screen bg-neutral-50 text-neutral-900">
         <StickyHeader />
         <section className="pt-40 pb-20 md:pb-32 bg-neutral-50">

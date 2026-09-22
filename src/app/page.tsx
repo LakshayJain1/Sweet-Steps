@@ -31,10 +31,10 @@ const jsonLd = [
     "description": "Premium 3D hand and feet casting service for babies, siblings, couples, and elders in Jaipur, Rajasthan.",
     "url": "https://sweetsteps.online",
     "telephone": "+91-8302419714",
-    "priceRange": "₹₹",
     "image": "https://sweetsteps.online/logo.webp",
     "address": {
       "@type": "PostalAddress",
+      "streetAddress": "73/47, Paramhans Marg, Mansarovar",
       "addressLocality": "Jaipur",
       "addressRegion": "Rajasthan",
       "postalCode": "302020",
@@ -60,6 +60,20 @@ const jsonLd = [
       "bestRating": "5",
       "worstRating": "1"
     },
+    "sameAs": [
+      "https://www.instagram.com/sweet_.steps__",
+      "https://www.facebook.com/sweetstepsjaipur",
+      googleBusinessUrl
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://sweetsteps.online#organization",
+    "name": "Sweet Steps",
+    "url": "https://sweetsteps.online",
+    "logo": "https://sweetsteps.online/logo.webp",
+    "image": "https://sweetsteps.online/logo.webp",
     "sameAs": [
       "https://www.instagram.com/sweet_.steps__",
       "https://www.facebook.com/sweetstepsjaipur",

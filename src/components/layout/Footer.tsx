@@ -49,11 +49,13 @@ export default function Footer() {
                   <div>
                     <p className="font-medium text-neutral-900">Sweet Steps Impressions</p>
                     <a
-                      href="https://www.google.com/maps/search/?api=1&query=Sweet+Steps+Impressions+3D+Hand+Foot+Casting+Jaipur"
+                      href="https://www.google.com/maps/search/?api=1&query=73%2F47+Paramhans+Marg+Mansarovar+Jaipur"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="hover:text-neutral-900 transition-colors underline underline-offset-4"
                     >
+                      73/47, Paramhans Marg, Mansarovar,
+                      <br />
                       Jaipur, Rajasthan 302020
                     </a>
                   </div>

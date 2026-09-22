@@ -1,4 +1,5 @@
 import StickyHeader from "@/components/layout/StickyHeader";
+import BreadcrumbJsonLd from "@/components/seo/BreadcrumbJsonLd";
 import Footer from "@/components/layout/Footer";
 import BookingForm from "@/components/sections/BookingForm";
 import ProductGrid from "@/components/sections/ProductGrid";
@@ -7,7 +8,7 @@ import ScrollReveal from "@/components/common/ScrollReveal";
 import { Check } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Book a Session | Sweet Steps Jaipur",
+  title: "Book a Session",
   description: "Schedule your at-home baby 3D casting session in Jaipur today. Fill out our simple booking form.",
   keywords: [
     "book baby casting session Jaipur",
@@ -27,6 +28,7 @@ export const metadata: Metadata = {
 export default function BookPage() {
   return (
     <>
+      <BreadcrumbJsonLd trail={[{ name: "Home", href: "/" }, { name: "Book a Session", href: "/book" }]} />
       <StickyHeader />
       <div className="pt-32 pb-20 bg-neutral-50 min-h-[90vh]">
         <div className="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start max-w-[1200px]">

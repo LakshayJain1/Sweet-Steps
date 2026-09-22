@@ -1,4 +1,5 @@
 import StickyHeader from "@/components/layout/StickyHeader";
+import BreadcrumbJsonLd from "@/components/seo/BreadcrumbJsonLd";
 import Footer from "@/components/layout/Footer";
 import Image from "next/image";
 import type { Metadata } from "next";
@@ -6,7 +7,7 @@ import ScrollReveal from "@/components/common/ScrollReveal";
 import { Shield, Home, Star } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "About Us | Sweet Steps 3D Impressions Jaipur",
+  title: "About Us",
   description: "Learn about the passionate team behind Sweet Steps and why families in Jaipur trust us with their most precious keepsakes.",
   keywords: [
     "Sweet Steps Jaipur about",
@@ -26,6 +27,7 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
+      <BreadcrumbJsonLd trail={[{ name: "Home", href: "/" }, { name: "About Us", href: "/about" }]} />
       <StickyHeader />
       <div className="pt-32 pb-20 bg-neutral-50 min-h-screen">
         <div className="container mx-auto px-6 max-w-[1000px]">

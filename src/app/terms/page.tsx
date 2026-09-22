@@ -1,10 +1,11 @@
 import { Metadata } from "next";
 import StickyHeader from "@/components/layout/StickyHeader";
+import BreadcrumbJsonLd from "@/components/seo/BreadcrumbJsonLd";
 import Footer from "@/components/layout/Footer";
 import ScrollReveal from "@/components/common/ScrollReveal";
 
 export const metadata: Metadata = {
-  title: "Terms of Service | Sweet Steps Jaipur",
+  title: "Terms of Service",
   description: "Sweet Steps Terms of Service - Booking, cancellations, refunds, and liability for 3D casting sessions in Jaipur.",
   alternates: {
     canonical: "https://sweetsteps.online/terms",
@@ -14,6 +15,7 @@ export const metadata: Metadata = {
 export default function TermsPage() {
   return (
     <>
+      <BreadcrumbJsonLd trail={[{ name: "Home", href: "/" }, { name: "Terms of Service", href: "/terms" }]} />
       <StickyHeader />
       <main className="min-h-screen bg-neutral-50">
         <section className="pt-32 pb-16 md:pt-40 md:pb-24 px-4 md:px-6">

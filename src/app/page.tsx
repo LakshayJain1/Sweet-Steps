@@ -2,6 +2,7 @@ import dynamic from "next/dynamic";
 import Hero from "@/components/sections/Hero";
 import StickyHeader from "@/components/layout/StickyHeader";
 
+import BreadcrumbJsonLd from "@/components/seo/BreadcrumbJsonLd";
 import HowItWorks from "@/components/sections/HowItWorks";
 import BeforeAfterSection from "@/components/sections/BeforeAfterSection";
 import ProductGrid from "@/components/sections/ProductGrid";
@@ -13,7 +14,7 @@ import { Metadata } from "next";
 import { googleTotalReviews, googleAverageRating, googleBusinessUrl } from "@/data/google-reviews";
 
 export const metadata: Metadata = {
-  title: "Sweet Steps | Premium 3D Casting Jaipur | Baby, Sibling & Couple Impressions",
+  title: "Premium 3D Casting Jaipur | Baby, Sibling & Couple Impressions",
   description: "Preserve precious bonds forever with Jaipur's premium 3D casting service. Handcrafted frames for babies, siblings, couples, and elders. 100% skin safe, at-home sessions available.",
   keywords: ["baby hand casting Jaipur", "3D family impressions Jaipur", "sibling casting Jaipur", "couple hand casting Jaipur", "elder blessing casting Jaipur"],
   alternates: {
@@ -126,6 +127,7 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+      <BreadcrumbJsonLd trail={[{ name: "Home", href: "/" }]} />
       <StickyHeader />
       <Hero />
       <HowItWorks />

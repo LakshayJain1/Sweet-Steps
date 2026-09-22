@@ -1,10 +1,11 @@
 import { Metadata } from "next";
 import StickyHeader from "@/components/layout/StickyHeader";
+import BreadcrumbJsonLd from "@/components/seo/BreadcrumbJsonLd";
 import Footer from "@/components/layout/Footer";
 import ScrollReveal from "@/components/common/ScrollReveal";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | Sweet Steps Jaipur",
+  title: "Privacy Policy",
   description: "How Sweet Steps collects, uses, and protects your personal data when you book a 3D casting session.",
   alternates: {
     canonical: "https://sweetsteps.online/privacy",
@@ -14,6 +15,7 @@ export const metadata: Metadata = {
 export default function PrivacyPage() {
   return (
     <>
+      <BreadcrumbJsonLd trail={[{ name: "Home", href: "/" }, { name: "Privacy Policy", href: "/privacy" }]} />
       <main className="min-h-screen bg-neutral-50 text-neutral-900">
         <StickyHeader />
         <section className="pt-40 pb-20 md:pb-32 bg-neutral-50">

@@ -3,6 +3,7 @@ import StickyHeader from "@/components/layout/StickyHeader";
 import Footer from "@/components/layout/Footer";
 import ScrollReveal from "@/components/common/ScrollReveal";
 import FaqAccordion from "@/components/sections/FaqAccordion";
+import BreadcrumbJsonLd from "@/components/seo/BreadcrumbJsonLd";
 
 export const metadata: Metadata = {
   title: {
@@ -80,6 +81,7 @@ export default function FAQPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
+      <BreadcrumbJsonLd trail={[{ name: "Home", href: "/" }, { name: "FAQs", href: "/faq" }]} />
       <StickyHeader />
       <div className="pt-32 pb-24 bg-neutral-50 min-h-screen">
         <div className="container mx-auto px-6 max-w-[800px]">

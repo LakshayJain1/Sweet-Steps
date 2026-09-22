@@ -75,8 +75,8 @@ function ReelCard({ reel }: { reel: (typeof REELS)[0] }) {
     if (video.paused) {
       try {
         await video.play();
-      } catch (err) {
-        console.error(err);
+      } catch {
+        // Autoplay rejections are expected browser behavior, not errors.
       }
     } else {
       video.pause();

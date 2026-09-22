@@ -1,4 +1,5 @@
 import StickyHeader from "@/components/layout/StickyHeader";
+import BreadcrumbJsonLd from "@/components/seo/BreadcrumbJsonLd";
 import Footer from "@/components/layout/Footer";
 import Link from "next/link";
 import { CheckCircle2 } from "lucide-react";
@@ -6,7 +7,7 @@ import type { Metadata } from "next";
 import ScrollReveal from "@/components/common/ScrollReveal";
 
 export const metadata: Metadata = {
-  title: "Thank You! | Sweet Steps Session Confirmed",
+  title: "Thank You! | Session Confirmed",
   description: "Your session request has been received by Sweet Steps. We'll be in touch shortly.",
   keywords: [
     "booking confirmation Sweet Steps Jaipur",
@@ -23,6 +24,7 @@ export const metadata: Metadata = {
 export default function ThankYouPage() {
   return (
     <>
+      <BreadcrumbJsonLd trail={[{ name: "Home", href: "/" }, { name: "Thank You", href: "/thank-you" }]} />
       <StickyHeader />
       <div className="pt-32 pb-20 bg-neutral-50 min-h-[90vh] flex flex-col justify-center">
         <div className="container mx-auto px-6 text-center max-w-[800px]">

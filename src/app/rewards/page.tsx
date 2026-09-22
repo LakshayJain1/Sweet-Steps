@@ -1,4 +1,5 @@
 import StickyHeader from "@/components/layout/StickyHeader";
+import BreadcrumbJsonLd from "@/components/seo/BreadcrumbJsonLd";
 import Footer from "@/components/layout/Footer";
 import ChatWidget from "@/components/common/ChatWidget";
 import { Gift, Heart, Users, Calendar } from "lucide-react";
@@ -6,7 +7,7 @@ import type { Metadata } from "next";
 import ScrollReveal from "@/components/common/ScrollReveal";
 
 export const metadata: Metadata = {
-  title: "Sweet Rewards | Loyalty Program for Sweet Steps Families",
+  title: "Sweet Rewards | Loyalty Program",
   description: "Join the Sweet Steps loyalty program in Jaipur. Earn rewards for every referral and multiple casting sessions as your baby grows.",
   keywords: [
     "baby casting loyalty program Jaipur",
@@ -45,6 +46,7 @@ const rewards = [
 export default function RewardsPage() {
   return (
     <>
+      <BreadcrumbJsonLd trail={[{ name: "Home", href: "/" }, { name: "Rewards", href: "/rewards" }]} />
       <StickyHeader />
       <main className="pt-32 pb-24 bg-neutral-50 overflow-hidden relative">
         {/* Background Mesh: monochromatic */}

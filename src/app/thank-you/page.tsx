@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     "casting session next steps Jaipur"
   ],
   alternates: {
-    canonical: "https://sweetsteps.online/thank-you",
+    canonical: "https://www.sweetsteps.online/thank-you",
   },
 };
 

@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     "Sweet Steps referral program"
   ],
   alternates: {
-    canonical: "https://sweetsteps.online/rewards",
+    canonical: "https://www.sweetsteps.online/rewards",
   },
 };
 

@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     "couple casting booking Jaipur"
   ],
   alternates: {
-    canonical: "https://sweetsteps.online/book",
+    canonical: "https://www.sweetsteps.online/book",
   },
 };
 

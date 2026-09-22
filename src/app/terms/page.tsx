@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: "Terms of Service",
   description: "Sweet Steps Terms of Service - Booking, cancellations, refunds, and liability for 3D casting sessions in Jaipur.",
   alternates: {
-    canonical: "https://sweetsteps.online/terms",
+    canonical: "https://www.sweetsteps.online/terms",
   },
 };
 

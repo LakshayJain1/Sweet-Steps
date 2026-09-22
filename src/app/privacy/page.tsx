@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: "Privacy Policy",
   description: "How Sweet Steps collects, uses, and protects your personal data when you book a 3D casting session.",
   alternates: {
-    canonical: "https://sweetsteps.online/privacy",
+    canonical: "https://www.sweetsteps.online/privacy",
   },
 };
 

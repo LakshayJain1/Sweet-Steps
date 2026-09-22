@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     "family impression artist Rajasthan"
   ],
   alternates: {
-    canonical: "https://sweetsteps.online/about",
+    canonical: "https://www.sweetsteps.online/about",
   },
 };
 

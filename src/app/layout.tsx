@@ -8,12 +8,12 @@ const inter = Inter({ subsets: ["latin"], weight: "400", display: "swap", variab
 const playfair = Playfair_Display({ subsets: ["latin"], weight: ["400", "700"], display: "swap", variable: "--font-playfair" });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://sweetsteps.online"),
+  metadataBase: new URL("https://www.sweetsteps.online"),
   title: {
     default: "Sweet Steps | Premium 3D Casting Jaipur | Baby, Sibling & Couple Impressions",
     template: "%s | Sweet Steps Jaipur",
   },
-  description: "Jaipur's #1 premium 3D casting service for babies, siblings, couples, and elders. Handcrafted keepsake frames. 100% skin safe, preserved for a lifetime. Book your session today!",
+  description: "Jaipur's 3D hand & feet imprint studio — baby, couple, family & pet imprints turned into frames that actually hit different.",
   keywords: ["baby hand casting Jaipur", "3D family impressions Jaipur", "sibling hand casting Jaipur", "couple hand casting Jaipur", "elder blessing casting Jaipur", "keepsake frames Jaipur"],
   authors: [{ name: "Sweet Steps Jaipur" }],
   creator: "Sweet Steps",
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_IN",
-    url: "https://sweetsteps.online",
+    url: "https://www.sweetsteps.online",
     siteName: "Sweet Steps Jaipur",
     title: "Sweet Steps | Premium 3D Casting in Jaipur",
     description: "Capture precious bonds that last a lifetime with Jaipur's favorite 3D hand and feet impression service for all ages.",

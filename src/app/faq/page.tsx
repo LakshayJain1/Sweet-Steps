@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     "baby casting movement during process",
   ],
   alternates: {
-    canonical: "https://sweetsteps.online/faq",
+    canonical: "https://www.sweetsteps.online/faq",
   },
 };
 

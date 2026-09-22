@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   description: "Preserve precious bonds forever with Jaipur's premium 3D casting service. Handcrafted frames for babies, siblings, couples, and elders. 100% skin safe, at-home sessions available.",
   keywords: ["baby hand casting Jaipur", "3D family impressions Jaipur", "sibling casting Jaipur", "couple hand casting Jaipur", "elder blessing casting Jaipur"],
   alternates: {
-    canonical: "https://sweetsteps.online",
+    canonical: "https://www.sweetsteps.online",
   },
 };
 
@@ -26,12 +26,12 @@ const jsonLd = [
   {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "@id": "https://sweetsteps.online",
+    "@id": "https://www.sweetsteps.online",
     "name": "Sweet Steps",
     "description": "Premium 3D hand and feet casting service for babies, siblings, couples, and elders in Jaipur, Rajasthan.",
-    "url": "https://sweetsteps.online",
+    "url": "https://www.sweetsteps.online",
     "telephone": "+91-8302419714",
-    "image": "https://sweetsteps.online/logo.webp",
+    "image": "https://www.sweetsteps.online/logo.webp",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "73/47, Paramhans Marg, Mansarovar",
@@ -69,11 +69,11 @@ const jsonLd = [
   {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "@id": "https://sweetsteps.online#organization",
+    "@id": "https://www.sweetsteps.online#organization",
     "name": "Sweet Steps",
-    "url": "https://sweetsteps.online",
-    "logo": "https://sweetsteps.online/logo.webp",
-    "image": "https://sweetsteps.online/logo.webp",
+    "url": "https://www.sweetsteps.online",
+    "logo": "https://www.sweetsteps.online/logo.webp",
+    "image": "https://www.sweetsteps.online/logo.webp",
     "sameAs": [
       "https://www.instagram.com/sweet_.steps__",
       "https://www.facebook.com/sweetstepsjaipur",
@@ -87,7 +87,7 @@ const jsonLd = [
     "provider": {
       "@type": "LocalBusiness",
       "name": "Sweet Steps",
-      "url": "https://sweetsteps.online"
+      "url": "https://www.sweetsteps.online"
     },
     "areaServed": [
       {
@@ -106,7 +106,7 @@ const jsonLd = [
     "@type": "Product",
     "name": "Custom 3D Family Impression Frames",
     "description": "Handcrafted 3D impression frames - customizable for babies, siblings, couples, and elders. Capture every tiny detail and bond.",
-    "image": "https://sweetsteps.online/Assets/signature-baby-frame.webp",
+    "image": "https://www.sweetsteps.online/Assets/signature-baby-frame.webp",
     "brand": {
       "@type": "Brand",
       "name": "Sweet Steps"
@@ -116,7 +116,7 @@ const jsonLd = [
       "lowPrice": "0",
       "priceCurrency": "INR",
       "offerCount": "17",
-      "url": "https://sweetsteps.online/gallery"
+      "url": "https://www.sweetsteps.online/gallery"
     },
     "aggregateRating": {
       "@type": "AggregateRating",

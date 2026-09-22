@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     "premium 3D art frames Jaipur"
   ],
   alternates: {
-    canonical: "https://sweetsteps.online/gallery",
+    canonical: "https://www.sweetsteps.online/gallery",
   },
 };
 
@@ -27,7 +27,7 @@ import { products } from "@/data/products";
 
 const images = products.map(p => p.mainImg);
 
-const SITE_URL = "https://sweetsteps.online";
+const SITE_URL = "https://www.sweetsteps.online";
 
 const itemListSchema = {
   "@context": "https://schema.org",

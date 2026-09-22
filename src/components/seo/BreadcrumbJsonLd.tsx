@@ -1,4 +1,4 @@
-const SITE_URL = "https://sweetsteps.online";
+const SITE_URL = "https://www.sweetsteps.online";
 
 export interface BreadcrumbTrailItem {
   name: string;

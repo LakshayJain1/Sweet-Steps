@@ -9,6 +9,9 @@ export interface BreadcrumbTrailItem {
 /**
  * Renders a BreadcrumbList JSON-LD script block.
  * Pass the full trail from Home to the current page.
+ *
+ * NOTE: This is a React component used with client:load in Astro pages.
+ * It renders a <script> tag server-side via Astro's JSX rendering.
  */
 export default function BreadcrumbJsonLd({ trail }: { trail: BreadcrumbTrailItem[] }) {
   const jsonLd = {
@@ -25,6 +28,7 @@ export default function BreadcrumbJsonLd({ trail }: { trail: BreadcrumbTrailItem
   return (
     <script
       type="application/ld+json"
+      // biome-ignore lint/security/noDangerouslySetInnerHtml: controlled JSON-LD data
       dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
     />
   );

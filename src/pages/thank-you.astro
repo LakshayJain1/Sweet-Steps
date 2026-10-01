@@ -1,0 +1,70 @@
+---
+import Layout from "../layouts/layout.astro";
+import StickyHeader from "@components/layout/StickyHeader";
+import BreadcrumbJsonLd from "@components/seo/BreadcrumbJsonLd";
+import Footer from "@components/layout/Footer";
+import ScrollReveal from "@components/common/ScrollReveal";
+import { CheckCircle2 } from "lucide-react";
+
+export const metadata = {
+  title: "Thank You! | Session Confirmed",
+  description: "Your session request has been received by Sweet Steps. We'll be in touch shortly.",
+  keywords: [
+    "booking confirmation Sweet Steps Jaipur",
+    "baby casting booking received Jaipur",
+    "what happens after booking casting session",
+    "Sweet Steps contact WhatsApp Jaipur",
+    "casting session next steps Jaipur"
+  ],
+  canonical: "https://www.sweetsteps.online/thank-you",
+};
+---
+
+<Layout metadata={metadata}>
+  <BreadcrumbJsonLd trail={[{ name: "Home", href: "/" }, { name: "Thank You", href: "/thank-you" }]} />
+  <StickyHeader client:load />
+  <main class="pt-32 pb-20 bg-neutral-50 min-h-[90vh] flex flex-col justify-center">
+    <div class="container mx-auto px-6 text-center max-w-[800px]">
+      <ScrollReveal client:load>
+        <div class="relative inline-flex items-center justify-center p-6 bg-neutral-100 rounded-full mb-8 border border-neutral-200">
+          <CheckCircle2 className="h-16 w-16 text-neutral-900" />
+          <div class="absolute inset-0 animate-ping rounded-full border border-neutral-400/40"></div>
+        </div>
+      </ScrollReveal>
+      
+      <ScrollReveal client:load delay={0.15}>
+        <h1 class="leading-tight mb-6 text-neutral-900">Booking Request Received!</h1>
+      </ScrollReveal>
+      
+      <ScrollReveal client:load delay={0.25}>
+        <p class="text-xl md:text-2xl text-neutral-500 leading-[1.6]">
+          Thank you for trusting Sweet Steps. Our team will contact you via WhatsApp or phone within 24 hours 
+          to confirm your selected date and discuss frame options.
+        </p>
+      </ScrollReveal>
+      
+      <ScrollReveal client:load delay={0.35}>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-6 mt-12 bg-neutral-100 p-8 rounded-card border border-neutral-200">
+          <span class="text-lg text-neutral-900 font-medium">Need immediate assistance?</span>
+          <a 
+            href="https://wa.me/918302419714" 
+            class="flex items-center btn-primary"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Follow up on WhatsApp 💬
+          </a>
+        </div>
+      </ScrollReveal>
+
+      <ScrollReveal client:load delay={0.45}>
+        <div class="mt-12">
+          <a href="/" class="btn-ghost">
+            Return to Home
+          </a>
+        </div>
+      </ScrollReveal>
+    </div>
+  </main>
+  <Footer client:load />
+</Layout>

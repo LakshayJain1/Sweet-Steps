@@ -101,11 +101,10 @@ function ReelCard({ reel }: { reel: (typeof REELS)[0] }) {
         <video
           ref={videoRef}
           src={reel.video}
-          autoPlay
           muted
           loop
           playsInline
-          preload="metadata"
+          preload="none"
           onClick={togglePlay}
           onPlay={() => setPlaying(true)}
           onPause={() => setPlaying(false)}
@@ -271,7 +270,7 @@ function ReelCard({ reel }: { reel: (typeof REELS)[0] }) {
 
 export default function VideoTestimonials() {
   return (
-    <section className="section-padding bg-transparent">
+    <section id="video-testimonials" className="section-padding bg-transparent scroll-mt-20">
       <div className="container mx-auto max-w-[1280px] px-6">
 
         <ScrollReveal>
@@ -292,7 +291,7 @@ export default function VideoTestimonials() {
 
         <div className="grid grid-cols-1 justify-items-center gap-10 md:grid-cols-2 lg:grid-cols-2">
 
-          {REELS.map((reel, index) => (
+          {REELS.map((reel) => (
             <ScrollReveal key={reel.id}>
 
               <div

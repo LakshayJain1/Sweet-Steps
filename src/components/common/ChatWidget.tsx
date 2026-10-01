@@ -1,7 +1,4 @@
-"use client";
-
 import { useState } from "react";
-import Image from "next/image";
 import { MessageCircle, X, ChevronRight, HelpCircle } from "lucide-react";
 
 const miniFaqs = [
@@ -67,7 +64,7 @@ export default function ChatWidget() {
               >
                 <div className="flex items-center gap-3">
                   <div className="relative h-12 w-12 rounded-full overflow-hidden border-2 border-neutral-200 shadow-sm shrink-0">
-                    <Image src="/founder.webp" alt="Founder" fill sizes="48px" className="object-cover" />
+                    <img src="/founder.webp" alt="Founder" width={48} height={48} className="object-cover w-full h-full" />
                   </div>
                   <div>
                     <p className="text-sm font-bold text-neutral-900">Message Founder</p>

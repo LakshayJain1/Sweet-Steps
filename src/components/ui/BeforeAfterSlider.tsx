@@ -1,7 +1,4 @@
-"use client";
-
-import { useState, useRef, useEffect, MouseEvent, TouchEvent } from "react";
-import Image from "next/image";
+import { useState, useRef, useEffect, type MouseEvent, type TouchEvent } from "react";
 
 interface BeforeAfterSliderProps {
   beforeImage: string;
@@ -60,14 +57,13 @@ export default function BeforeAfterSlider({
       >
         {/* After Image (Full Background) */}
         <div className="absolute inset-0">
-          <Image
+          <img
             src={afterImage}
             alt="After - Final impression frame"
-            fill
-            sizes="(max-width: 640px) 88vw, 380px"
-            quality={64}
-            className="object-cover object-center"
+            width={380}
+            height={676}
             draggable={false}
+            className="object-cover object-center w-full h-full"
           />
         </div>
 
@@ -78,14 +74,13 @@ export default function BeforeAfterSlider({
             clipPath: `inset(0 ${100 - sliderPosition}% 0 0)`,
           }}
         >
-          <Image
+          <img
             src={beforeImage}
             alt="Before - Initial impression"
-            fill
-            sizes="(max-width: 640px) 88vw, 380px"
-            quality={64}
-            className="object-cover object-center"
+            width={380}
+            height={676}
             draggable={false}
+            className="object-cover object-center w-full h-full"
           />
         </div>
 

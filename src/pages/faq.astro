@@ -1,0 +1,159 @@
+---
+import Layout from "../layouts/layout.astro";
+import StickyHeader from "@components/layout/StickyHeader";
+import Footer from "@components/layout/Footer";
+import ScrollReveal from "@components/common/ScrollReveal";
+import FaqAccordion from "@components/sections/FaqAccordion";
+import BreadcrumbJsonLd from "@components/seo/BreadcrumbJsonLd";
+
+export const metadata = {
+  title: "FAQs | Sweet Steps Impressions",
+  description: "Common questions about skin-safe 3D hand and feet castings in Jaipur.",
+  keywords: [
+    "baby casting FAQ Jaipur",
+    "is 3D casting safe for newborns",
+    "how long does hand casting take",
+    "at home casting process Jaipur",
+    "best age for baby hand impression",
+    "casting frame delivery time Jaipur",
+    "casting frame customization options",
+    "baby casting movement during process",
+  ],
+  canonical: "https://www.sweetsteps.online/faq",
+};
+---
+
+<Layout metadata={metadata}>
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is the material skin-safe?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Absolutely. We use 100% skin-safe, non-toxic, and hypoallergenic alginate. It's the same material dentists use for oral impressions and is safe for everyone from newborns to elders."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does the process take?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The molding process takes less than 2 minutes per hand or foot. The entire session usually wraps up within 30-45 minutes."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I have to come to your studio?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No! We provide an at-home service anywhere in Jaipur. You stay comfortable in your own environment."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the best age to get an impression?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For babies, we recommend between 0-6 months for the best newborn wrinkles, but we can do castings for individuals, couples, and families of any age."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "When will I receive my finished frame?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It takes about 10 to 15 days to dry, finish, paint, and frame the final 3D piece."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I choose the frame color?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, you can select from our collection of premium frames during our visit. Popular choices include gold, silver, and classic white."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What if there is movement during the casting?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The material sets very quickly. Even with some movement, it usually captures perfectly. If not, we simply try again at no extra cost!"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I book a session?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Click 'Book Now' in our menu, fill out the form, or simply send us a message on WhatsApp. We'll find a convenient date for you."
+          }
+        }
+      ]
+    })}
+  />
+  <BreadcrumbJsonLd trail={[{ name: "Home", href: "/" }, { name: "FAQs", href: "/faq" }]} />
+  <StickyHeader client:load />
+  <main class="pt-32 pb-24 bg-neutral-50 min-h-screen">
+    <div class="container mx-auto px-6 max-w-[800px]">
+      <ScrollReveal client:visible>
+        <div class="text-center mb-16">
+          <h1 class="mb-6 text-neutral-900">Frequently Asked Questions</h1>
+          <p class="text-xl text-neutral-500 prose mx-auto">
+            Everything you need to know about capturing your most precious bonds.
+          </p>
+        </div>
+      </ScrollReveal>
+
+      <FaqAccordion client:visible faqs={[
+        {
+          q: "Is the material skin-safe?",
+          a: "Absolutely. We use 100% skin-safe, non-toxic, and hypoallergenic alginate. It's the same material dentists use for oral impressions and is safe for everyone from newborns to elders."
+        },
+        {
+          q: "How long does the process take?",
+          a: "The molding process takes less than 2 minutes per hand or foot. The entire session usually wraps up within 30-45 minutes."
+        },
+        {
+          q: "Do I have to come to your studio?",
+          a: "No! We provide an at-home service anywhere in Jaipur. You stay comfortable in your own environment."
+        },
+        {
+          q: "What is the best age to get an impression?",
+          a: "For babies, we recommend between 0-6 months for the best newborn wrinkles, but we can do castings for individuals, couples, and families of any age."
+        },
+        {
+          q: "When will I receive my finished frame?",
+          a: "It takes about 10 to 15 days to dry, finish, paint, and frame the final 3D piece."
+        },
+        {
+          q: "Can I choose the frame color?",
+          a: "Yes, you can select from our collection of premium frames during our visit. Popular choices include gold, silver, and classic white."
+        },
+        {
+          q: "What if there is movement during the casting?",
+          a: "The material sets very quickly. Even with some movement, it usually captures perfectly. If not, we simply try again at no extra cost!"
+        },
+        {
+          q: "How do I book a session?",
+          a: "Click 'Book Now' in our menu, fill out the form, or simply send us a message on WhatsApp. We'll find a convenient date for you."
+        }
+      ]} />
+
+      <ScrollReveal client:visible delay={0.2}>
+        <div class="mt-16 text-center">
+          <p class="text-lg text-neutral-500 mb-4">Still have questions?</p>
+          <a href="https://wa.me/918302419714" class="btn-primary" target="_blank" rel="noopener noreferrer">
+            Chat with us on WhatsApp
+          </a>
+        </div>
+      </ScrollReveal>
+    </div>
+  </main>
+  <Footer client:load />
+</Layout>

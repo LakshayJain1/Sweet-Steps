@@ -3,9 +3,9 @@
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
 
-const EMAILJS_SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "service_xs1r1ij";
-const EMAILJS_TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "template_466ohrx";
-const EMAILJS_PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "MdPYAn2rmEEjW9s7e";
+const EMAILJS_SERVICE_ID = import.meta.env.PUBLIC_EMAILJS_SERVICE_ID || "service_xs1r1ij";
+const EMAILJS_TEMPLATE_ID = import.meta.env.PUBLIC_EMAILJS_TEMPLATE_ID || "template_466ohrx";
+const EMAILJS_PUBLIC_KEY = import.meta.env.PUBLIC_EMAILJS_PUBLIC_KEY || "MdPYAn2rmEEjW9s7e";
 
 export default function BookingForm() {
   const [formData, setFormData] = useState({
@@ -69,8 +69,10 @@ export default function BookingForm() {
       <form onSubmit={handleSubmit} className="space-y-6">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           <div className="space-y-2">
-            <label className="text-sm font-bold text-neutral-700 block ml-1">Your Name *</label>
+            <label htmlFor="booking-name" className="text-sm font-bold text-neutral-700 block ml-1">Your Name *</label>
             <input
+              id="booking-name"
+              aria-label="Your Name"
               required
               type="text"
               value={formData.name}
@@ -81,8 +83,10 @@ export default function BookingForm() {
           </div>
           
           <div className="space-y-2">
-            <label className="text-sm font-bold text-neutral-700 block ml-1">WhatsApp Number *</label>
+            <label htmlFor="booking-phone" className="text-sm font-bold text-neutral-700 block ml-1">WhatsApp Number *</label>
             <input
+              id="booking-phone"
+              aria-label="WhatsApp Number"
               required
               type="tel"
               value={formData.phone}
@@ -95,8 +99,10 @@ export default function BookingForm() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           <div className="space-y-2">
-            <label className="text-sm font-bold text-neutral-700 block ml-1">City / Locality *</label>
+            <label htmlFor="booking-city" className="text-sm font-bold text-neutral-700 block ml-1">City / Locality *</label>
             <input
+              id="booking-city"
+              aria-label="City or Locality"
               required
               type="text"
               value={formData.city}
@@ -107,8 +113,10 @@ export default function BookingForm() {
           </div>
           
           <div className="space-y-2">
-            <label className="text-sm font-bold text-neutral-700 block ml-1">Age / Occasion *</label>
+            <label htmlFor="booking-subject" className="text-sm font-bold text-neutral-700 block ml-1">Age / Occasion *</label>
             <input
+              id="booking-subject"
+              aria-label="Age or Occasion"
               required
               type="text"
               value={formData.subjectDetails}
@@ -120,8 +128,10 @@ export default function BookingForm() {
         </div>
 
         <div className="space-y-2">
-          <label className="text-sm font-bold text-neutral-700 block ml-1">Preferred Date *</label>
+          <label htmlFor="booking-date" className="text-sm font-bold text-neutral-700 block ml-1">Preferred Date *</label>
           <input
+            id="booking-date"
+            aria-label="Preferred Date"
             required
             type="date"
             value={formData.date}

@@ -1,8 +1,4 @@
-"use client";
-
 import { useState, useEffect } from "react";
-import Link from "next/link";
-import Image from "next/image";
 import { Menu, X } from "lucide-react";
 
 export default function StickyHeader() {
@@ -35,31 +31,31 @@ export default function StickyHeader() {
     >
       <div className="container mx-auto max-w-[1200px] px-4 md:px-6">
         <div className="flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2 md:gap-3 z-50">
-            <div className="relative h-8 w-8 md:h-10 md:w-10 overflow-hidden rounded-full">
-              <Image src="/logo.webp" alt="Sweet Steps Logo" fill sizes="40px" className="object-cover" />
+          <a href="/" className="flex items-center gap-2 md:gap-3 z-50">
+            <div className="h-8 w-8 md:h-10 md:w-10 overflow-hidden rounded-full flex-shrink-0">
+              <img src="/logo.webp" alt="Sweet Steps Logo" width={40} height={40} className="object-cover w-full h-full" />
             </div>
             <span className="font-heading text-lg md:text-2xl font-bold text-neutral-900 hidden xs:block">Sweet Steps</span>
-          </Link>
+          </a>
 
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center space-x-12 absolute left-1/2 -translate-x-1/2">
             {navLinks.map((link) => (
-              <Link 
+              <a 
                 key={link.href}
                 href={link.href} 
                 className="relative text-neutral-600 hover:text-neutral-900 transition-colors duration-300 font-medium group"
               >
                 {link.label}
                 <span className="absolute -bottom-1 left-0 w-0 h-[1.5px] bg-neutral-900 group-hover:w-full transition-all duration-300 ease-out" />
-              </Link>
+              </a>
             ))}
           </nav>
 
           <div className="flex items-center gap-2 md:gap-4">
-            <Link href="/book" className="btn-primary !hidden lg:!inline-flex px-6 py-2.5 text-sm shadow-none">
+            <a href="/book" className="btn-primary !hidden lg:!inline-flex px-6 py-2.5 text-sm shadow-none">
               Book Now
-            </Link>
+            </a>
             <button
               className="md:hidden z-50 p-2 rounded-full hover:bg-neutral-100 transition-colors"
               onClick={() => setIsOpen(!isOpen)}
@@ -82,19 +78,19 @@ export default function StickyHeader() {
                   className="animate-menu-item"
                   style={{ animationDelay: `${idx * 50 + 100}ms` }}
                 >
-                  <Link
+                  <a
                     href={link.href}
                     onClick={() => setIsOpen(false)}
                     className="block text-lg text-neutral-600 hover:text-neutral-900 py-2 transition-colors"
                   >
                     {link.label}
-                  </Link>
+                  </a>
                 </div>
               ))}
               <div className="pt-4 mt-2 border-t border-neutral-200">
-                 <Link href="/book" onClick={() => setIsOpen(false)} className="btn-primary w-full text-center">
+                 <a href="/book" onClick={() => setIsOpen(false)} className="btn-primary w-full text-center">
                    Book Now
-                 </Link>
+                 </a>
               </div>
             </nav>
           </div>

@@ -1,11 +1,7 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
-  content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
+  content: ["./src/pages/**/*.{astro,js,ts,jsx,tsx,mdx}", "./src/components/**/*.{js,ts,jsx,tsx,mdx}", "./src/layouts/**/*.{astro,js,ts,jsx,tsx,mdx}", "./src/app/**/*.{js,ts,jsx,tsx,mdx}"],
   theme: {
     extend: {
       screens: {
@@ -35,8 +31,11 @@ const config: Config = {
         whatsapp: "#25D366",
       },
       fontFamily: {
-        heading: ["var(--font-playfair)", "serif"],
-        body: ["var(--font-inter)", "sans-serif"],
+        heading: ["var(--font-playfair)", "Playfair Display", "Georgia", "serif"],
+        body: ["var(--font-inter)", "Montserrat", "sans-serif"],
+        serif: ["var(--font-playfair)", "Playfair Display", "Georgia", "serif"],
+        caveat: ["var(--font-caveat)", "Caveat", "cursive"],
+        handwriting: ["var(--font-caveat)", "Caveat", "cursive"],
       },
       boxShadow: {
         glass: "0 8px 32px 0 rgba(0, 0, 0, 0.06)",
@@ -98,3 +97,4 @@ const config: Config = {
   plugins: [],
 };
 export default config;
+

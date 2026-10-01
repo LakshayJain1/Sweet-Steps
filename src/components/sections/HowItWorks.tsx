@@ -21,7 +21,7 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section className="bg-neutral-50 section-padding">
+    <section id="how-it-works" className="bg-neutral-50 section-padding scroll-mt-20">
       <div className="container mx-auto max-w-[1200px] px-4 md:px-6">
         <ScrollReveal>
           <div className="text-center space-y-4 mb-20">

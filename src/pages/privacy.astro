@@ -1,0 +1,82 @@
+---
+import Layout from "../layouts/layout.astro";
+import StickyHeader from "@components/layout/StickyHeader";
+import BreadcrumbJsonLd from "@components/seo/BreadcrumbJsonLd";
+import Footer from "@components/layout/Footer";
+import ScrollReveal from "@components/common/ScrollReveal";
+
+export const metadata = {
+  title: "Privacy Policy",
+  description: "How Sweet Steps collects, uses, and protects your personal data when you book a 3D casting session.",
+  canonical: "https://www.sweetsteps.online/privacy",
+};
+---
+
+<Layout metadata={metadata}>
+  <BreadcrumbJsonLd trail={[{ name: "Home", href: "/" }, { name: "Privacy Policy", href: "/privacy" }]} />
+  <StickyHeader client:load />
+  <main class="min-h-screen bg-neutral-50 text-neutral-900">
+    <section class="pt-40 pb-20 md:pb-32 bg-neutral-50">
+      <div class="container mx-auto px-4 md:px-6 max-w-[900px]">
+        <ScrollReveal client:load delay={0.1}>
+          <h1 class="text-3xl md:text-5xl font-heading font-bold text-neutral-900 mb-8 leading-tight">Privacy Policy</h1>
+          <p class="text-neutral-500 text-lg mb-12">Last updated: July 2026</p>
+        </ScrollReveal>
+
+        <div class="prose prose-neutral max-w-none space-y-10 text-neutral-700 leading-relaxed">
+          <ScrollReveal client:load delay={0.15}>
+            <section>
+              <h2 class="text-2xl font-bold text-neutral-900 mb-4">Who we are</h2>
+              <p>Sweet Steps Impressions provides at-home 3D casting services in Jaipur, Rajasthan. You can reach us anytime at <a href="mailto:sweetsteps05@gmail.com" class="text-neutral-900 underline hover:text-neutral-600">sweetsteps05@gmail.com</a> or +91 83024 19714.</p>
+            </section>
+          </ScrollReveal>
+
+          <ScrollReveal client:load delay={0.2}>
+            <section>
+              <h2 class="text-2xl font-bold text-neutral-900 mb-4">What we collect</h2>
+              <ul class="list-disc list-inside space-y-3 ml-4">
+                <li>Your name, phone/WhatsApp number, email, and city</li>
+                <li>Booking details: child's age, occasion, preferred date, and address for the home visit</li>
+                <li>Photos or feedback you choose to share with us</li>
+                <li>Basic website usage data (pages visited, general location) to understand how people use our site</li>
+              </ul>
+              <p class="mt-4">We don't collect your child's name or any sensitive/health information, just their approximate age, so we bring the right kit.</p>
+            </section>
+          </ScrollReveal>
+
+          <ScrollReveal client:load delay={0.25}>
+            <section>
+              <h2 class="text-2xl font-bold text-neutral-900 mb-4">Why we collect it</h2>
+              <p>Simply to confirm and schedule your session, prepare the right materials, keep basic business records, and (only if you say yes) share your frame photos or testimonials publicly.</p>
+              <p class="mt-4">We never sell or rent your information to anyone.</p>
+            </section>
+          </ScrollReveal>
+
+          <ScrollReveal client:load delay={0.3}>
+            <section>
+              <h2 class="text-2xl font-bold text-neutral-900 mb-4">Who sees it</h2>
+              <p>Only our team, the tools we use to manage bookings and send you messages, and a delivery courier if you're outside Jaipur. Everyone we work with is required to keep your data safe.</p>
+            </section>
+          </ScrollReveal>
+
+          <ScrollReveal client:load delay={0.35}>
+            <section>
+              <h2 class="text-2xl font-bold text-neutral-900 mb-4">Changes</h2>
+              <p>If we update this policy, we'll post the new version here and let you know if anything major changes.</p>
+            </section>
+          </ScrollReveal>
+
+          <ScrollReveal client:load delay={0.4}>
+            <section>
+              <h2 class="text-2xl font-bold text-neutral-900 mb-4">Contact</h2>
+              <p>Neetu Jain, Founder</p>
+              <p>Sweet Steps Impressions, Jaipur</p>
+              <p>WhatsApp: +91 83024 19714 • Email: <a href="mailto:sweetsteps05@gmail.com" class="text-neutral-900 underline hover:text-neutral-600">sweetsteps05@gmail.com</a></p>
+            </section>
+          </ScrollReveal>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer client:load />
+</Layout>

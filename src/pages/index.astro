@@ -1,24 +1,48 @@
-import dynamic from "next/dynamic";
-import Hero from "@/components/sections/Hero";
-import StickyHeader from "@/components/layout/StickyHeader";
+---
+import { googleTotalReviews, googleAverageRating, googleBusinessUrl } from "@data/google-reviews";
+import Layout from "../layouts/layout.astro";
+import Hero from "@components/sections/Hero";
 
-import BreadcrumbJsonLd from "@/components/seo/BreadcrumbJsonLd";
-import HowItWorks from "@/components/sections/HowItWorks";
-import BeforeAfterSection from "@/components/sections/BeforeAfterSection";
-import ProductGrid from "@/components/sections/ProductGrid";
-import Testimonials from "@/components/sections/Testimonials";
-import Footer from "@/components/layout/Footer";
-const ExitPopup = dynamic(() => import("@/components/common/ExitPopup"), { ssr: false });
+import StickyHeader from "@components/layout/StickyHeader";
+import BreadcrumbJsonLd from "@components/seo/BreadcrumbJsonLd";
+import HowItWorks from "@components/sections/HowItWorks";
+import BeforeAfterSection from "@components/sections/BeforeAfterSection";
+import ProductGrid from "@components/sections/ProductGrid";
+import Testimonials from "@components/sections/Testimonials";
+import Footer from "@components/layout/Footer";
+import VideoTestimonials from "@components/sections/VideoTestimonials";
+import ChatWidget from "@components/common/ChatWidget";
 
-import { Metadata } from "next";
-import { googleTotalReviews, googleAverageRating, googleBusinessUrl } from "@/data/google-reviews";
-
-export const metadata: Metadata = {
+export const metadata = {
   title: "Premium 3D Casting Jaipur | Baby, Sibling & Couple Impressions",
   description: "Preserve precious bonds forever with Jaipur's premium 3D casting service. Handcrafted frames for babies, siblings, couples, and elders. 100% skin safe, at-home sessions available.",
   keywords: ["baby hand casting Jaipur", "3D family impressions Jaipur", "sibling casting Jaipur", "couple hand casting Jaipur", "elder blessing casting Jaipur"],
-  alternates: {
-    canonical: "https://www.sweetsteps.online",
+  canonical: "https://www.sweetsteps.online",
+  openGraph: {
+    type: "website",
+    locale: "en",
+    url: "https://www.sweetsteps.online",
+    siteName: "Sweet Steps",
+    title: "Premium 3D Casting Jaipur | Baby, Sibling & Couple Impressions",
+    description: "Preserve precious bonds forever with Jaipur's premium 3D casting service. Handcrafted frames for babies, siblings, couples, and elders. 100% skin safe, at-home sessions available.",
+    images: [{ url: "https://www.sweetsteps.online/logo.webp" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Premium 3D Casting Jaipur | Baby, Sibling & Couple Impressions",
+    description: "Preserve precious bonds forever with Jaipur's premium 3D casting service. Handcrafted frames for babies, siblings, couples, and elders. 100% skin safe, at-home sessions available.",
+    images: ["https://www.sweetsteps.online/logo.webp"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 };
 
@@ -127,31 +151,24 @@ const jsonLd = [
     }
   }
 ];
+---
 
-const VideoTestimonials = dynamic(() => import("@/components/sections/VideoTestimonials"), {
-  ssr: false,
-  loading: () => null,
-});
-const ChatWidget = dynamic(() => import("@/components/common/ChatWidget"), { ssr: false });
 
-export default function Home() {
-  return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-      <BreadcrumbJsonLd trail={[{ name: "Home", href: "/" }]} />
-      <StickyHeader />
-      <Hero />
-      <HowItWorks />
-      <BeforeAfterSection />
-      <ProductGrid />
-      <Testimonials />
-      <VideoTestimonials />
-      <Footer />
-      <ChatWidget />
-      <ExitPopup />
-    </>
-  );
-}
+<Layout metadata={metadata}>
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify(jsonLd)}
+  />
+  <BreadcrumbJsonLd trail={[{ name: "Home", href: "/" }]} />
+  <StickyHeader client:load />
+  <main id="main-content">
+    <Hero client:load />
+    <HowItWorks client:visible />
+    <BeforeAfterSection client:visible />
+    <ProductGrid client:visible />
+    <Testimonials client:visible />
+    <VideoTestimonials client:visible />
+  </main>
+  <Footer client:visible />
+  <ChatWidget client:idle />
+</Layout>

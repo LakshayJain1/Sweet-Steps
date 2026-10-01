@@ -1,5 +1,4 @@
 import { Star, MessageCircle } from "lucide-react";
-import Link from "next/link";
 import ScrollReveal from "@/components/common/ScrollReveal";
 import { googleReviews, googleBusinessUrl, googleBusinessName, googleTotalReviews, googleAverageRating } from "@/data/google-reviews";
 
@@ -10,7 +9,7 @@ function truncate(text: string, maxLength: number): string {
 
 export default function Testimonials() {
   return (
-    <section className="bg-neutral-100 section-padding">
+    <section id="testimonials" className="bg-neutral-100 section-padding scroll-mt-20">
       <div className="container mx-auto max-w-[1200px] px-6">
         <ScrollReveal>
           <div className="text-center mb-16">
@@ -35,15 +34,15 @@ export default function Testimonials() {
                     <Star key={i} className="h-5 w-5 fill-current" />
                   ))}
                 </div>
-                <p className="text-base text-neutral-600 leading-relaxed italic flex-1 overflow-hidden flex-shrink-0">
+                <p className="relative text-base text-neutral-600 leading-relaxed italic flex-1 overflow-hidden line-clamp-[7]">
                   <span className="absolute -top-3 -left-1 text-3xl text-neutral-300 font-serif">"</span>
-                  <span className="relative block display:-webkit-box -webkit-line-clamp-7 -webkit-box-orient:vertical overflow-hidden">
+                  <span className="block">
                     {truncate(review.text, 280)}
                   </span>
                 </p>
                 <div className="border-t border-neutral-200 pt-6 flex-shrink-0 mt-auto">
                   <p className="font-heading font-bold text-lg text-neutral-900">{review.author}</p>
-                  <div className="text-sm text-neutral-500 mt-1 opacity-80">
+                  <div className="text-sm text-neutral-600 mt-1 font-medium">
                     <time dateTime={review.date}>
                       {new Date(review.date).toLocaleDateString("en-IN", { month: "short", day: "numeric", year: "numeric" })}
                     </time>
@@ -56,7 +55,7 @@ export default function Testimonials() {
 
         <ScrollReveal delay={0.3}>
           <div className="mt-16 text-center">
-            <Link
+            <a
               href={googleBusinessUrl}
               target="_blank"
               rel="noopener noreferrer"
@@ -66,7 +65,7 @@ export default function Testimonials() {
               <span className="font-bold text-base">
                 Read all {googleTotalReviews}+ reviews on Google →
               </span>
-            </Link>
+            </a>
             <p className="mt-4 text-sm text-neutral-500">
               Verified reviews from <span className="font-medium">{googleBusinessName}</span> Family
             </p>

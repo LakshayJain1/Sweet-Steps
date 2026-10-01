@@ -1,11 +1,8 @@
-"use client";
-
 import { useState } from "react";
-import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import StaggerContainer, { staggerChildVariants } from "@/components/common/StaggerContainer";
 import ScrollReveal from "@/components/common/ScrollReveal";
-import { Product } from "@/data/products";
+import type { Product } from "@/data/products";
 import { X, MessageCircle, Ruler, Star, Check, ArrowRight } from "lucide-react";
 
 interface GalleryViewProps {
@@ -57,16 +54,13 @@ export default function GalleryView({ images, designs }: GalleryViewProps) {
                 className="relative break-inside-avoid rounded-2xl overflow-hidden shadow-glass border border-neutral-200/60 group bg-white"
               >
                 <div className="relative w-full h-full cursor-pointer">
-                  <Image
+                  <img
                     src={src}
                     alt={product?.imageAlts?.[src] ?? product?.name ?? `Sweet steps gallery image ${i + 1}`}
                     width={400}
                     height={400}
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    quality={72}
                     className="w-full h-auto object-cover group-hover:scale-110 transition-transform duration-700"
-                    priority={i < 4}
-                    loading={i < 4 ? undefined : "lazy"}
+                    loading={i < 4 ? "eager" : "lazy"}
                   />
                   
                   {/* Hover Overlay */}
@@ -141,12 +135,10 @@ export default function GalleryView({ images, designs }: GalleryViewProps) {
 
               {/* Image side */}
               <div className="w-full md:w-1/2 h-[300px] md:h-auto relative bg-neutral-100">
-                <Image
+                <img
                   src={selectedDesign.mainImg}
                   alt={selectedDesign.imageAlts?.[selectedDesign.mainImg] ?? selectedDesign.name}
-                  fill
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  className="object-cover"
+                  className="object-cover w-full h-full"
                 />
               </div>
 

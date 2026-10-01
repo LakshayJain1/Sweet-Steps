@@ -1,0 +1,117 @@
+---
+import "../styles/globals.css";
+
+export interface MetaImage {
+  url: string;
+  width?: number;
+  height?: number;
+  alt?: string;
+}
+
+export interface LayoutMetadata {
+  title: string;
+  description: string;
+  keywords?: string[];
+  canonical?: string;
+  openGraph?: {
+    type: string;
+    locale: string;
+    url: string;
+    siteName: string;
+    title: string;
+    description: string;
+    images?: MetaImage[];
+  };
+  twitter?: {
+    card: string;
+    title: string;
+    description: string;
+    images?: string[];
+  };
+  robots?: {
+    index?: boolean;
+    follow?: boolean;
+    googleBot?: {
+      index?: boolean;
+      follow?: boolean;
+      "max-video-preview"?: number;
+      "max-image-preview"?: string;
+      "max-snippet"?: number;
+    };
+  };
+  alternates?: { canonical?: string };
+}
+
+export interface Props {
+  metadata: LayoutMetadata;
+}
+
+const { metadata } = Astro.props;
+const {
+  title,
+  description,
+  keywords,
+  openGraph,
+  twitter,
+  robots,
+} = metadata;
+
+const canonical = metadata.canonical ?? metadata.alternates?.canonical;
+
+const robotsContent = robots
+  ? `${robots.index !== false ? 'index' : 'noindex'}, ${robots.follow !== false ? 'follow' : 'nofollow'}`
+  : undefined;
+
+const googleBotContent = robots?.googleBot
+  ? `${robots.googleBot.index !== false ? 'index' : 'noindex'}, ${robots.googleBot.follow !== false ? 'follow' : 'nofollow'}, max-video-preview=${robots.googleBot['max-video-preview'] ?? -1}, max-image-preview=${robots.googleBot['max-image-preview'] ?? 'large'}, max-snippet=${robots.googleBot['max-snippet'] ?? -1}`
+  : undefined;
+---
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="/logo.webp" type="image/webp" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    {keywords && keywords.length > 0 && (
+      <meta name="keywords" content={keywords.join(", ")} />
+    )}
+    {canonical && (
+      <link rel="canonical" href={canonical} />
+    )}
+
+    {openGraph && <meta property="og:type" content={openGraph.type} />}
+    {openGraph && <meta property="og:locale" content={openGraph.locale} />}
+    {openGraph && <meta property="og:url" content={openGraph.url} />}
+    {openGraph && <meta property="og:site_name" content={openGraph.siteName} />}
+    {openGraph && <meta property="og:title" content={openGraph.title} />}
+    {openGraph && <meta property="og:description" content={openGraph.description} />}
+    {openGraph?.images && openGraph.images.map((img) => (
+      <meta property="og:image" content={img.url} />
+    ))}
+
+    {twitter && <meta name="twitter:card" content={twitter.card} />}
+    {twitter && <meta name="twitter:title" content={twitter.title} />}
+    {twitter && <meta name="twitter:description" content={twitter.description} />}
+    {twitter?.images && twitter.images.map((img) => (
+      <meta name="twitter:image" content={img} />
+    ))}
+
+    {robotsContent && (
+      <meta name="robots" content={robotsContent} />
+    )}
+    {googleBotContent && (
+      <meta name="googlebot" content={googleBotContent} />
+    )}
+
+    <meta name="google-site-verification" content="evSHeP88q1nZr80cWHM5iqaF9j22jMffWOKa-fl1tVc" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&family=Montserrat:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+    <link rel="preload" as="image" href="/hero_desktop.webp" type="image/webp" />
+    <link rel="preload" as="image" href="/Assets/signature-baby-frame.webp" />
+  </head>
+  <body class="min-h-screen bg-neutral-50 text-neutral-900 font-sans antialiased selection:bg-neutral-900 selection:text-white">
+    <slot />
+  </body>
+</html>
